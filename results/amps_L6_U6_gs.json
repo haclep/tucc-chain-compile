@@ -1,0 +1,2621 @@
+{
+  "schema": "chaincompile.amps.v0",
+  "generated": "2026-08-04",
+  "note": "state-equivalent CC amplitudes from cluster analysis of a compiled factorized-UCC chain state; intermediate normalization on the pivot determinant",
+  "pivot_determinant": [
+    {
+      "so": 0,
+      "orbital": 0,
+      "spin": "u"
+    },
+    {
+      "so": 1,
+      "orbital": 0,
+      "spin": "d"
+    },
+    {
+      "so": 2,
+      "orbital": 1,
+      "spin": "u"
+    },
+    {
+      "so": 3,
+      "orbital": 1,
+      "spin": "d"
+    },
+    {
+      "so": 10,
+      "orbital": 5,
+      "spin": "u"
+    },
+    {
+      "so": 11,
+      "orbital": 5,
+      "spin": "d"
+    }
+  ],
+  "energy": -2.648517564261174,
+  "amplitudes": [
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": 0.09305822862437808
+    },
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        }
+      ],
+      "t": -0.09305822862437811
+    },
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        }
+      ],
+      "t": 0.16831036712634637
+    },
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        }
+      ],
+      "parts": [
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        }
+      ],
+      "t": -0.060913777033074414
+    },
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": 0.15397200565745248
+    },
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        }
+      ],
+      "t": -0.2148857826905273
+    },
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        }
+      ],
+      "t": 0.06091377703307435
+    },
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        }
+      ],
+      "t": 0.21488578269052688
+    },
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        }
+      ],
+      "t": -0.15397200565745253
+    },
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        }
+      ],
+      "parts": [
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": -0.21488578269052722
+    },
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        }
+      ],
+      "parts": [
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        }
+      ],
+      "t": 0.15397200565745245
+    },
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": -0.06091377703307447
+    },
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        }
+      ],
+      "t": -0.15397200565745262
+    },
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        }
+      ],
+      "parts": [
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        }
+      ],
+      "t": 0.21488578269052697
+    },
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        }
+      ],
+      "t": 0.0609137770330743
+    },
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": 0.4201642451041183
+    },
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        }
+      ],
+      "t": 0.1480737235632186
+    },
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": 0.27209052154089935
+    },
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        }
+      ],
+      "t": -0.1240167979776807
+    },
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        }
+      ],
+      "t": 0.09305822862437806
+    },
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": -0.12401679797768081
+    },
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        }
+      ],
+      "parts": [
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        }
+      ],
+      "t": 0.2720905215408993
+    },
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        }
+      ],
+      "parts": [
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        }
+      ],
+      "t": -0.09305822862437801
+    },
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": 0.14807372356321838
+    },
+    {
+      "rank": 2,
+      "holes": [
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        }
+      ],
+      "t": 0.42016424510411887
+    },
+    {
+      "rank": 3,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        }
+      ],
+      "t": -0.036608361289727324
+    },
+    {
+      "rank": 3,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        }
+      ],
+      "t": -0.03660836128972727
+    },
+    {
+      "rank": 3,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        }
+      ],
+      "parts": [
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": -0.03660836128972695
+    },
+    {
+      "rank": 3,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": -0.03660836128972697
+    },
+    {
+      "rank": 3,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        }
+      ],
+      "t": 0.04186852967061869
+    },
+    {
+      "rank": 3,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        }
+      ],
+      "t": 0.03660836128972696
+    },
+    {
+      "rank": 3,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": 0.041868529670618486
+    },
+    {
+      "rank": 3,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        }
+      ],
+      "t": 0.036608361289727574
+    },
+    {
+      "rank": 3,
+      "holes": [
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": 0.04186852967061878
+    },
+    {
+      "rank": 3,
+      "holes": [
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        }
+      ],
+      "t": 0.036608361289727026
+    },
+    {
+      "rank": 3,
+      "holes": [
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": 0.041868529670618625
+    },
+    {
+      "rank": 3,
+      "holes": [
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": 0.0366083612897274
+    },
+    {
+      "rank": 3,
+      "holes": [
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        }
+      ],
+      "t": -0.04186852967061857
+    },
+    {
+      "rank": 3,
+      "holes": [
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        }
+      ],
+      "t": -0.04186852967061846
+    },
+    {
+      "rank": 3,
+      "holes": [
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": -0.04186852967061853
+    },
+    {
+      "rank": 3,
+      "holes": [
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": -0.04186852967061862
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": -0.00984530009839285
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        }
+      ],
+      "t": 0.0037081167177465055
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": -0.005895043135986898
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": -0.013553416816140335
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        }
+      ],
+      "t": 0.01726153353388625
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": 0.005895043135986988
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": 0.017261533533886354
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        }
+      ],
+      "parts": [
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        }
+      ],
+      "t": -0.013553416816140265
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": 0.003708116717746804
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        }
+      ],
+      "t": -0.00984530009839299
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": -0.023168925894451728
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": -0.04044280865291579
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": 0.01727388275846449
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        }
+      ],
+      "t": 0.023168925894451846
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": -0.017273882758464504
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        }
+      ],
+      "t": 0.04044280865291744
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": 0.017273882758464656
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        }
+      ],
+      "parts": [
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": -0.040442808652916176
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": -0.023168925894451693
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": 0.04044280865291723
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        }
+      ],
+      "t": -0.017273882758464587
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": 0.023168925894451874
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": -0.13580660769301012
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": -0.005895043135986974
+    },
+    {
+      "rank": 4,
+      "holes": [
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        }
+      ],
+      "t": 0.005895043135987134
+    },
+    {
+      "rank": 6,
+      "holes": [
+        {
+          "so": 0,
+          "orbital": 0,
+          "spin": "u"
+        },
+        {
+          "so": 1,
+          "orbital": 0,
+          "spin": "d"
+        },
+        {
+          "so": 2,
+          "orbital": 1,
+          "spin": "u"
+        },
+        {
+          "so": 3,
+          "orbital": 1,
+          "spin": "d"
+        },
+        {
+          "so": 10,
+          "orbital": 5,
+          "spin": "u"
+        },
+        {
+          "so": 11,
+          "orbital": 5,
+          "spin": "d"
+        }
+      ],
+      "parts": [
+        {
+          "so": 4,
+          "orbital": 2,
+          "spin": "u"
+        },
+        {
+          "so": 5,
+          "orbital": 2,
+          "spin": "d"
+        },
+        {
+          "so": 6,
+          "orbital": 3,
+          "spin": "u"
+        },
+        {
+          "so": 7,
+          "orbital": 3,
+          "spin": "d"
+        },
+        {
+          "so": 8,
+          "orbital": 4,
+          "spin": "u"
+        },
+        {
+          "so": 9,
+          "orbital": 4,
+          "spin": "d"
+        }
+      ],
+      "t": 0.02862547776700279
+    }
+  ],
+  "meta": {
+    "system": "L6_U6",
+    "root": 0,
+    "chaincompile": "0.1.0"
+  }
+}

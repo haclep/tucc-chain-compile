@@ -1,0 +1,95 @@
+# CLAUDE.md -- tucc-chain-compile
+
+Working notes for AI-assisted sessions in this repository. Read
+`docs/METHOD.md` before touching `compile.py`; the solver design encodes
+measured counterexamples, not preferences.
+
+## Commands
+
+```powershell
+# install (any plain venv; "Seneca"-style pip env is fine, no conda needed)
+pip install -e ".[test]"
+
+# run everything (regenerates results/ in ~20 s)
+python -u examples\run_hubbard.py
+
+# Stage-1 certification (kernel, JSON round trip, dressing law; ~1 s)
+python -u examples\run_stage1.py
+
+# H4 molecular validation (~5 s)
+python -u examples\run_h4.py
+
+# hydrogen-systems scaling study (~10 s)
+python -u examples\run_hn_scaling.py
+
+# verify the compiled fast path is active (numba)
+python -c "from chaincompile.fastpath import status; status()"
+
+# molecular SD chains + constructive translation (~3 min)
+python -u examples\run_hn_sd.py
+
+# Psi4 adapter: exporter runs in the CONDA env (upgradation), never here
+#   conda: python examples\psi4_export.py --system h4_rect --basis 6-31g --out dump.npz
+# ingestion runs HERE (Seneca side):
+python -u examples\run_psi4_dump.py dump.npz
+# active-space variant (freeze K lowest doubly occupied orbitals):
+python -u examples\run_psi4_dump.py dump.npz --n-core K
+
+# resumable chain compiler for large supports (requires numba);
+# rerun the SAME command until it prints DONE:
+python -u examples\run_big_sd.py c2_2348.npz --n-core 2 --deadline 3000
+
+# tests (17, all exact-value assertions)
+pytest -q
+```
+
+Always run Python with `-u` (unbuffered) so long compiles stream progress.
+On Linux/macOS the same commands apply with forward slashes.
+
+## Environment conventions
+
+- Runtime dependency is NumPy only. Do not add SciPy, Psi4, or anything
+  conda-shaped to this repo; it must install in a bare pip venv.
+- Console output is ASCII only. Files are UTF-8. No box-drawing, no
+  Greek letters in stdout (use `theta`, `kappa`, `dE_mt`).
+- Windows/PowerShell is a first-class target: no shell-isms in scripts,
+  paths through `pathlib`, no `os.fork`, no ANSI-only assumptions.
+- Determinism: the solver seeds its RNG (`20260803`); keep it seeded so
+  `results/` regenerates byte-comparably where floats allow.
+
+## Project-rule exceptions (deliberate, scoped)
+
+- **Sign bookkeeping.** The wider project rule is "never re-implement
+  fermionic sign bookkeeping". This standalone repo carries its own
+  (`dets.py`: `parity`, `apply_a`, `substitution_between`) as a scoped
+  exception so the validation is pip-only and self-contained. The
+  planned reconciliation is a parity adapter delegating to the
+  `upgradation` (Psi4) environment; keep all sign logic behind the
+  `Substitution` boundary so that swap stays local.
+- Multi-root outputs follow ADR-003: label roots by (E, <S^2>, K,
+  dominant determinant), never by bare index.
+
+## Editing rules of thumb
+
+- `compile.py` invariants that tests enforce (sd_paired adds: endpoint
+  <S^2> < 1e-6, forced_overlap == 0 on L4, letter-multiset noise
+  stability): final residual < 1e-12;
+  every `sd_routed` factor has rank <= 2; every angle satisfies
+  `|theta| < pi/2`; ledger `fid_after` equals the recomputed K-prefix
+  fidelity; `direct` mode's truncation curve is monotone.
+- If you change the solver, re-run `examples/run_hubbard.py` and commit
+  the regenerated `results/` together with the code.
+- Determinism: every amplitude-scored discrete choice must go through
+  `_canon_argmax`/`_canon_desc` (relative tie tolerance, smallest-mask
+  tie-break). Never reintroduce a raw `argmax`/`sort` over amplitudes;
+  `test_determinism.py` enforces noise/sign invariance (METHOD sec 13).
+- The `sd_routed` prefix curve is intentionally NOT monotone; do not
+  "fix" it by reordering factors post hoc (ordering is part of the
+  ansatz, T-7). See docs/METHOD.md sections 5-8 before attempting.
+- Stage-1 invariants (test_disentangle): the tuple-determinant kernel
+  must match the vector machinery to 1e-12 on every chain, and the
+  two-factor secant closed forms are exact. Do not "fix" the deep-chain
+  dressing-law failure by changing the report; it is a measurement
+  (METHOD.md section 11).
+- `amps_*.json` schema is `chaincompile.amps.v0` and is consumed
+  downstream via `amps:<file>` subjects; treat it as a public contract.
