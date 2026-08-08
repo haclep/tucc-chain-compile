@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "tucc-chain-compile"
+abstract: >-
+  Compiles exact eigenstates into chains of primitive (rank <= 2)
+  factorized unitary coupled-cluster factors, and translates those
+  chains exactly to coupled-cluster amplitudes.
+authors:
+  - family-names: Xu
+    given-names: Luogen
+    orcid: "https://orcid.org/0009-0004-6400-7479"
+    affiliation: "Department of Chemistry, Emory University"
+version: 0.1.0
+license: LGPL-3.0-or-later
+repository-code: "https://github.com/haclep/tucc-chain-compile"
