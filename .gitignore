@@ -35,3 +35,6 @@ dist/
 
 # manual backups — Git is the backup now
 backup/
+# curated artifacts in data/ are tracked (exception to the scratch rules above)
+!data/*.npz
+!data/*.pkl

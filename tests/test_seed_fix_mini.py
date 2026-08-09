@@ -231,3 +231,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def test_seed_policy():
+    main()

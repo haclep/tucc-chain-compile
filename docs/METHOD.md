@@ -826,3 +826,135 @@ C2's 1108) has crossed init, routing, greedy (|r| 2.2e-2), and its
 first solver slices across four invocations with clean resumes.
 Scaling by the letters-squared law puts C2 near 0.9 s per iteration on
 the reference workstation -- an overnight loop.
+
+## 22d. The wrong-root incident: the seeding law and leak-triggered purity
+
+The first overnight C2 run compiled the wrong eigenstate, exactly, and
+reported success. E0 landed at -74.63998153 -- +49.77 mHa above the
+known ground -- with 1216 creator monomials, the 2 x 608 signature.
+The dense root table identified it: an arbitrary mixture of the exactly
+degenerate first excited triplet pair (S^2 = 2, the two Pi spatial
+components in two H-disconnected blocks of 608), the (8e,8o) analog of
+C2's famous low-lying a3Pi_u. Every downstream gate passed because the
+machinery was exact for the state it was given; only the target was
+wrong.
+
+The mechanism is a theorem, now a law: a Davidson search is
+variationally sealed inside the H-disconnected blocks its starting
+vectors touch -- H is exactly zero across blocks, so the residual, the
+diagonal preconditioner, and the orthogonalization all preserve block
+membership, and a converged residual is fully compatible with total
+blindness to a lower state in an untouched block. The shipped driver
+seeded from the lowest DIAGONALS (nroots=2, default seeds), and
+equilibrium C2 is the first committed system where the sigma/pi
+competition puts the lowest diagonals outside the ground state's block:
+four open-shell pi determinants, exactly tied by symmetry, two per Pi
+block. The seeds went to the Pi blocks; the solver honestly converged
+the lowest thing it could see.
+
+The projection safety net failed for an independent reason: its
+trigger was a ROOT-GAP test (w1 - w0 < 1e-9). By elimination -- no
+projection fired AND the compiled support was 1216 -- the equilibrium
+dump couples the two Pi blocks above the 1e-10 walk threshold
+(pi_x/pi_y symmetry breaking at RHF-convergence noise scale). In that
+regime either the noise-split gap exceeds 1e-9 and the branch is
+skipped while the TRUE numerical eigenvector genuinely spans both
+blocks (avoided crossing at zero detuning forces the 50/50 mixture),
+or the gap stays under 1e-9 but the 1e-10 walk crosses the noise
+couplings, fuses the blocks, and finds no leak to project.
+
+Fix, in examples/run_big_sd.py: (1) the HF determinant ALWAYS joins
+the three lowest-diagonal seeds, covering both regimes at once --
+equilibrium-type grounds (HF block) and stretched-type grounds
+(lowest-diagonal blocks) -- with nroots = the seed count; (2) purity
+of the selected root is decided by LEAKED WEIGHT, not root gap: walk
+the block from the root's dominant determinant at threshold 1e-7
+(above integral noise, below any coupling that matters at our
+tolerances), project if the out-of-component norm exceeds 1e-8, and
+pay the price in public -- the post-projection eigen-residual is
+computed and reported; (3) the report now persists the target
+diagnostics that made this a three-session diagnosis instead of one
+glance: all tracked roots to 8 decimals, support, dominant-block size
+at both walk thresholds, routed count, projection status, HF-block
+membership. Regression anchor: tests/test_seed_fix_mini.py builds a
+three-block miniature shaped exactly like the trap and, against the
+real davidson(), reproduces the failure, verifies the fix, and
+exercises both projection regimes (exact degeneracy and the 1e-8
+noise bridge).
+
+Verification on the real system: the reseeded init printed roots
+-74.68975162 / -74.63998153 / -74.63998153 / -74.58131327 -- ground
+recovered to every dense digit, the old wrong answer sitting behind it
+as the degenerate pair, digit for digit. The pair's split is below the
+printed 8 decimals; with the leak trigger covering both noise
+mechanisms, which one operated is archival, not operational. The
+fourth root also corrected a misprediction worth recording: the
+tracked roots are the lowest states OF THE SEEDED SECTORS, not the
+global lowest k -- the third triplet (-74.638974 in the dense table)
+lives in a block no seed touched.
+
+The wrong night's chain is preserved, not deleted:
+data/c2_2348_triplet_pair_chain.npz (2767 letters, ranks {2: 2726,
+1: 41}, residual 3.3e-13, acceptance 8.3e-16) is the project's first
+compiled excited-state chain and the comparison point for 22e.
+
+## 22e. C2 equilibrium singlet: the flagship chain and three law revisions
+
+The result (results/bigsd_c2_2348.md, 42 invocations, zero restarts):
+the equilibrium C2 singlet ground state -- frozen-core (8e,8o), dim
+4900, E0 = -74.68975162, dense-exact to every digit -- compiled as an
+sd_routed chain of 3202 primitive factors, ranks {2: 3147, 1: 55},
+fidelity residual 6.4e-15 (two orders under the 1e-12 gate), routed
+1107 (= support - 1, the routing law), grown 2095, and translated
+constructively to 1220 creator monomials at acceptance 2.6e-16. The
+strongest multireference target the project has attempted is now a
+certified chain and, through the translator, an exact CC amplitude
+set. max|theta| = 1.541729 is a record: t = tan(theta) ~ 34.4, the
+largest committed CC-side amplitude (retiring LiH R=9.0's ~25), still
+under the ~50 translation ceiling -- the sigma/pi near-degeneracy
+carried by a single factor.
+
+Three law revisions come out of the run, one falsification each.
+
+(1) Growth-dominance measures hardness, not impurity. The conjecture
+recorded after the triplet incident -- grown > routed flags a
+multi-block target -- is falsified in its original form: the PURE
+singlet (projected False, support 1108, one block, HF inside it)
+out-grew its routing 2095/1107 = 1.89, against the impure triplet
+mixture's 1552/1215 = 1.28. Growth-dominance is a marker of
+multireference strength; multi-block detection lives where the driver
+now measures it directly -- leaked weight at the 1e-7 walk, and the
+support-equals-integer-multiple-of-block signature. The driver's
+report line is downgraded accordingly (WARNING -> NOTE); the WARNING
+printed in results/bigsd_c2_2348.md is retracted by this revision --
+the same report's purity fields certify the target pure four ways.
+
+(2) The monomial-saturation law holds at MATCHED floors; a descending
+term-curve tail is the floor-mismatch signature. Probing the stored
+target at four floors gave support [1108, 1108, 1108, 1258] at
+thresholds [1e-8, 1e-10, 1e-12, 1e-14]: the physical support is
+sharply 1108, with at least a four-decade gap between the smallest
+physical amplitude (> 1e-8) and the largest sub-resolution entry
+(< 1e-12). Of the 150 entries between 1e-14 and 1e-12, at least six
+lie OUTSIDE the dominant block (1258 > 1252) -- impossible for an
+exact eigenvector, so they are eigensolver dust, and their bound
+certifies Davidson convergence to < 1e-12 per out-of-block component.
+The 1220 monomials at the translator's 1e-15 keep-floor are therefore
+support plus ~112 sub-resolution dressing terms living between the
+floors, and the term curve DESCENDS into the tail ([1224, 1224, 1220])
+instead of sitting flat -- prior systems' flat-at-support tails were
+matched-floor cases. Restated law: creator-monomial count equals state
+support when the monomial floor and the support floor are matched;
+flat tail = physical saturation, descending tail = floor mismatch.
+
+(3) Chain length tracks correlation strength, not state size. Same
+geometry, same Hamiltonian, two exact eigenstates compiled: the
+singlet (support 1108) cost 3202 letters at growth ratio 1.89 and
+max t ~ 34.4; the triplet-pair mixture (support 1216) cost 2767 at
+1.28 and max t ~ 4.9. The 9%-smaller state cost 16% more letters --
+the fill-in law's molecular cousin. Caveat recorded for honesty: the
+triplet chain is a basis-arbitrary mixture, so its length is not
+canonical; the clean version of this comparison is a pure 608-support
+triplet compile (needs a root-selection flag on the driver -- future
+measurement, not claimed here).
+

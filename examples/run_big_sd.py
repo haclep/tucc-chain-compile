@@ -478,9 +478,9 @@ def main():
     routed = state.get("routed")
     warn = ""
     if routed is not None and state.get("grown", 0) >= routed:
-        warn = (f"\nWARNING: growth ({state.get('grown', 0)}) >= "
-                f"routing ({routed}) -- multi-block or symmetry-"
-                f"impure target suspected.\n")
+        warn = (f"\nNOTE: growth ({state.get('grown', 0)}) >= "
+                f"routing ({routed}) -- hard (strongly correlated) "
+                f"target; see purity fields for multi-block status.\n")
     roots_s = ", ".join(f"{x:.8f}" for x in state.get("roots", [])) \
         or "n/a"
     pr = state.get("proj_res")
