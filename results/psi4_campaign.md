@@ -108,3 +108,53 @@ independently re-derived on 2026-08-10/11 by the resumable driver
 (same energy, support 133, length 186). Adjudication throughout was
 by report content against the table -- the mechanism that motivates
 stamping future reports with their dump stem and verbatim invocation.
+
+## Provenance sweep completion (2026-08-11)
+
+Every dense-path report was regenerated at the current commit and
+checked against its committed version and its master-table row.
+
+Scope and outcome: 12 reports -- h2_14, lih_30/45/60/75/90 (routed;
+60 and 75 also sd_paired), h4_rect, h2o_sto3g, and both C2 directs
+(--n-core 2 --max-dim 5000). Every digit reproduced: energies,
+lengths, rank splits, max|theta|, residuals, and NOC acceptances to
+the last printed figure. Nine reports gained format-only upgrades
+(two-anchor block lines, prefix S2 peaks, active-space phrasing);
+the two C2 directs reproduced BYTE-identical -- last runs of Aug 5,
+already carrying the post-incident format -- so git records no
+change and this note is the durable record that the reruns occurred
+(file write times 2026-08-11 11:27). lih_45 was regenerated from its
+dump (see erratum above).
+
+New measurements filled in: prefix S2 peaks for lih_30 (0.0120),
+lih_45 (0.3236), h2_14 (0.0022); block-law datum four -- H2/cc-pVDZ
+block 22 = support 22; H4 and H2 block lines now in their reports.
+The stretched-C2 two-anchor line makes the state reordering numeric:
+HF-connected 660 vs ground-state-connected 608 of 4900.
+
+Chain-composition fence: the dense path reproduces chain COMPOSITION
+exactly across a week of library commits (h2o ranks {2:160, 1:26},
+max|theta| 0.677582), while the sparse resumable driver on the same
+target reproduces every invariant (length 186, support 133,
+translation 133) with a different letter mix ({2:165, 1:21},
+max|theta| 0.6309). Composition is optimizer-dependent; length,
+support, and translation are not.
+
+Davidson is not a census: dense diagonalization at equilibrium C2
+puts the fourth state at -74.638974, 1.0 mHa above the degenerate
+pair; the flagship Davidson run's fourth root was -74.58131327,
+58 mHa higher -- roots 0-2 matched dense to every printed digit,
+root 3 was a different, higher state. Rule adopted: trust the
+Davidson target and its converged near-cluster; never treat the
+root list as a census or index blindly past the converged cluster.
+Retroactively strengthens the leaked-weight trigger over any
+root-gap criterion.
+
+Reading convention, verified on all eight systems: the master
+table's c_dom column stores the dominant COEFFICIENT c; reports
+store the dominant WEIGHT c^2 (lih_30: 0.9872^2 = 0.9746).
+
+Cosmetic driver bug, queued for the stamp patch: the console's
+"-> results/..." line prints the pre-suffix filename when mode or
+core suffixes apply (three instances); written files were correct
+throughout.
