@@ -1,6 +1,6 @@
-# Psi4-dump ingestion -- custom
+# Psi4-dump ingestion -- lih_60
 
-Source: psi4 1.11; basis sto-3g; nmo 6; sector (2,2) dim 225.
+Source: psi4 1.11; basis sto-3g; active nmo 6; sector (2,2) dim 225.
 
 Certification: |<HF|H|HF> + Enuc - E_SCF(dump)| = 7.11e-15. E_SCF = -7.69197856; E_FCI = -7.79385906; Ecorr = -0.10188050.
 
@@ -12,4 +12,7 @@ Certification: |<HF|H|HF> + Enuc - E_SCF(dump)| = 7.11e-15. E_SCF = -7.69197856;
 | 3 | -7.700323 | 2.000000 | |0u 0d 1d 3u> | 0.344636 |
 
 
-sd_routed: length 106, ranks {2: 93, 1: 13}, max|theta| 1.009879, residual 6.7e-16. Constructive translation: 69 creator monomials, acceptance 1.7e-16.
+Symmetry blocks: HF-connected 69, ground-state-connected 69 of 225; ground support 69.
+
+
+sd_routed: length 106, ranks {2: 93, 1: 13}, max|theta| 1.009879, residual 6.7e-16. Prefix <S2> peak 0.8326. Constructive translation: 69 creator monomials, acceptance 1.7e-16.
