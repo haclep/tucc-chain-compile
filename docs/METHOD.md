@@ -946,6 +946,21 @@ instead of sitting flat -- prior systems' flat-at-support tails were
 matched-floor cases. Restated law: creator-monomial count equals state
 support when the monomial floor and the support floor are matched;
 flat tail = physical saturation, descending tail = floor mismatch.
+Closure check (pre-registered 2026-08-10; run same day): floor-counting the
+stored translated monomial weights of the equilibrium C2 flagship gave
+[1108, 1108, 1108, 1212] at floors 1e-8/1e-10/1e-12/1e-14, against the
+stated-in-advance prediction [1108, 1108, ~1108, ~1219]. At every physical
+floor the monomial count equals the target support exactly: the exact
+translation is support-exact, adding no weight above the eigensolver noise
+ceiling. The band structure of the 1220 monomial weights reads: 1108 above
+1e-8, two empty decades, 104 in (1e-14, 1e-12], 8 in (1.57e-15, 1e-14] --
+the same four-decade gap the target itself shows, with all 112 dressing
+terms confined below the noise ceiling and above the translator keep-floor.
+The identity monomial's weight, 0.816517, equals the target's reference
+coefficient and squares to 0.6667, the recorded ground weight. Forecast
+audit: the 1e-14 guess assumed at most one dressing term below 1e-14; eight
+sit there, so 1212 was observed where ~1219 was guessed. Qualitative claim
+confirmed; tail count off by 7.
 
 (3) Chain length tracks correlation strength, not state size. Same
 geometry, same Hamiltonian, two exact eigenstates compiled: the
