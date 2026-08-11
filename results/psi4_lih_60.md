@@ -12,7 +12,4 @@ Certification: |<HF|H|HF> + Enuc - E_SCF(dump)| = 7.11e-15. E_SCF = -7.69197856;
 | 3 | -7.700323 | 2.000000 | |0u 0d 1d 3u> | 0.344636 |
 
 
-Symmetry block (HF-connected) 69 of 225; ground-state support 69.
-
-
-sd_paired: length 414, ranks {2: 102, 1: 312}, max|theta| 0.823632, residual 7.6e-14. Prefix <S2> peak 0.0635.  units 228  forced 4 Constructive translation: 69 creator monomials, acceptance 6.7e-16.
+sd_routed: length 106, ranks {2: 93, 1: 13}, max|theta| 1.009879, residual 6.7e-16. Constructive translation: 69 creator monomials, acceptance 1.7e-16.

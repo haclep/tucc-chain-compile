@@ -83,3 +83,28 @@ Pi partners spanning two disconnected blocks; the ingestion script now
 projects such mixtures onto the dominant determinant's block,
 recovering a symmetry-pure exact eigenvector. C2's sd chain (support ~1100, dim 4900)
 is rung three's first named target.
+
+## Erratum (2026-08-11): report-file identity repair
+
+A content audit (full enumeration of psi4_*.md Source and result
+lines) found two ingestion reports decoupled from their filenames by
+a curation slip in the generic-name workflow (custom-geometry runs
+write psi4_custom*.md and were renamed by hand):
+
+- psi4_h2o_sto3g.md actually held the LiH 6.0 sd_routed report ->
+  renamed to psi4_lih_60.md, its true and previously missing name.
+- psi4_custom.md actually held the water sd_routed report -> renamed
+  to psi4_h2o_sto3g.md.
+- psi4_custom_sd_paired.md was a byte-identical leftover duplicate of
+  psi4_lih_60_sd_paired.md -> removed.
+- psi4_lih_45.md never existed: the LiH 4.5 detail report is presumed
+  overwritten in the generic slot before curation. Its master-table
+  row and its dump (lih_45.npz) are intact; the report was
+  regenerated from the dump on 2026-08-11.
+
+Every number in the master table was and remains correct: rows were
+written from run output at run time, and the water row was
+independently re-derived on 2026-08-10/11 by the resumable driver
+(same energy, support 133, length 186). Adjudication throughout was
+by report content against the table -- the mechanism that motivates
+stamping future reports with their dump stem and verbatim invocation.

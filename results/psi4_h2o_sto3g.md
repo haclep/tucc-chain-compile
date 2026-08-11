@@ -1,15 +1,18 @@
 # Psi4-dump ingestion -- custom
 
-Source: psi4 1.11; basis sto-3g; nmo 6; sector (2,2) dim 225.
+Source: psi4 1.11; basis sto-3g; nmo 7; sector (5,5) dim 441.
 
-Certification: |<HF|H|HF> + Enuc - E_SCF(dump)| = 7.11e-15. E_SCF = -7.69197856; E_FCI = -7.79385906; Ecorr = -0.10188050.
+Certification: |<HF|H|HF> + Enuc - E_SCF(dump)| = 8.53e-14. E_SCF = -74.96294684; E_FCI = -75.01243756; Ecorr = -0.04949072.
 
 | root | E_tot | S2 | dominant | weight |
 |---|---|---|---|---|
-| 0 | -7.793859 | -6.422e-22 | |0u 0d 1u 1d> | 0.673706 |
-| 1 | -7.780473 | 2.000000 | |0u 0d 1d 2u> | 0.403720 |
-| 2 | -7.718798 | 3.774e-21 | |0u 0d 1d 2u> | 0.236753 |
-| 3 | -7.700323 | 2.000000 | |0u 0d 1d 3u> | 0.344636 |
+| 0 | -75.012438 | 5.890e-20 | |0u 0d 1u 1d 2u 2d 3u 3d 4u 4d> | 0.973608 |
+| 1 | -74.614053 | 2.000000 | |0u 0d 1u 1d 2u 2d 3u 3d 4d 5u> | 0.477927 |
+| 2 | -74.554287 | -2.331e-19 | |0u 0d 1u 1d 2u 2d 3u 3d 4d 5u> | 0.470110 |
+| 3 | -74.510465 | 2.000000 | |0u 0d 1u 1d 2u 2d 3d 4u 4d 5u> | 0.463918 |
 
 
-sd_routed: length 106, ranks {2: 93, 1: 13}, max|theta| 1.009879, residual 6.7e-16. Constructive translation: 69 creator monomials, acceptance 1.7e-16.
+Symmetry block (HF-connected) 133 of 441; ground-state support 133.
+
+
+sd_routed: length 186, ranks {2: 160, 1: 26}, max|theta| 0.677582, residual 6.8e-13. Prefix <S2> peak 0.0850. Constructive translation: 133 creator monomials, acceptance 2.2e-16.
