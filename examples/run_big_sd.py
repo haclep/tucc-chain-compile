@@ -494,9 +494,19 @@ def main():
         + (f" (eigen-residual {pr:.1e})" if pr is not None else "")
         + f", HF in dominant block "
         f"{state.get('hf_in_dom', 'n/a')}.\n")
+    src_s = (
+        f"Source: {meta.get('source', 'unknown')}; basis "
+        f"{meta.get('basis', 'unknown')}; active nmo {nmo}; sector "
+        f"({na},{nb}) dim {basis.dim}"
+        + (f"; {a.n_core} core orbitals frozen, E_core = {e_core:.8f}"
+           if a.n_core else "") + ".\n"
+        f"Provenance: dump file {os.path.basename(a.dump)}; "
+        f"invocation run_big_sd.py {os.path.basename(a.dump)} "
+        f"--n-core {a.n_core} (repeated to completion).\n\n")
     write_text(os.path.join(RES, f"bigsd_{stem}.md"),
         f"# Resumable sd chain -- {stem}\n\n"
-        f"E0 = {state['e0']:.8f}; chain length {len(word)}, ranks "
+        + src_s
+        + f"E0 = {state['e0']:.8f}; chain length {len(word)}, ranks "
         f"{ranks}, max|theta| {float(np.max(np.abs(th))):.6f}, "
         f"residual {state['residual']:.1e}, grown "
         f"{state.get('grown', 0)}, restarts {state.get('tries', 0)}. "

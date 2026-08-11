@@ -2,6 +2,8 @@
 
 Source: psi4 1.11; basis sto-3g; active nmo 6; sector (2,2) dim 225.
 
+Provenance: dump file lih_sto3g.npz; invocation run_psi4_dump.py lih_sto3g.npz --mode sd_routed --nroots 4 --max-dim 4000 --n-core 0.
+
 Certification: |<HF|H|HF> + Enuc - E_SCF(dump)| = 3.55e-15. E_SCF = -7.86224631; E_FCI = -7.88250433; Ecorr = -0.02025802.
 
 | root | E_tot | S2 | dominant | weight |

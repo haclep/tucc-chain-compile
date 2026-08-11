@@ -157,6 +157,10 @@ def main():
         f"({na},{nb}) dim {sb.dim}"
         + (f"; {a.n_core} core orbitals frozen, E_core = {e_core:.8f}"
            if a.n_core else "") + ".\n",
+        f"Provenance: dump file {os.path.basename(a.dump)}; invocation "
+        f"run_psi4_dump.py {os.path.basename(a.dump)} --mode {a.mode} "
+        f"--nroots {a.nroots} --max-dim {a.max_dim} "
+        f"--n-core {a.n_core}.\n",
         f"Certification: |<HF|H|HF> + Enuc - E_SCF(dump)| = {ident:.2e}. "
         f"E_SCF = {e_scf:.8f}; E_FCI = {w[0]+e_shift:.8f}; Ecorr = "
         f"{w[0]+e_shift-e_scf:.8f}.\n",
@@ -165,7 +169,7 @@ def main():
         f"connected {block_gs} of {sb.dim}; ground support {sup1}"
         + ("" if sb.index[hf] in seen2 else
            " -- ground state NOT in the HF block (state reordering)")
-        + (" Degenerate pair projected onto the dominant block."
+        + ("; degenerate pair projected onto the dominant block"
            if mixed else "") + ".\n",
         f"\n{a.mode}: length {res.length}, ranks {res.rank_counts()}, "
         f"max|theta| {res.max_abs_theta():.6f}, residual "
@@ -181,7 +185,7 @@ def main():
         suffix += f"_nc{a.n_core}"
     out = os.path.join(RES, f"psi4_{name}{suffix}.md")
     write_text(out, "\n".join(lines))
-    print(f"-> results/psi4_{name}.md")
+    print(f"-> results/psi4_{name}{suffix}.md")
 
 
 if __name__ == "__main__":
