@@ -158,3 +158,68 @@ Cosmetic driver bug, queued for the stamp patch: the console's
 "-> results/..." line prints the pre-suffix filename when mode or
 core suffixes apply (three instances); written files were correct
 throughout.
+
+## H2O symmetric double dissociation series (2026-08-11)
+
+Active space CAS(8e,6o): STO-3G, oxygen 1s frozen (--n-core 1),
+sector (4,4) dim 225. Geometry: the equilibrium dump's experimental
+geometry (R_OH = 1.80905 a0, angle 104.5 deg), both O-H vectors
+scaled uniformly about O, so the stretch series is "the experimental
+geometry scaled by 1.0 / 1.5 / 2.0". Export invocations
+(upgradation side; dumps are bench files, regenerable from these):
+
+  psi4_export.py --geom "O 0 0 0; H 1.4305 0 1.1074; H -1.4305 0 1.1074"
+      --basis sto-3g --out h2o_sto3g.npz   (pre-existing, 1.0 Re)
+  psi4_export.py --geom "O 0 0 0; H 2.14575 0 1.6611; H -2.14575 0 1.6611"
+      --basis sto-3g --out h2o_15re.npz
+  psi4_export.py --geom "O 0 0 0; H 2.8610 0 2.2148; H -2.8610 0 2.2148"
+      --basis sto-3g --out h2o_20re.npz
+
+Each point ran both drivers (dense run_psi4_dump --n-core 1; sparse
+run_big_sd --n-core 1); all six compiles exact (five residuals
+literally 0.0e+00, the sixth 3.9e-13).
+
+| point | E_SCF | E_FCI | Ecorr | weight | len | ranks | max|th| dense/sparse | sup |
+|---|---|---|---|---|---|---|---|---|
+| 1.0 Re | -74.962947 | -75.012359 | -0.049 | 0.9736 | 81 | {2:67,1:14} | 0.916844 / 0.916814 | 65 |
+| 1.5 Re | -74.747153 | -74.896645 | -0.149 | 0.8408 | 81 | {2:69,1:12} | 0.702330 / 0.702330 | 65 |
+| 2.0 Re | -74.445661 | -74.771878 | -0.326 | 0.5246 | 73 | {2:61,1:12} | 1.458359 / 1.476334 | 65 |
+
+Findings:
+- Support pinned: 65 = block at every point and both walk floors,
+  across simultaneous breaking of BOTH O-H bonds while Ecorr grows
+  6.6x and the dominant weight collapses 0.97 -> 0.52. Second
+  molecule (after LiH) with a dissociation-pinned support; first
+  double-bond-breaking instance.
+- Correlation is carried by ANGLE, not length: chain length is flat
+  then falls (81, 81, 73) while max|theta| dips mid-scan then surges
+  to 1.476, pressing the pi/2 - 0.02 = 1.5508 bound. The same
+  mid-scan dip sits unremarked in the LiH table (4.5 bohr: 85
+  letters, theta 0.597, both below the 3.0-bohr values). Refinement
+  of the chain-length law: length tracks correlation ACROSS states
+  at fixed geometry (C2 singlet vs triplet); along a pinned-support
+  coordinate, growing correlation is absorbed by angle magnitude,
+  with theta -> bound as the dissociation signature. Contrast at
+  matched weight ~0.52: the LiH endpoint needs 127 letters with
+  singles 36 (heteronuclear orbital degradation); H2O 2Re needs 73
+  with singles 12 (the symmetric stretch spares the orbitals).
+- Translation support-exact at all six runs (65 monomials, flat
+  [65,65,65] tails), now proven at dominant weight 0.52. Routed =
+  support - 1 throughout. Prefix S2 peaks (dense): 0.107 / 0.434 /
+  0.222 across the scan.
+- Optimizer fence has gradations: dense and sparse chains coincide
+  to every printed digit at 1.5 Re; agree in length and rank split
+  with angles differing at 3e-5 (1.0 Re) and 2e-2 (2.0 Re); the
+  full-space equilibrium pair differs in rank split. Length,
+  support, and translation reproduce on every rung.
+- Sparse-path determinism, fourth confirmation: the fc-anchor
+  recompile replayed the entire 2026-08-10 optimization trajectory
+  line for line (every joint/growth residual); the report differs
+  only by the new Source/Provenance stamp.
+- Davidson (HF + 2 lowest-diag seeds) matched dense roots 0-2 to
+  every printed digit at all three points; projected False, HF in
+  dominant block True throughout -- no false leak triggers at
+  stretched geometry. The outside-HF-block live branch still awaits
+  stretched N2.
+- 2.0 Re spectrum crowding on schedule: S-T gap 21.5 mHa, next
+  singlet 3.6 mHa above the triplet.
