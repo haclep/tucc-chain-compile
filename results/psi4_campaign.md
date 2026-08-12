@@ -279,3 +279,58 @@ held for 150+ iterations before the next round) -- second exhibit
 for the deferred plateau early-exit. Finished-state invocations
 verified idempotent (repeated done-phase reruns rewrite the report
 byte-identically).
+
+## N2 1.5x equilibrium, 3.111 a0, CAS(10e,8o) (2026-08-12)
+
+Same space and passes as equilibrium. E_SCF -107.144739, E_FCI
+-107.525604, Ecorr -0.381 (2.4x equilibrium), dominant weight
+0.6007. Spectrum crowding: S-T gap 40 mHa, and root 2 is a QUINTET
+(S2 = 6.000) -- the triple bond's pairs decoupling together.
+
+Davidson FULL CENSUS: four seeds (HF no longer among the three
+lowest diagonals -- the seed count itself now a mean-field
+degradation meter), and all four roots match dense to every digit,
+quintet included. Refined census rule: failures observed only at
+EXACT degeneracy (the equilibrium Pi pair); crowded but split
+spectra are caught. 2x is the degeneracy stress test.
+
+Support pinned: 652 = 652, gap to the 784 block pinned at 132,
+through weight 0.92 -> 0.60. Routed 651. NOTE fired (grown 672 >=
+651) but the growth fraction FELL (61% -> 51%) as correlation
+deepened.
+
+Fence: length split #2 and growing -- dense 1514 vs sparse 1323
+(12.6%; equilibrium 0.5%). ROBUST across optimizers: the mid-scan
+length dip (per-support 2.57 -> 2.32 dense, 2.56 -> 2.03 sparse).
+NOT robust: max|theta| trends are OPPOSITE (dense 1.5506 -> 1.2100,
+sparse 1.2813 -> 1.5493 pressing the bound) -- theta is fully
+demoted to a factorization property; the dip law is stated in
+length only. Singles rise in both (58 -> 80 dense, 34 -> 53
+sparse): orbital relaxation growing, cross-optimizer.
+
+Translation and the residual-currency finding: the sparse operator
+carries 784 monomials = THE BLOCK exactly, tail [784, 784, 784],
+and the floor probe reads [734, 784, 784, 784] at 1e-8/-10/-12/-14
+-- these are NOT dust. The exact wave operator occupies its entire
+symmetry block while the state it prepares occupies 652
+determinants: 132 sub-floor determinants receive above-noise
+operator contributions that cancel by destructive interference in
+the final state. Operator footprint and state footprint DIVERGE as
+correlation deepens (equilibrium: support-shaped operator, 652 +
+sub-noise dust; 1.5x: block-shaped operator, interference-sculpted
+state). Identity monomial 0.775068 = sqrt(0.600730). Target probe
+[652, 652, 666, 1072]: Davidson-tolerance dust below 1e-10, which
+the sparse compile reproduces to 8.0e-13 -- the chain carries even
+the eigensolver's sub-tolerance tail faithfully.
+
+Residual currencies, adjudicated (compile.py line 73): the dense
+driver's final_residual is a FIDELITY DEFICIT (1 - fid^2); the
+sparse driver's residual is a VECTOR NORM. Dense sd 8.9e-16
+(deficit) ~ 4e-8 (norm); never tabulate the two in one column
+unconverted. The dense 1029-monomial reading thereby dissolves:
+a ~1e-8-amplitude tail legitimately pushes keep-floor monomial
+counts past the block. Dense sd exactness is certified by NOC
+acceptance (3.5e-15 here) against the eigh vector, not by the
+deficit; direct-mode entries are certified at the deficit level
+only, and the ledger's residual columns are deficit-currency for
+dense, norm-currency for sparse.
