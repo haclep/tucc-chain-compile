@@ -223,3 +223,53 @@ Findings:
   stretched N2.
 - 2.0 Re spectrum crowding on schedule: S-T gap 21.5 mHa, next
   singlet 3.6 mHa above the triplet.
+
+  ## N2 equilibrium, CAS(10e,8o) (2026-08-12)
+
+Triple-bond rung of the bond-order ladder. Dump n2_2074.npz
+(psi4_export --geom "N 0 0 0; N 0 0 2.074" --basis sto-3g); STO-3G,
+2 cores frozen, sector (5,5) dim 3136. Three passes: dense direct,
+dense sd_routed, sparse resumable sd (both sd compiles exact;
+residuals 2.9e-15 / 0.0e+00).
+
+E_SCF -107.495842, E_FCI -107.652426, Ecorr -0.157, dominant weight
+0.9174 -- energetically single-reference, yet compile-hard: grown
+1019 >= routed 651 (the hard-target NOTE fires at a 0.92-weight
+equilibrium state). S-T gap 298 mHa with a degenerate Pi triplet
+pair -- the "normal multiple bond" foil to C2's 50 mHa crowd.
+
+Headline: sd chain 1670 (sparse) / 1678 (dense) letters vs C2's
+3202 at comparable dimension (per-support 2.56/2.57 vs 2.89) --
+chain length measures correlation character, not space size.
+
+Block law, strict-subset instance 2: support 652 of a 784-det block
+(132 allowed determinants below floor; C2: 144 of 1252).
+
+Davidson non-census, second conviction: seeds HF + 2 lowest-diag;
+roots 0 and one Pi partner match dense to every digit; the second
+Pi partner (-107.354070) and the -107.339601 triplet are skipped,
+Davidson's third root landing at -107.303761. Standing rule
+(trust target + converged near-cluster only) now measured twice.
+
+Optimizer fence, major revision -- first LENGTH split: dense 1678
+vs sparse 1670 (0.5%); singles 58 vs 34; max|theta| 1.5506 vs
+1.2813, so theta_max is optimizer-dependent at fixed state (the
+dense chain presses the pi/2 - 0.02 bound at EQUILIBRIUM, further
+demoting absolute theta as a physics meter); translation monomials
+676 vs 768 at the keep-floor. The dressing-grows-with-length
+monotone (0 -> 24 -> 112) is FALSIFIED: dressing (24 vs 116 on the
+same state) belongs to the factorization, not the length.
+Invariants that survived: support (652 = 652), block walks, E0,
+exactness. [Floor probe of the stored sparse U: RESULT HERE.]
+
+Direct anatomy at a normal triple bond: 7535 letters, fill-in 11.6x
+support (C2: 56x), ranks {1:2, 2:84, 3:260, 4:1281, 5:2484,
+6:3424}, max|theta| 0.1273, residual 0.0e+00. Rank ceiling 6 is
+imposed by the space (six virtual spin-orbitals), so the honest
+cross-system comparison is distribution and fill-in, not ceiling.
+
+Operational: growth rounds show long residual plateaus (2.283e-04
+held for 150+ iterations before the next round) -- second exhibit
+for the deferred plateau early-exit. Finished-state invocations
+verified idempotent (repeated done-phase reruns rewrite the report
+byte-identically).
