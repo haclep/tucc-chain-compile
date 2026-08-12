@@ -224,7 +224,8 @@ Findings:
 - 2.0 Re spectrum crowding on schedule: S-T gap 21.5 mHa, next
   singlet 3.6 mHa above the triplet.
 
-  ## N2 equilibrium, CAS(10e,8o) (2026-08-12)
+  
+## N2 equilibrium, CAS(10e,8o) (2026-08-12)
 
 Triple-bond rung of the bond-order ladder. Dump n2_2074.npz
 (psi4_export --geom "N 0 0 0; N 0 0 2.074" --basis sto-3g); STO-3G,
@@ -260,7 +261,12 @@ demoting absolute theta as a physics meter); translation monomials
 monotone (0 -> 24 -> 112) is FALSIFIED: dressing (24 vs 116 on the
 same state) belongs to the factorization, not the length.
 Invariants that survived: support (652 = 652), block walks, E0,
-exactness. [Floor probe of the stored sparse U: RESULT HERE.]
+exactness. Floor probe of the stored sparse U: [652, 652, 652, 753] at
+1e-8/-10/-12/-14 -- support-exact at every physical floor; all 116
+dressing terms sub-noise (101 in (1e-14, 1e-12], 15 below 1e-14).
+Target probe: [652, 652, 652, 750] -- the same four-decade
+silhouette. Identity monomial 0.957796 = sqrt(dominant weight
+0.917374).
 
 Direct anatomy at a normal triple bond: 7535 letters, fill-in 11.6x
 support (C2: 56x), ranks {1:2, 2:84, 3:260, 4:1281, 5:2484,
