@@ -334,3 +334,61 @@ acceptance (3.5e-15 here) against the eigh vector, not by the
 deficit; direct-mode entries are certified at the deficit level
 only, and the ledger's residual columns are deficit-currency for
 dense, norm-currency for sparse.
+
+## N2 2.0x equilibrium, 4.148 a0 (2026-08-13) -- series complete
+
+Same space and passes. E_SCF -106.754496, E_FCI -107.444981, Ecorr
+-0.690 (4.4x equilibrium), dominant weight 0.1558 -- HF a minority
+voice in its own reference state. The four lowest states are the
+complete two-atom spin ladder S = 0, 1, 2, 3 (S2 = 0, 2, 6, 12;
+the campaign's first septet) at 4.1 / 13.1 / 30.9 mHa above ground,
+all dominant weights <= 0.156 -- the 4S + 4S dissociation manifold
+closing.
+
+Census, designed stress passed: Davidson (4 seeds) matched dense on
+ALL FOUR roots to every digit at 4.1 mHa spacing. Rule measured at
+three geometries: crowded-but-split spectra are caught in full; the
+only observed failure remains exact degeneracy (equilibrium Pi
+pair).
+
+Pinned support, boldest test: 652 = 652 both drivers, block
+784/784, gap 132, through weight 0.92 -> 0.60 -> 0.156. Routed 651
+throughout; restarts 0 at every point of the series.
+
+Endpoint length verdict: dip then partial recovery, ROBUST across
+the fence -- per-support 2.57 -> 2.32 -> 2.45 (dense), 2.56 -> 2.03
+-> 2.41 (sparse). N2 votes with LiH against H2O's monotone fall.
+Dip law, full form: a length minimum at the correlation crossover,
+partial recovery toward dissociation.
+
+The crossover-peak family (every member maximal at 3.111, relaxed
+at both ends): fence length split 0.5% -> 12.6% -> 1.5%; singles
+58 -> 80 -> 69 (dense), 34 -> 53 -> 30 (sparse); operator
+block-filling (below). Growth fraction non-monotone: 61% -> 51% ->
+59%.
+
+Operator footprint law, REVISED (corrects the 3111 section's
+"diverges as correlation deepens"): sparse U floor probes across
+the series read [652, 652, 652, 753] -> [734, 784, 784, 784] ->
+[652, 652, 654, 776]. Block-filling with above-noise interference
+weight on the 132 silent seats is a CROSSOVER phenomenon -- present
+only at 3.111; at both ends the operator is support-exact at
+physical floors (endpoint: 652 at 1e-8 and 1e-10; of 780 kept, 2 in
+(1e-12, 1e-10], 122 in (1e-14, 1e-12], 4 below). Keep-floor counts
+confirmed factorization-dependent (dense 676 -> 1029 -> 652; sparse
+768 -> 784 -> 780). Identity monomial 0.394679 = sqrt(0.155772)
+within the weight's rounding. Target probe [652, 652, 656, 1307]:
+Davidson-tolerance dust only; the sparse compile reproduced the
+vector to 4.4e-16 -- the series' deepest residual at its hardest
+point.
+
+Series table (dense/sparse where they split):
+
+| R (a0) | E_FCI | Ecorr | weight | sd len | per-sup | max|th| | monomials |
+|---|---|---|---|---|---|---|---|
+| 2.074 | -107.652426 | -0.157 | 0.9174 | 1678/1670 | 2.57/2.56 | 1.551/1.281 | 676/768 |
+| 3.111 | -107.525604 | -0.381 | 0.6007 | 1514/1323 | 2.32/2.03 | 1.210/1.549 | 1029/784 |
+| 4.148 | -107.444981 | -0.690 | 0.1558 | 1597/1573 | 2.45/2.41 | 1.551/1.549 | 652/780 |
+
+All six sd compiles exact; every invariant (E0, support, block,
+routed) agreed across drivers at every point.
