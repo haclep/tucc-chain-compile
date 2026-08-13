@@ -973,3 +973,111 @@ canonical; the clean version of this comparison is a pure 608-support
 triplet compile (needs a root-selection flag on the driver -- future
 measurement, not claimed here).
 
+## Genealogy and certificates
+
+### Lineage
+
+Three papers and one gap define where this method comes from.
+
+Xu-Lee-Freericks (Mod. Phys. Lett. B 2020) established the
+backwards construction: take a known exact eigenstate (the
+four-site Hubbard ground state) and build, by hand, an ordered
+product of individual UCC factors that prepares it exactly --
+including the rank-4 factor of its Table 1, which direct mode
+still reproduces on the P2 lattice. Everything the compile stage
+does (route, angle-solve, order, hit the eigenvector exactly) is
+the mechanization of that construction.
+
+Freericks (Symmetry 2022) supplies the exact factor algebra: a
+single-substitution UCC exponential terminates in closed form,
+
+    U(theta) = I + sin(theta) kappa + (cos(theta) - 1)(A Adag + Adag A),
+    kappa = Adag - A,  via  kappa^3 = -kappa,
+
+so every chain letter is EXACTLY a degree-2 operator polynomial --
+no BCH series anywhere in the stack. The same paper's operator-
+valued first-order amplitude relations (tan dressed by secants
+over sharing letters; eqs. 38/46/51) are honored here as a scored
+hypothesis, not an engine: stage-1 certification C3 measures where
+the first-order law holds and where folded (multi-factor) terms
+take over.
+
+Evangelista-Chan-Scuseria (JCP 2019) is the adjacent formal prior
+art: a disentangled (factorized) UCC product can represent any
+state exactly, and ordering matters. Existence and formalism there;
+explicit construction for physical eigenstates in XLF; algorithmic
+construction plus exact translation here.
+
+The tucc contribution closes the gap between XLF and Symmetry:
+the constructive normal-ordered composer multiplies the full chain
+out by exact Wick algebra over the closed-form factors, retaining
+every folded term, yielding the exact wave operator Omega at
+arbitrary chain length. The variational cousin (tune angles against
+the energy with no eigenvector; Chen-Cheng-Freericks) is the
+planned tucc.chains.grow branch, deliberately NOT this pipeline:
+here the eigenvector is the input by design, because exactness
+certificates require a known target.
+
+### Omega vs T
+
+The stored translation object is the wave operator Omega =
+c0 I + sum_mu c_mu E_mu with Omega|HF> the exact state; c0 equals
+the reference amplitude (sqrt of the dominant weight -- the
+identity-monomial check in every floor probe). Cluster amplitudes
+in the e^T sense follow by finite algebra, T = log(Omega/c0)
+(cluster_analysis), terminating exactly in a finite space. Exact
+amplitudes satisfy CC's projected equations identically; nothing
+is ever solved downstream of the eigensolve.
+
+### The certificate chain
+
+Doctrine: no number that matters has only one path into existence.
+Each pipeline arrow carries its own two-route certificate, testing
+that one link and nothing else.
+
+  C0  Ingestion identity (every ingestion, every report):
+      |<HF|H|HF> + Enuc (+ E_core) - E_SCF(dump)| ~ 1e-13.
+      Psi4's density-contraction RHF energy vs tucc's determinant-
+      space matrix element from the imported integrals -- one
+      theorem, two unrelated formulas; trips loudly on any schema,
+      notation, ordering, unit, or frozen-core error, and on any
+      defect in the sector-Hamiltonian builder itself.
+
+  C1  Eigensolve: sparse Davidson E0 vs dense eigh E_FCI to every
+      printed digit (two routes to the state). Standing rule from
+      the N2 series: the Davidson ROOT LIST is not a census --
+      trust the target and its converged near-cluster; the only
+      observed census failure is exact degeneracy.
+
+  C2  Compile: residual ||chain|HF> - v0|| -> machine zero. The
+      only optimization anywhere in the pipeline is this
+      least-squares fit of the angles.
+
+  C3  Translation: acceptance = worst amplitude disagreement
+      between Omega|HF> (Wick composer) and the chain state
+      rebuilt by the independent tuple-determinant kernel
+      (stage-1 C1 engine; shares no code with the vector
+      machinery). ~1e-16 = the floor of double precision.
+
+Chained: Omega == chain == exact eigenstate, each link sealed
+separately.
+
+### Residual currencies
+
+The two drivers report "residual" in different units; never
+tabulate them in one column unconverted.
+
+  dense (compile_chain / run_psi4_dump):
+      final_residual = 1 - fid^2   (fidelity deficit)
+  sparse (run_big_sd):
+      residual = ||chain|HF> - v0||   (vector norm)
+
+For fid -> 1: norm ~ sqrt(deficit), since ||psi - ct||^2 =
+2(1 - fid) and 1 - fid^2 ~ 2(1 - fid). E.g. a dense 8.9e-16
+deficit corresponds to a ~3e-8 norm. Dense sd exactness is
+certified by C3 acceptance against the eigh vector; direct-mode
+entries are certified at the deficit level only.
+
+Campaign-measured doctrines (census rule, pinned support, dip law,
+crossover family, operator-footprint behavior) live with their
+evidence in results/psi4_campaign.md.
