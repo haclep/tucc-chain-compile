@@ -458,3 +458,41 @@ Findings:
   break a Davidson census.
 - Equilibria: chain binds near 1.8, ring near 1.9; S2 peaks rise
   monotonically in both (chain to 1.93 at 3.6).
+
+
+## H8 chain, 1.9 bohr -- the beyond-C2 milestone opens (2026-08-13)
+
+Dump minted Seneca-side (make_h_dumps.py h8_chain; the sandbox
+twin's recipe verbatim: 8 H on z at 1.9 bohr spacing, STO-3G).
+Sector (4,4) dim 4900 -- the C2 arena with opposite physics.
+
+Dense census reference (probe_spectrum.py, console-only; this
+entry is the durable record): C0 = 1.55e-12 (internal band);
+blocks 2468 / 2468 of 4900; ground support 2468. Six roots, clean
+split spectrum, NO degenerate pairs (gaps 137.0 / 146.2 / 26.5 /
+66.4 / 23.6 mHa; S = 0,1,1,0,0,1). E_SCF -4.171555, E_FCI
+-4.306049, Ecorr -0.134494, dominant weight 0.8662. Per-atom
+Ecorr 16.8 mHa vs H6-chain-1.9's 16.9 -- near-perfect extensivity
+at matched spacing.
+
+Support adjudication: 2468. The inherited "2467" was almost
+certainly the ROUTED count = support - 1; the sparse banner
+adjudicates. Block = support: the chain FILLS its block, but the
+H6 exact halving does not generalize -- 2468 of 4900 exceeds
+dim/2 = 2450 by 18; the offset is recorded as an open structural
+question.
+
+Direct-mode frontier datum: the elimination pass exceeded its
+20 x dim = 98,000-step budget (RuntimeError at the cap) -- the
+direct chain needs > 98,000 letters, fill-in > 39.7x support,
+C2-class (C2: 56x). The fill-in law is now enforced by the driver
+itself; a cap raise is deferred as optional, the sd path being
+the object of interest.
+
+Sparse campaign launched 2026-08-13, pre-registered: E0 -4.306049
+to the digit; routed 2467; support 2468; projected False, HF in
+block True; identity monomial sqrt(0.866242) = 0.930722; length
+in the 2,700-6,400 band (per-support 1.1-2.6), the H6 open-chain
+band 1.1-1.6 the hopeful read; monomials near support, dressing
+open; restarts 0 hoped; the measured cost becomes the second
+point on the cost-vs-support curve that re-prices H10.
