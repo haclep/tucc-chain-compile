@@ -496,3 +496,33 @@ in the 2,700-6,400 band (per-support 1.1-2.6), the H6 open-chain
 band 1.1-1.6 the hopeful read; monomials near support, dressing
 open; restarts 0 hoped; the measured cost becomes the second
 point on the cost-vs-support curve that re-prices H10.
+
+### H8 ring decision gate (dense reference, same day)
+
+Dump minted at damp 0.4, first try (the refuse-to-converge
+contingency never fired). C0 = 1.32e-11 -- the loosest internal
+reading yet, tracking the hardest SCF; ten orders from a
+convention error. Blocks 2468 / 2468 of 4900 -- block size is
+topology-independent at matched N (as at H6); ground support 2306
+(deletion 162, 6.6% vs H6-ring's 20% -- shallow enough to suggest
+a partially symmetry-broken mean field mixing K labels; open
+question, not adjudicated).
+
+VERDICT: compilable, queued after the chain. The pre-registered
+pathology relocated rather than vanished: the ground state is a
+clean nondegenerate SINGLET in the HF block (no projection), 28.3
+mHa below the first triplet -- but its dominant weight is 0.4466
+AT EQUILIBRIUM, more multireference than C2's 0.667, the
+anti-aromatic frontier degeneracy expressed as static correlation
+with correlation beating Hund. Roots 0-3 are the complete e^2
+frontier manifold (three singlets + one triplet, 143 mHa; roots 0
+and 2 share a dominant determinant at ~0.45 weight). The census
+ambush is REAL and located: an exactly degenerate triplet pair at
+roots 4/5 (-3.868647 twice) -- on record for the future sparse
+run. E_SCF -4.000538, E_FCI -4.177019, Ecorr -0.176481 (22.1
+mHa/atom vs the chain's 16.8).
+
+The 4n / 4n+2 rule in exact energies, matched N and spacing: H6
+ring 2.5 mHa BELOW its chain (aromatic); H8 ring 129.0 mHa ABOVE
+its chain (anti-aromatic). Weight at matched spacing: chain
+0.8662, ring 0.4466.
