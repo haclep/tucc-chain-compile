@@ -392,3 +392,69 @@ Series table (dense/sparse where they split):
 
 All six sd compiles exact; every invariant (E0, support, block,
 routed) agreed across drivers at every point.
+
+## H6 matched chain-vs-ring scan (2026-08-13) -- dump minter certified
+
+Dumps minted Seneca-side by examples/make_h_dumps.py (internal
+s-only closed-form integrals written in the tucc-psi4-dump-1
+schema; dumps are bench files, regenerable from the script; ring
+spacing = nearest-neighbor distance). C0 note for internal dumps:
+the identity reads 1e-12 to 1e-11 -- the internal RHF loop's own
+convergence floor (e_scf is the SCF iterate; <HF|H|HF> uses the
+final orbitals), largest at the damp-0.5 stretched points; a
+genuine convention error misses by 1e-2 to 1e-1 Ha. Selftest
+precedent 8.5e-13.
+
+Generator anchor, two routes: h6_ring_19 through the dump path
+reproduces the committed internal-direct system -- support 160
+exact, and length 358 = the recorded WINDOWS column of the
+platform-determinism pair (METHOD: 298 Linux / 358 Windows), run
+on Windows. Schema and pipeline certified end to end.
+
+| chain s | E_FCI | Ecorr | weight | len | per-sup | sup=block | monom |
+|---|---|---|---|---|---|---|---|
+| 1.4 | -3.143508 | -0.0625 | 0.959 | 316 | 1.58 | 200 = 200 | 200 |
+| 1.8 | -3.244517 | -0.0922 | 0.916 | 250 | 1.25 | 200 = 200 | 200 |
+| 1.9 | -3.234686 | -0.1015 | 0.901 | 250 | 1.25 | 200 = 200 | 200 |
+| 2.4 | -3.114121 | -0.1646 | 0.787 | 223 | 1.12 | 200 = 200 | 200 |
+| 3.0 | -2.957646 | -0.2822 | 0.573 | 225 | 1.13 | 200 = 200 | 200 |
+| 3.6 | -2.863701 | -0.4325 | 0.366 | 225 | 1.13 | 200 = 200 | 200 |
+
+| ring s | E_FCI | Ecorr | weight | len | per-sup | sup (block 200) | monom |
+|---|---|---|---|---|---|---|---|
+| 1.4 | -3.035415 | -0.0548 | 0.975 | 374 | 2.34 | 160 | 160 |
+| 1.8 | -3.235025 | -0.0747 | 0.949 | 319 | 1.99 | 160 | 176 |
+| 1.9 | -3.237170 | -0.0811 | 0.940 | 358 | 2.24 | 160 | 160 |
+| 2.4 | -3.138841 | -0.1274 | 0.854 | 284 | 1.78 | 160 | 181 |
+| 3.0 | -2.973164 | -0.2303 | 0.626 | 284 | 1.78 | 160 | 160 |
+| 3.6 | -2.869840 | -0.3846 | 0.360 | 358 | 2.24 | 160 | 160 |
+
+Findings:
+- Pinned support, family four, in stereo: chain 200 and ring 160
+  at every spacing, weights collapsing to 0.37/0.36 -- the first
+  matched topology pair.
+- Boundary-condition answer, two-part: periodic wrap-around
+  DELETES support (160 in the same-size 200-det block: RHF's
+  degenerate ring orbitals mix K-partners, so the connectivity
+  walk cannot see the momentum symmetry the amplitudes obey --
+  the molecular K-sector law) yet COSTS letters (ring longer than
+  chain at every spacing; per-support 1.8-2.3 vs 1.1-1.6).
+  Symmetry shrinks the stage and hardens the play. The chain
+  fills its block at all six points (the block law's original
+  saturating form); the ring is the first STANDING strict-subset
+  family.
+- Dip law, vote four, per topology: chain minimum at 2.4 (223)
+  with marginal recovery (+2); ring minimum flat across 2.4-3.0
+  (284), recovery to 358 by 3.6. Robust core = the crossover
+  minimum; recovery onset and amplitude are system properties.
+- Length is only piecewise-smooth along a coordinate: ring 319 ->
+  358 across the 1.8 -> 1.9 step -- jitter at the optimizer-fence
+  scale.
+- Ring dressing is a light crossover echo (0/16/0/21/0/0, peak at
+  2.4); the chain is support-exact at every point.
+- Census ambush, recorded for future sparse ring runs: the ring's
+  excited spectrum carries EXACTLY degenerate triplet pairs at
+  1.4/1.8/1.9 (lifted by 2.4) -- the one condition observed to
+  break a Davidson census.
+- Equilibria: chain binds near 1.8, ring near 1.9; S2 peaks rise
+  monotonically in both (chain to 1.93 at 3.6).
