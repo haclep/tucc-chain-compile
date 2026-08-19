@@ -526,3 +526,90 @@ The 4n / 4n+2 rule in exact energies, matched N and spacing: H6
 ring 2.5 mHa BELOW its chain (aromatic); H8 ring 129.0 mHa ABOVE
 its chain (anti-aromatic). Weight at matched spacing: chain
 0.8662, ring 0.4466.
+
+### H8 chain -- day-4 progress, a census correction, and the deadline trap (2026-08-17)
+
+Banner (launch 2026-08-13 23:18): support 2468, block 2468/2468, HF
+in block, routed 2467 -- the inherited "2467" convicted as the
+routed count. Davidson (3 seeds) matched dense root 0 to every
+digit; its three roots were dense roots 0, 1, 3 -- the triplet at
+-4.022918 was SKIPPED though split by 26.5 mHa from its neighbors.
+CENSUS RULE CORRECTED (forward): the "only exact degeneracy"
+refinement of the N2 3.111 section is falsified; skips are now
+observed at exact degeneracy (N2 eq), near-degeneracy (C2, 1 mHa),
+and a split spectrum (H8 chain, 26.5 mHa). The target root has
+matched dense in every case, seven of seven. Hypothesis to test:
+the two full censuses (N2 stretched) were the four-seed runs; a
+--nroots knob on the sparse driver would adjudicate.
+
+Progress: joint phase 3.8 h; then growth rounds (letters added,
+per-support, residual at round start, invocations/hours): 1: +308
+-> 2775, 1.12, 1.89e-3, 10/6.5; 2: +346 -> 3121, 1.26, 1.04e-3,
+14/9.2; 3: +390 -> 3511, 1.42, 5.86e-4, 17/10.5; 4: +438 -> 3949,
+1.60, 3.15e-4, 37/15.7; 5: +495 -> 4444, 1.80, 1.54e-4, 40/19.5;
+6: +557 -> 5001, 2.03, 7.05e-5, 37/22.4; 7: +627 -> 5628, 2.28,
+2.52e-5, in progress. Letters per round grow 13%/round; the
+per-round residual factor is accelerating (0.55, 0.56, 0.54, 0.49,
+0.46, 0.36); per-iteration cost scales ~length^2.8 (3.3 min at
+5001, 4.6 min at 5628). Second point on the cost-vs-support curve:
+3.7 days to 5628 letters at support 2468 (C2: ~35 h to 3202 at
+1108) -- cost grows far faster than support.
+
+Deadline trap (mechanism from run_big_sd.py lines 199-213): the
+driver measures slice_t (seconds per 10-iteration slice) and
+refuses to start a slice unless 1.3 x slice_t remains before the
+deadline. At len 5628, slice_t = 2733 s, so 1.3 x 2733 = 3553 s >
+the 3000 s deadline: every resume refused, no slice ran, slice_t
+never re-measured -- 38 zero-work invocations (163-200) in 12 s
+on 2026-08-17 16:23. State intact (idempotent re-saves). Remedy:
+--deadline 14400 (clears rounds 7-9 with margin; checkpoint saves
+every slice). Loop upgraded: utf-8 log, stop rule at round 10 =
+the ceiling of the pre-registered length band (per-support ~2.88
+at ~7,100 letters, C2's own ratio); if unfinished there, the band
+is falsified and we stop by rule. Decision: continue, bounded;
+no mid-run driver patch (one driver version per compile). Queued
+after this run: plateau early-exit (each round burns most of its
+400 iterations at <1% improvement) and a code-version stamp in
+the Provenance line.
+
+### H8 chain -- DONE (2026-08-18): the beyond-C2 milestone
+
+E0 -4.30604886 = dense census reference to every digit. Chain 6333
+letters, ranks {2: 6040, 1: 293}, max|theta| 1.534693, grown 3866 +
+routed 2467, restarts 0; residual 8.0e-13 (deficit; rn = 8.97e-07,
+rn^2 = 8.0e-13 -- the currency demonstrated in one line); round 8 of
+a possible 9 under the stop rule. Translation: 2468 creator monomials,
+tail [2468, 2468, 2468], acceptance 9.6e-16 -- the largest exact
+translation on record. Floor probe of U: [2468, 2468, 2468, 2468],
+support-exact at EVERY floor incl. 1e-14; identity monomial 0.930721
+= sqrt(0.866242). Target probe [2468, 2468, 2528, 4686]: Davidson
+dust only.
+
+Round table (letters added -> total, per-support, residual at round
+start): 1: +308 -> 2775, 1.12, 1.89e-3; 2: +346 -> 3121, 1.26,
+1.04e-3; 3: +390 -> 3511, 1.42, 5.86e-4; 4: +438 -> 3949, 1.60,
+3.15e-4; 5: +495 -> 4444, 1.80, 1.54e-4; 6: +557 -> 5001, 2.03,
+7.05e-5; 7: +627 -> 5628, 2.28, 2.52e-5; 8: +705 -> 6333, 2.57,
+then the quadratic finish to the gate. Per-round residual factors
+0.55, 0.56, 0.54, 0.49, 0.46, 0.36, then convergence: the threshold
+finish arrived one round before the pre-registered ceiling.
+Per-support 2.57 = C2's dense ratio exactly; inside the 2,700-6,400
+band with 67 to spare.
+
+Cost-curve point two: ~4.6 days of compute to 6,333 letters at
+support 2,468, vs C2's ~35 h to 3,202 at 1,108 -- letters x2.0 for
+support x2.2, wall time x3.2 (per-iteration cost ~length^2.8). H10
+re-priced from data: support 28,684 -> ~70,000 letters -> months.
+The compile frontier is measured, not guessed. 210 invocations
+total; the deadline trap cost 38 zero-work invocations and was
+cured by loop policy (--deadline 14400), no driver change.
+
+Singles 293 (4.6% of letters) vs <= 80 in every prior system
+(N2: 34/53/69): the open-chain mean field is collectively poor --
+orbital-relaxation content jumps fourfold at this topology. No
+dense sd column by decision (unresumable at this length); this
+length is the sparse driver's alone.
+
+Census record: Davidson (3 seeds) returned dense roots 0, 1, 3 --
+the -4.022918 triplet skipped at 26.5 mHa split (see the day-4
+section); target right, seven of seven.
