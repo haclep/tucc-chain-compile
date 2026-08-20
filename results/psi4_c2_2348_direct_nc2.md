@@ -2,6 +2,8 @@
 
 Source: psi4 1.11; basis sto-3g; active nmo 8; sector (4,4) dim 4900; 2 core orbitals frozen, E_core = -72.49241251.
 
+Provenance: dump file c2_2348.npz; invocation run_psi4_dump.py c2_2348.npz --mode direct --nroots 4 --max-dim 5000 --n-core 2.
+
 Certification: |<HF|H|HF> + Enuc - E_SCF(dump)| = 1.42e-14. E_SCF = -74.42203718; E_FCI = -74.68975162; Ecorr = -0.26771445.
 
 | root | E_tot | S2 | dominant | weight |
