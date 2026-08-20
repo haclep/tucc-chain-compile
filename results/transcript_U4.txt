@@ -1,0 +1,102 @@
+==============================================================================
+FOUR-SITE HUBBARD RING, half filling, Sz=0, momentum basis   U/t = 4.000
+dim(Sz=0) = 36 ; E0 (dense) = -2.102748483462 ; lowest root of XLF eq.(10) = -2.102748483462 ; gap to root 2 = 0.296325
+reference Phi0 = |01 0_1_> = |1100|1100>   (bits: k0 k1 k2 k3 | k0 k1 k2 k3, up | down)
+--- exact ground state, all components above 1e-12 (occupation-number states) ---
+  |01 0_1_>      |1100|1100>  K=2  level=0   c = +0.6518541365
+  |23 0_1_>      |0011|1100>  K=2  level=2   c = +0.0971927776
+  |13 0_2_>      |0101|1010>  K=2  level=2   c = +0.1943855552
+  |12 1_2_>      |0110|0110>  K=2  level=2   c = -0.1356744948
+  |03 1_2_>      |1001|0110>  K=2  level=2   c = +0.0971927776
+  |12 0_3_>      |0110|1001>  K=2  level=2   c = +0.0971927776
+  |03 0_3_>      |1001|1001>  K=2  level=2   c = -0.6518541365
+  |02 1_3_>      |1010|0101>  K=2  level=2   c = +0.1943855552
+  |01 2_3_>      |1100|0011>  K=2  level=2   c = +0.0971927776
+  |23 2_3_>      |0011|0011>  K=2  level=4   c = +0.1356744948
+support = 10 ; all in K=2 sector? True ; K=2,Sz=0 sector size = 10
+XLF eq.(12) check: alpha=0.65185414 (-alpha at |03 0_3_>: -0.65185414) beta=0.09719278  2beta at |02 1_3_>: 0.19438556  gamma=0.13567449 (-gamma at |12 1_2_>: -0.13567449)
+SD pool conserving (K, Sz): 28 generators (0 singles, 28 doubles)
+
+==============================================================================
+ROUTING SWEEP (closed-form Givens zeroing, one SD letter per support determinant minus pivot)
+columns: |01 0_1_>  |23 0_1_>  |13 0_2_>  |12 1_2_>  |03 1_2_>  |12 0_3_>  |03 0_3_>  |02 1_3_>  |01 2_3_>  |23 2_3_>
+start  : +0.651854  +0.097193  +0.194386  -0.135674  +0.097193  +0.097193  -0.651854  +0.194386  +0.097193  +0.135674
+letter 1: (2u 2d <- 0u 0d)             theta=+0.205207  zero |23 2_3_> -> into |03 0_3_> ; siblings also rotated: |01 0_1_>, |12 1_2_>
+          +0.665824  +0.097193  +0.194386  -0.000000  +0.097193  +0.097193  -0.665824  +0.194386  +0.097193  -0.000000
+letter 2: (2u 3u <- 0u 1u)             theta=-0.144950  zero |23 0_1_> -> into |01 0_1_> ; siblings also rotated: |01 2_3_>, |23 2_3_>
+          +0.672880  +0.000000  +0.194386  -0.000000  +0.097193  +0.097193  -0.665824  +0.194386  +0.096174  -0.014039
+letter 3: (3u 2d <- 0u 1d)             theta=+0.281229  zero |13 0_2_> -> into |01 0_1_> ; siblings also rotated: |02 1_3_>, |23 2_3_>
+          +0.700395  +0.000000  +0.000000  -0.000000  +0.097193  +0.097193  -0.665824  +0.182853  +0.096174  -0.067436
+  |12 1_2_> already zero (collateral) -- skipped
+letter 4: (3u 2d <- 1u 0d)             theta=+0.137888  zero |03 1_2_> -> into |01 0_1_> ; siblings also rotated: |12 0_3_>, |23 2_3_>
+          +0.707107  +0.000000  +0.000000  -0.000000  +0.000000  +0.087001  -0.665824  +0.182853  +0.096174  -0.080156
+letter 5: (2u 3d <- 0u 1d)             theta=+0.122423  zero |12 0_3_> -> into |01 0_1_> ; siblings also rotated: |03 1_2_>, |23 2_3_>
+          +0.712439  +0.000000  +0.000000  -0.000000  -0.009788  +0.000000  -0.665824  +0.182853  +0.096174  -0.079556
+letter 6: (3u 3d <- 1u 1d)             theta=+0.751589  zero |03 0_3_> -> into |01 0_1_> ; siblings also rotated: |12 1_2_>, |23 2_3_>
+          +0.975136  +0.000000  +0.000000  +0.054321  -0.009788  +0.000000  -0.000000  +0.182853  +0.096174  -0.058124
+letter 7: (2u 3d <- 1u 0d)             theta=+0.185363  zero |02 1_3_> -> into |01 0_1_> ; siblings also rotated: |13 0_2_>, |23 2_3_>
+          +0.992132  +0.000000  -0.010712  +0.054321  -0.009788  +0.000000  -0.000000  -0.000000  +0.096174  -0.057128
+letter 8: (2d 3d <- 0d 1d)             theta=-0.096634  zero |01 2_3_> -> into |01 0_1_> ; siblings also rotated: |23 0_1_>, |23 2_3_>
+          +0.996782  -0.005512  -0.010712  +0.054321  -0.009788  +0.000000  -0.000000  -0.000000  -0.000000  -0.056862
+after routing: 8 letters, |<Phi0|v>|^2 = 0.9935750689, residual 1-fid^2 = 6.425e-03
+   off-reference weight left on: |23 0_1_>(3.04e-05), |13 0_2_>(1.15e-04), |12 1_2_>(2.95e-03), |03 1_2_>(9.58e-05), |23 2_3_>(3.23e-03)
+
+==============================================================================
+GROWTH (routed angles FROZEN at closed form; grown angles solved by least squares)
+  growth round  1: +3 letters ((3u 2d <- 0u 1d), (3u 0d <- 2u 1d), (2u 3u <- 0u 1u)) -> total grown  3, residual 1-fid^2 = 5.687e-03
+  growth round  2: +3 letters ((2u 2d <- 0u 0d), (2u 3d <- 1u 0d), (1u 2d <- 0u 3d)) -> total grown  6, residual 1-fid^2 = 2.166e-04
+  growth round  3: +3 letters ((2u 3d <- 0u 1d), (1u 2u <- 0u 3u), (2d 3d <- 0d 1d)) -> total grown  9, residual 1-fid^2 = 2.212e-31
+FINAL: 17 letters = 8 routed + 9 grown ; ranks: {1: 0, 2: 17}
+  compile check   : |<Phi0| U_compile |Psi>|^2 = 1.0000000000000000  residual = 0.000e+00   (gate 1e-12)
+  preparation     : U^dagger|Phi0> vs Psi : 1-|<Psi|chain>|^2 = 4.441e-16 ; E(chain) = -2.102748483462 ; E0 = -2.102748483462 ; dE = 8.88e-16
+  max|theta| = 0.751589 at (3u 3d <- 1u 1d)  ->  CC-side t = tan(theta) = 0.9346
+  full preparation chain (apply left to right on Phi0):
+     1  (2d 3d <- 0d 1d)              theta=+0.09663431  (routed)
+     2  (2u 3d <- 1u 0d)              theta=-0.18536260  (routed)
+     3  (3u 3d <- 1u 1d)              theta=-0.75158945  (routed)
+     4  (2u 3d <- 0u 1d)              theta=-0.12242277  (routed)
+     5  (3u 2d <- 1u 0d)              theta=-0.13788787  (routed)
+     6  (3u 2d <- 0u 1d)              theta=-0.28122936  (routed)
+     7  (2u 3u <- 0u 1u)              theta=+0.14494995  (routed)
+     8  (2u 2d <- 0u 0d)              theta=-0.20520652  (routed)
+     9  (3u 2d <- 0u 1d)              theta=-0.20189049  (grown)
+    10  (3u 0d <- 2u 1d)              theta=+0.21912627  (grown)
+    11  (2u 3u <- 0u 1u)              theta=+0.00345203  (grown)
+    12  (2u 2d <- 0u 0d)              theta=+0.08138799  (grown)
+    13  (2u 3d <- 1u 0d)              theta=+0.14769664  (grown)
+    14  (1u 2d <- 0u 3d)              theta=+0.18125519  (grown)
+    15  (2u 3d <- 0u 1d)              theta=+0.12908200  (grown)
+    16  (1u 2u <- 0u 3u)              theta=-0.14443791  (grown)
+    17  (2d 3d <- 0d 1d)              theta=+0.01772772  (grown)
+
+VARIANT: routed angles also free during growth
+  10 letters = 8 routed + 2 grown ; residual = -4.441e-16 ; staircase: 6.4e-03 -> 3.2e-03 -> 3.7e-31
+
+==============================================================================
+DIRECT MODE (straight-shot letters of whatever rank, ascending level) -- the ECS/XLF-class construction
+  letter 1: rank-2 (2u 3u <- 0u 1u)                   zero |23 0_1_> ; fill-in created on: none
+  letter 2: rank-2 (3u 2d <- 0u 1d)                   zero |13 0_2_> ; fill-in created on: none
+  letter 3: rank-2 (2u 2d <- 0u 0d)                   zero |12 1_2_> ; fill-in created on: none
+  letter 4: rank-2 (3u 2d <- 1u 0d)                   zero |03 1_2_> ; fill-in created on: none
+  letter 5: rank-2 (2u 3d <- 0u 1d)                   zero |12 0_3_> ; fill-in created on: |03 1_2_>
+  letter 6: rank-2 (3u 3d <- 1u 1d)                   zero |03 0_3_> ; fill-in created on: |12 1_2_>
+  letter 7: rank-2 (2u 3d <- 1u 0d)                   zero |02 1_3_> ; fill-in created on: |13 0_2_>
+  letter 8: rank-2 (2d 3d <- 0d 1d)                   zero |01 2_3_> ; fill-in created on: |23 0_1_>
+  letter 9: rank-4 (2u 3u 2d 3d <- 0u 1u 0d 1d)       zero |23 2_3_> ; fill-in created on: none
+  letter 10: rank-2 (2u 3u <- 0u 1u)                   zero |23 0_1_> ; fill-in created on: none
+  letter 11: rank-2 (3u 2d <- 0u 1d)                   zero |13 0_2_> ; fill-in created on: none
+  letter 12: rank-2 (2u 2d <- 0u 0d)                   zero |12 1_2_> ; fill-in created on: none
+  letter 13: rank-2 (3u 2d <- 1u 0d)                   zero |03 1_2_> ; fill-in created on: none
+direct: 13 letters, ranks {1: 0, 2: 12, 3: 0, 4: 1}, residual 2.220e-16 ; translation cost of the rank-4 letter = 4^4+2 = 258 monomials vs 18 for a rank-2
+
+free-angle variant chain (preparation order):
+     1  (2d 3d <- 0d 1d)              theta=+0.10145033  (routed)
+     2  (2u 3d <- 1u 0d)              theta=-0.07176192  (routed)
+     3  (3u 3d <- 1u 1d)              theta=-0.76782402  (routed)
+     4  (2u 3d <- 0u 1d)              theta=-0.13788787  (routed)
+     5  (3u 2d <- 1u 0d)              theta=-0.13788787  (routed)
+     6  (3u 2d <- 0u 1d)              theta=-0.12235761  (routed)
+     7  (2u 3u <- 0u 1u)              theta=+0.14027332  (routed)
+     8  (2u 2d <- 0u 0d)              theta=-0.12897485  (routed)
+     9  (3u 2d <- 0u 1d)              theta=-0.20077214  (grown)
+    10  (3u 0d <- 2u 1d)              theta=+0.22661306  (grown)
