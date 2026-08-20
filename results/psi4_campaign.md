@@ -2,17 +2,23 @@
 
 All ingestions through the certified adapter (psi4 1.11), zero tucc
 code changes. Identities in the 1e-16 to 1e-14 band; every constructive
-translation at ~1e-16 with creator monomials at the state support.
+translation accepted at ~1e-16, with monomial counts support-exact at
+physical floors (keep-floor counts are factorization-dependent; see
+the N2 series and the C2 flagship floor probe).
 
-## The block law (three molecules)
+## The block law (current form; header updated 2026-08-20)
 
-The HF-connected component of H equals the ground-state support
-EXACTLY in every system measured: H4/6-31G 208 = 208 (of 784),
-LiH/STO-3G 69 = 69 (of 225) at every bond length, H2O/STO-3G 133 = 133
-(of 441). Ground states fill their symmetry blocks; support is
-symmetry-determined, amplitudes carry the physics. The molecular
-analogue of the lattice K-sector support law, now confirmed rather
-than hypothesized.
+The HF-connected component of H BOUNDS the ground support from above:
+support <= block always, with equality saturating only in small
+systems -- H2/cc-pVDZ 22 = 22, H4/6-31G 208 = 208 (of 784), LiH/STO-3G
+69 = 69 (of 225) at every bond length, H2O 133 = 133 full-space and
+65 = 65 in CAS(8e,6o) at all three stretches, H6 chains 200 = 200 at
+all six spacings, H8 chain 2468 = 2468. Strict subsets at C2
+(1108 of 1252), N2 all three geometries (652 of 784), and as STANDING
+families at the rings: H6 ring 160 of 200, H8 ring 2306 of 2468.
+Support is symmetry-BOUNDED, not symmetry-determined; amplitudes carry
+the physics. The original saturating statement ("support fills the
+block") survives as the small-system limit of this law.
 
 ## Master table (sd_routed unless marked)
 
@@ -323,17 +329,22 @@ state). Identity monomial 0.775068 = sqrt(0.600730). Target probe
 the sparse compile reproduces to 8.0e-13 -- the chain carries even
 the eigensolver's sub-tolerance tail faithfully.
 
-Residual currencies, adjudicated (compile.py line 73): the dense
-driver's final_residual is a FIDELITY DEFICIT (1 - fid^2); the
-sparse driver's residual is a VECTOR NORM. Dense sd 8.9e-16
-(deficit) ~ 4e-8 (norm); never tabulate the two in one column
-unconverted. The dense 1029-monomial reading thereby dissolves:
-a ~1e-8-amplitude tail legitimately pushes keep-floor monomial
-counts past the block. Dense sd exactness is certified by NOC
-acceptance (3.5e-15 here) against the eigh vector, not by the
-deficit; direct-mode entries are certified at the deficit level
-only, and the ledger's residual columns are deficit-currency for
-dense, norm-currency for sparse.
+Residual currencies, adjudicated (SUPERSEDED here; corrected form
+below, measured at the H8 chain finish and carried into METHOD):
+BOTH drivers report the FIDELITY DEFICIT 1 - fid^2. The sparse
+driver's number is not a vector norm; it relates to the residual
+norm as deficit ~ ||r||^2 (H8 one-line demonstration:
+rn = 8.97e-07, rn^2 = 8.0e-13 = the reported residual). The
+original paragraph's compile.py line-73 reading classified the
+sparse currency backwards; the deficit-vs-norm CONVERSION it
+warned about still stands -- never tabulate a deficit next to a
+norm unconverted; deficit ~ norm^2. What survives unchanged:
+dense sd 8.9e-16 (deficit) corresponds to a ~4e-8-amplitude
+tail, so the 1029-monomial keep-floor reading legitimately
+dissolves; dense sd exactness is certified by NOC acceptance
+(3.5e-15 here) against the eigh vector, not by the deficit;
+direct-mode entries are certified at the deficit level only.
+Ledger residual columns are deficit-currency for both paths.
 
 ## N2 2.0x equilibrium, 4.148 a0 (2026-08-13) -- series complete
 
