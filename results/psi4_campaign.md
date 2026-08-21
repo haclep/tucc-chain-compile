@@ -642,3 +642,45 @@ selection under exact degeneracy is platform-arbitrary: Windows and
 Linux projections chose disjoint 608-blocks; scalars invariant.
 Open observable: recurring extremal angle ~ -1.5506412 across
 letters and states.
+
+## C2 flagship: translator cross-check, C4 (2026-08-20)
+
+Independent reimplementation of the cluster analysis (own parity,
+own exp bookkeeping; xcheck_cluster.py) vs translate.cluster_analysis
+on the stored eigenvector: worst |dt| 1.1e-13 over all 8 ranks;
+sign-conversion map measured, identically 1.0. Chain replay
+reproduces ct at fid 1 - 4e-16. Stable census at 1e-12:
+4/84/252/426/252/84/4/1 = 1107 = routed; ZERO amplitudes on empty
+determinants -- exact T is support-shaped, like U; keep-floor
+amplitude counts are route-dependent dust below 1.1e-13. Anatomy:
+max|t2| 0.457, ||T3|| 0.094, ||T4|| 0.022, rank-8 amplitude 1.9e-5.
+Route is cluster analysis (Monkhorst; Lehtola 2017 precedent); the
+chain-level operator pass stays the roadmap item. Windows/Linux
+platform pair bounded at 3e-16 (libm, transcendental route only).
+
+## LiH scan: chain smoothness + support-set pinning (2026-08-20)
+
+Five scan chains recompiled from dumps, 5/5 MATCH vs committed.
+NEW LAW: the support SET is invariant -- the same 69 determinants
+at all five geometries; only amplitudes move. Smoothness is
+layered: letter set J 0.70-0.90, theta continuity r 0.89-0.96,
+backbone 36/65 with smooth physical trajectories (HOMO-pair double
++0.044 -> +0.738); ORDER churns (LCS 0.33-0.51, positions
+0.19-0.29). K1 leg 1: not triggered; learnability concentrates in
+the unordered layer. Probe: lih_smoothness.py.
+
+## H6 matched scan: transfer leg + the MO-gauge law (2026-08-20/21)
+
+Twelve recompiles, 12/12 MATCH in the committed gauge. MO-GAUGE
+LAW: chain compilation is platform-reproducible exactly when the
+dump's MO gauge is pinned; for degenerate-shell systems the DUMP
+FILE is the provenance object (chain dumps bit-adjacent at 8e-15;
+ring h_mo Schur-blind at 5e-15 while eri differs O(1); all 400
+levels agree at 4e-14; a filled degenerate shell means the SCF
+cannot pin the gauge even in principle). Support SET pinned across
+spacings in BOTH topologies (200 and 160) and GAUGE-INVARIANT
+(prediction falsified, recorded). Committed-gauge transfer: order
+of shared letters transfers across topology (tau 0.59 vs 0.80
+within) while content (setJ ~0.24) and amplitudes do not.
+Degenerate-shell dumps archived under data/. Probe: h6_transfer.py.
+
