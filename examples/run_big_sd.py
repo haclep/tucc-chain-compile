@@ -341,6 +341,13 @@ def main():
     ap.add_argument("--n-core", type=int, default=0)
     ap.add_argument("--deadline", type=float, default=3000,
                     help="seconds per invocation before checkpointing")
+    ap.add_argument("--root", type=int, default=0,
+                    help="Davidson root to compile (0 = ground; "
+                    "nonzero suffixes checkpoint and report with _rootN)")
+    ap.add_argument("--dense-init", action="store_true",
+                    help="use dense eigh for the init roots instead of "
+                    "seeded Davidson; mandatory at state-reordered "
+                    "geometries where no seed touches the ground block")
     ap.add_argument("--state", default=None)
     a = ap.parse_args()
     status()
@@ -351,6 +358,8 @@ def main():
     signal.signal(signal.SIGTERM, _term)
     t_end = time.time() + a.deadline
     stem = os.path.splitext(os.path.basename(a.dump))[0]
+    if a.root:
+        stem = f"{stem}_root{a.root}"
     spath = a.state or os.path.join(
         os.path.dirname(os.path.abspath(a.dump)), f"{stem}_bigsd.pkl")
 
@@ -392,13 +401,27 @@ def main():
         v0s = np.zeros((basis.dim, len(seeds)))
         for r_, s_ in enumerate(seeds):
             v0s[s_, r_] = 1.0
-        w, X, nmv = davidson(sp, nroots=len(seeds), tol=1e-10, v0=v0s)
-        v0 = X[:, 0]
+        if a.dense_init:
+            Hd = np.zeros((basis.dim, basis.dim))
+            for i_ in range(basis.dim):
+                Hd[i_, sp.indices[sp.indptr[i_]:sp.indptr[i_ + 1]]] = \
+                    sp.data[sp.indptr[i_]:sp.indptr[i_ + 1]]
+            ww, XX = np.linalg.eigh(Hd)
+            del Hd
+            w, X, nmv = ww[:len(seeds)], XX[:, :len(seeds)], 0
+        else:
+            w, X, nmv = davidson(sp, nroots=len(seeds), tol=1e-10, v0=v0s)
+        if not (0 <= a.root < X.shape[1]):
+            raise SystemExit(f"--root {a.root} outside computed roots "
+                             f"0..{X.shape[1]-1}")
+        v0 = X[:, a.root]
         roots_abs = [float(x + e_nuc + e_core) for x in w]
-        print("davidson roots: "
+        print(("dense-init eigh roots: " if a.dense_init
+               else "davidson roots: ")
               + "  ".join(f"{x:.8f}" for x in roots_abs)
-              + f"  ({nmv} matvecs; seeds = HF + {len(seeds)-1} "
-              f"lowest-diag)", flush=True)
+              + ("  (dense eigh; full spectrum computed)" if a.dense_init
+                 else f"  ({nmv} matvecs; seeds = HF + {len(seeds)-1} "
+                 f"lowest-diag)"), flush=True)
         # Purity of the SELECTED root, decided by leaked weight -- not
         # by a root gap. Walk at 1e-7 (above integral-noise couplings)
         # for the decision; walk at 1e-10 too, for the report.
@@ -411,7 +434,7 @@ def main():
         mask[list(comp_dec)] = True
         leak = float(np.linalg.norm(v0[~mask]))
         projected, proj_res = False, None
-        e0_abs = roots_abs[0]
+        e0_abs = roots_abs[a.root]
         if leak > 1e-8:
             v0 = np.where(mask, v0, 0.0)
             v0 /= np.linalg.norm(v0)
@@ -502,7 +525,10 @@ def main():
            if a.n_core else "") + ".\n"
         f"Provenance: dump file {os.path.basename(a.dump)}; "
         f"invocation run_big_sd.py {os.path.basename(a.dump)} "
-        f"--n-core {a.n_core} (repeated to completion).\n\n")
+        f"--n-core {a.n_core}"
+        + (f" --root {a.root}" if a.root else "")
+        + (" --dense-init" if a.dense_init else "")
+        + " (repeated to completion).\n\n")
     write_text(os.path.join(RES, f"bigsd_{stem}.md"),
         f"# Resumable sd chain -- {stem}\n\n"
         + src_s

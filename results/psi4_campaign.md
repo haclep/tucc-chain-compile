@@ -624,3 +624,21 @@ length is the sparse driver's alone.
 Census record: Davidson (3 seeds) returned dense roots 0, 1, 3 --
 the -4.022918 triplet skipped at 26.5 mHa split (see the day-4
 section); target right, seven of seven.
+
+## C2 3.0: both-root compile (2026-08-21)
+
+Driver gains --root and --dense-init after a production catch: seeded
+Davidson missed the triplet ground (no seed touches its block; the
+seeding comment's coverage assumption falsified) with every purity
+field green -- dense reference is MANDATORY at state-reordered
+geometries. Both roots compiled overnight and countersigned by
+independent replay at machine precision. Triplet (projected, 608):
+len 1401, per-support 2.304. Singlet (660 = HF block, SATURATING):
+len 1517, per-support 2.299. Per-support cost state-independent to
+0.2% at fixed geometry, vs 2.890 at equilibrium -- law candidate:
+cost is a property of the geometry, not the state. Raw eigh pair
+supports 1216 = 2 x 608 (mixture law at the source). Partner
+selection under exact degeneracy is platform-arbitrary: Windows and
+Linux projections chose disjoint 608-blocks; scalars invariant.
+Open observable: recurring extremal angle ~ -1.5506412 across
+letters and states.
