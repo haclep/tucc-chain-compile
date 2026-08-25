@@ -1,7 +1,7 @@
 # Psi4 ingestion campaign -- summary
 
 All ingestions through the certified adapter (psi4 1.11), zero tucc
-code changes. Identities in the 1e-16 to 1e-14 band; every constructive
+code changes. Identities in the 1e-16 to 1e-13 band (widened 2026-08-22: c2_28 at 2.4e-13); every constructive
 translation accepted at ~1e-16, with monomial counts support-exact at
 physical floors (keep-floor counts are factorization-dependent; see
 the N2 series and the C2 flagship floor probe).
@@ -684,3 +684,51 @@ of shared letters transfers across topology (tau 0.59 vs 0.80
 within) while content (setJ ~0.24) and amplitudes do not.
 Degenerate-shell dumps archived under data/. Probe: h6_transfer.py.
 
+## C2 scan: 2.6 and 2.8 bohr, both states (2026-08-22)
+
+Census first (probe_spectrum; dense reference mandatory): crossing
+localized at R* ~ 2.774 bohr (singlet leads by 17.02 mHa at 2.6,
+triplet pair leads by 2.57 mHa at 2.8). Four sd chains compiled
+overnight (--dense-init; pair targets are the eigh MIXTURES -- the
+pair block is CONNECTED here, 1216 at both walks, so projection has
+nothing to split; contrast 3.0, disjoint 608+608). All four
+replay-countersigned at machine precision against independent
+eigenvectors; the replay fidelities reproduce the reported deficits
+exactly (fid = 1 - residual/2), confirming the deficit currency
+from outside the driver.
+
+  state (R)      | E0           | support | len  | grown | len/sup
+  singlet (2.6)  | -74.67329900 | 1108    | 2844 | 1737  | 2.567
+  pair-mix (2.6) | -74.65627775 | 1216    | 2767 | 1552  | 2.276
+  pair-mix (2.8) | -74.64181268 | 1216    | 2767 | 1552  | 2.276
+  singlet (2.8)  | -74.63923918 | 1108    | 2837 | 1730  | 2.560
+
+FALSIFIED (recorded by name): the per-support state-equality
+candidate from 3.0 (2.299 vs 2.304) -- 12% state gaps at both new
+geometries. The 3.0 equality is the point where the decaying
+singlet family (2.890 -> 2.567 -> 2.560 -> 2.299) lands on the flat
+triplet family (2.276 / 2.276 / 2.304). ALSO FALSIFIED: "2.8
+singlet support strictly inside (660, 1108)" -- it is exactly 1108.
+
+SET PINNING, C2 singlet: the SAME 1108 determinants at 2.348, 2.6,
+and 2.8 (1108/1108/1108 pairwise), including at 2.8 where the
+singlet is an EXCITED state -- third pinned system, first strongly
+correlated one; pinning survives the energy crossing. Pair-mixture
+set pinned 2.6 <-> 2.8 (1216/1216), which explains the identical
+lengths (2767) and grown (1552) at the two geometries.
+
+STRUCTURAL LAG: nothing structural moves at the crossing. Inside
+(2.8, 3.0) everything moves at once: the pair block splits (1216
+connected -> 608+608 disjoint), the triplet set turns over (624 of
+1216 persist), and the singlet support MIGRATES rather than prunes
+-- 660 with only 364 inherited from the pinned 1108, 296 new.
+
+Operator level: the 2.8 singlet translation FILLS ITS BLOCK exactly
+(1252 monomials = block 1252, flat tail) -- first full-block
+operator fill, all 144 silent seats occupied. The 2.6 singlet tail
+[1137, 1137, 1109] is the lone non-flat one (+1 monomial over
+support): flagship-style dust, floor-probe candidate. The recurring
+extremal angle ~ -1.5506412 is ABSENT at 2.6/2.8 (max|theta| 1.435
+/ 1.203 / 1.060 / 1.399) -- it belongs to the post-reorganization
+3.0 structures only. Certification identity at 2.8 is 2.4e-13,
+above the old header band; band widened this date.
