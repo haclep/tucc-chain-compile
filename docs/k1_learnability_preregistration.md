@@ -216,3 +216,42 @@ On FAIL: D2 and D4 survive unchanged; D1 survives as verification/
   - Overfitting-to-benchmark: test sets are evaluated once; the
     protocol hash predates training; a clean-checkout replication on
     the second platform is required before any public claim.
+
+## Amendment log
+
+Rev B -- 2026-08-26. Confirmed by Logan ("confirm rev B"),
+PRE-TRAINING: no model has contacted any data; splits v2 generated
+the same date. Rev-A text above is left intact; these amendments
+govern where they conflict.
+
+B.1 P2 theta comparator. "beats B1 copy on THETA" is replaced by:
+    the model must beat the STRONGEST of {B0 frequency, B1 copy,
+    B2 physics} on theta, per fold, CI-separated. The content clause
+    is unchanged (match B1 within CI; an undershoot beyond CI is a
+    failed match). Reason, measured: on the h6_chain_19 smoke fold
+    B0 reaches theta R^2 +0.71 while B1 sits at -0.03; the
+    sign-calibrated B2 reaches +0.73/+0.74/+0.58 on its window. A
+    gate must face the measured-strongest simple predictor, and the
+    strongest one varies by fold.
+
+B.2 B2 sign convention. B2's theta carries exactly ONE global sign,
+    fitted on training folds only and recorded per split -- the
+    convention is measured, never assumed (same discipline as the C4
+    cross-check's conversion map). Measured motivation: uncalibrated
+    B2 sign accuracy was 0.03 (anti-correlated); calibrated, 0.83.
+
+B.3 Section-10 gauge note, sharpened. Degenerate-shell MO gauge is
+    pinned by platform AND by the SCF iteration path INCLUDING the
+    damping schedule (measured: same platform, different damping ->
+    different chain at identical energies). Consequently the
+    k1_corpus dump files are the sole canonical model inputs; per-
+    system damping values are recorded in the mint log.
+
+B.4 Splits v2 (recorded inside splits.json, "splits_revision"):
+    Split-A families extended with lih (5), c2_singlet (4),
+    h2o_fc_series (3), n2_series (3), for 8 families total. Census
+    note logged with it: support COUNT-pinning and SET-pinning come
+    apart (H2O-fc and N2 are count-only) -- set-pinning is
+    molecule-selective, so the per-fold strongest-comparator rule of
+    B.1 is load-bearing.
+
