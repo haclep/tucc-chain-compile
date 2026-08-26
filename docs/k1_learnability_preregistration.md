@@ -255,3 +255,40 @@ B.4 Splits v2 (recorded inside splits.json, "splits_revision"):
     molecule-selective, so the per-fold strongest-comparator rule of
     B.1 is load-bearing.
 
+Rev C -- 2026-08-26. Pre-training: the platform pair passed the same
+date; no model has contacted any data. Trigger: verifier v1 falsified
+its own 1e-9 pointwise-theta tolerance -- an unmeasured assumption,
+corrected by measurement.
+
+C.1 THE THETA-REDUNDANCY MANIFOLD (measured). Compiled chains are
+    overparameterized: length exceeds support-1 in every corpus
+    system, so a manifold of angle vectors of dimension at least
+    len-(support-1) reproduces the target state at the residual
+    floor, and each platform's optimizer parks at a different point
+    on it. Measured, Windows vs Linux, six probe systems: pointwise
+    max|dtheta| spans 2.0e-10 to 7.4e-04, ordered with the
+    redundancy dimension (4 -> 139), while every cross-replay
+    deficit is <= 6.7e-16 -- the same state in different
+    coordinates. This is gauge layer FOUR, alongside MO gauge
+    (degenerate shells), degenerate-partner selection, and chain
+    ordering.
+
+C.2 Verifier criterion, v2 (recorded): a platform-pair pass is
+    exact discrete identity -- letters, order, support, pivot,
+    monomial count -- AND cross-replay deficit <= 1e-11 between the
+    fresh and committed angle vectors applied through the identical
+    letter sequence. Pointwise dtheta is a reported diagnostic,
+    never a pass/fail quantity.
+
+C.3 Theta REPORTING floors. The measured pointwise widths become
+    per-family label-uncertainty floors: h4 families ~1e-9, lih
+    ~4e-8, h6 chains ~2e-5, h6 rings up to ~7e-4. No theta metric
+    (MAE or otherwise) may be quoted below its family's floor, and
+    every theta table in the write-up carries the floor alongside.
+
+C.4 Gates unchanged, with the reason stated: manifold widths
+    (<= 1e-3) are negligible against the theta scale of the physics
+    (0.1-1.5) and the pre-registered targets (R^2 >= 0.5,
+    CI-separated comparisons). P1 and P2 therefore stand exactly as
+    written in Rev B. This amendment changes what may be CLAIMED
+    about precision, not what must be ACHIEVED to pass.
