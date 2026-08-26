@@ -292,3 +292,37 @@ C.4 Gates unchanged, with the reason stated: manifold widths
     CI-separated comparisons). P1 and P2 therefore stand exactly as
     written in Rev B. This amendment changes what may be CLAIMED
     about precision, not what must be ACHIEVED to pass.
+
+Rev D -- 2026-08-26. Confirmed by Logan ("confirm rev D"). Trigger:
+first contact with Split A (M1-v0, evaluation #1) exposed a protocol
+gap -- under leave-one-out folds every system is a held-out system,
+so iterating the model against Split A would constitute test-set
+reuse, and the frozen text defined no development loop.
+
+D.1 DEV PROTOCOL. All model development -- features, architectures,
+    hyperparameters -- is conducted on INNER cross-validation carved
+    from training folds only. No development decision may condition
+    on any held-out system's score. The dev construction is recorded
+    in the dev runner's docstring and committed with it.
+
+D.2 EVALUATION BUDGET. Split-A banked evaluations are capped at
+    exactly TWO: v0 (2026-08-26, table in results/k1_splitA_v0.md,
+    SPENT) and one FINAL M1. Both are published side by side in
+    every report regardless of outcome. The same two-evaluation cap
+    applies prospectively to Splits B, C, D, and E: an optional
+    first look plus a mandatory final; if only one evaluation is
+    ever taken, it is the final.
+
+D.3 THE v0 RECORD: P2 NOT MET at v0. One CI-separated theta win
+    (c2_singlet, dR2 +0.280 +- 0.077 -- the family where every
+    baseline collapses), one CI-separated theta loss (h6_ring,
+    -0.286 +- 0.068), one CI-separated content-match failure
+    (h6_chain, dF1 -0.070 +- 0.015); all other families at
+    statistical parity. The observed pattern -- the model loses at
+    baseline ceilings and wins where baselines break -- is recorded
+    as the standing hypothesis for Split C, where no copy baseline
+    exists.
+
+D.4 Small families (n = 3) remain in every table with their
+    confidence intervals. Nothing is excluded post hoc; low
+    statistical power self-reports through non-separation.
