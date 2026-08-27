@@ -127,10 +127,25 @@ def _grow_once(ct, basis, pivot_mask, seq, thetas, k_pure):
 
 def solve_resumable(ct, basis, pivot_mask, state, deadline_at,
                     fid_tol=1e-12, grow_rounds=28, mirror_exact=False,
-                    log=print, save=lambda: None):
+                    log=print, save=lambda: None, stop_after_greedy=False,
+                    plateau=None):
     """Advance the mirrored _compile_sd loop until done or deadline.
     `state` is a dict mutated in place; `save()` persists it at every
-    phase transition. Returns True when converged."""
+    phase transition. Returns True when converged.
+
+    Harness knobs (K1b-T4 warm-start harness; both default OFF, and
+    with the defaults this function is byte-for-byte the mirror of
+    `_compile_sd` that the test suite certifies):
+      stop_after_greedy -- return (False) as soon as the greedy phase
+        has finished and the state sits at phase 'joint' with nothing
+        solved yet, so a caller may append seed letters before the
+        first Gauss-Newton solve.
+      plateau -- if set (a fraction, e.g. 0.01), a 'joint'/'grow_gn'
+        phase ends early when a completed slice of Gauss-Newton lowers
+        |r| by less than that fraction of its starting value; the
+        phase's remaining iteration budget is forfeited and growth
+        proceeds. Applied identically to every arm of a race.
+    """
     def out_of_time():
         return (not mirror_exact) and time.time() > deadline_at
 
@@ -192,6 +207,8 @@ def solve_resumable(ct, basis, pivot_mask, state, deadline_at,
         state["iters_left"] = 300
         save()
         log(f"greedy done, |r| {state['rn']:.3e}")
+        if stop_after_greedy:
+            return False
         if out_of_time():
             return False
     while state["phase"] in ("joint", "grow_gn"):
@@ -206,6 +223,7 @@ def solve_resumable(ct, basis, pivot_mask, state, deadline_at,
         else:
             budget = state["iters_left"]
         t_sl = time.time()
+        rn_before = state["rn"]
         state["thetas"], state["rn"] = _gauss_newton(
             state["thetas"], state["seq"], basis, pivot_mask, ct,
             tol=1e-13, max_iter=budget, bound=BOUND)
@@ -218,6 +236,11 @@ def solve_resumable(ct, basis, pivot_mask, state, deadline_at,
         if state["rn"] ** 2 < fid_tol:
             state["phase"] = "final"
             break
+        if plateau is not None and rn_before > 0 and \
+                (rn_before - state["rn"]) < plateau * rn_before:
+            log(f"{state['phase']}: plateau exit (slice gain "
+                f"{(rn_before - state['rn']) / rn_before:.2e} < {plateau})")
+            state["iters_left"] = 0
         if state["iters_left"] <= 0:
             if state["phase"] == "joint":
                 state["phase"] = "grow"
@@ -255,7 +278,8 @@ def solve_resumable(ct, basis, pivot_mask, state, deadline_at,
             return False
         # fall back into the GN loop
         return solve_resumable(ct, basis, pivot_mask, state, deadline_at,
-                               fid_tol, grow_rounds, mirror_exact, log)
+                               fid_tol, grow_rounds, mirror_exact, log,
+                               save, plateau=plateau)
     if state["phase"] == "restarts":
         rng = np.random.default_rng(20260803)
         rng.bit_generator.state = state.get(
