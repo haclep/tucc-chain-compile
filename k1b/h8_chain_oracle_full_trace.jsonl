@@ -1,0 +1,53 @@
+{"t_inv": 0.9, "wall_opt": 0.0, "rot": 0, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "routed 2467 letters"}
+{"t_inv": 3.1, "wall_opt": 0.0, "rot": 20120, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 50/2467"}
+{"t_inv": 4.2, "wall_opt": 0.0, "rot": 41280, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 100/2467"}
+{"t_inv": 5.4, "wall_opt": 0.0, "rot": 68520, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 150/2467"}
+{"t_inv": 6.5, "wall_opt": 0.0, "rot": 88740, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 200/2467"}
+{"t_inv": 7.6, "wall_opt": 0.0, "rot": 109080, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 250/2467"}
+{"t_inv": 8.6, "wall_opt": 0.0, "rot": 131120, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 300/2467"}
+{"t_inv": 9.7, "wall_opt": 0.0, "rot": 156360, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 350/2467"}
+{"t_inv": 10.8, "wall_opt": 0.0, "rot": 179540, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 400/2467"}
+{"t_inv": 11.9, "wall_opt": 0.0, "rot": 200680, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 450/2467"}
+{"t_inv": 12.9, "wall_opt": 0.0, "rot": 221880, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 500/2467"}
+{"t_inv": 14.0, "wall_opt": 0.0, "rot": 243140, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 550/2467"}
+{"t_inv": 15.0, "wall_opt": 0.0, "rot": 264300, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 600/2467"}
+{"t_inv": 16.0, "wall_opt": 0.0, "rot": 298400, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 650/2467"}
+{"t_inv": 17.0, "wall_opt": 0.0, "rot": 318400, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 700/2467"}
+{"t_inv": 17.9, "wall_opt": 0.0, "rot": 338400, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 750/2467"}
+{"t_inv": 18.7, "wall_opt": 0.0, "rot": 358400, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 800/2467"}
+{"t_inv": 19.5, "wall_opt": 0.0, "rot": 378400, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 850/2467"}
+{"t_inv": 20.3, "wall_opt": 0.0, "rot": 398940, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 900/2467"}
+{"t_inv": 21.1, "wall_opt": 0.0, "rot": 419600, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 950/2467"}
+{"t_inv": 21.8, "wall_opt": 0.0, "rot": 439600, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 1000/2467"}
+{"t_inv": 22.5, "wall_opt": 0.0, "rot": 459680, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 1050/2467"}
+{"t_inv": 23.2, "wall_opt": 0.0, "rot": 480100, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 1100/2467"}
+{"t_inv": 23.8, "wall_opt": 0.0, "rot": 500100, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 1150/2467"}
+{"t_inv": 24.5, "wall_opt": 0.0, "rot": 520520, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 1200/2467"}
+{"t_inv": 25.1, "wall_opt": 0.0, "rot": 540720, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 1250/2467"}
+{"t_inv": 25.7, "wall_opt": 0.0, "rot": 560900, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 1300/2467"}
+{"t_inv": 26.3, "wall_opt": 0.0, "rot": 583140, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 1350/2467"}
+{"t_inv": 26.8, "wall_opt": 0.0, "rot": 606300, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 1400/2467"}
+{"t_inv": 27.3, "wall_opt": 0.0, "rot": 639400, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 1450/2467"}
+{"t_inv": 27.9, "wall_opt": 0.0, "rot": 659400, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 1500/2467"}
+{"t_inv": 28.4, "wall_opt": 0.0, "rot": 679560, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 1550/2467"}
+{"t_inv": 28.8, "wall_opt": 0.0, "rot": 700420, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 1600/2467"}
+{"t_inv": 29.3, "wall_opt": 0.0, "rot": 720420, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 1650/2467"}
+{"t_inv": 29.6, "wall_opt": 0.0, "rot": 740880, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 1700/2467"}
+{"t_inv": 30.0, "wall_opt": 0.0, "rot": 761260, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 1750/2467"}
+{"t_inv": 30.3, "wall_opt": 0.0, "rot": 781440, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 1800/2467"}
+{"t_inv": 30.6, "wall_opt": 0.0, "rot": 816600, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 1850/2467"}
+{"t_inv": 30.9, "wall_opt": 0.0, "rot": 836600, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 1900/2467"}
+{"t_inv": 31.2, "wall_opt": 0.0, "rot": 856960, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 1950/2467"}
+{"t_inv": 31.4, "wall_opt": 0.0, "rot": 877220, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 2000/2467"}
+{"t_inv": 31.6, "wall_opt": 0.0, "rot": 897440, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 2050/2467"}
+{"t_inv": 31.8, "wall_opt": 0.0, "rot": 922640, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 2100/2467"}
+{"t_inv": 32.0, "wall_opt": 0.0, "rot": 952760, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 2150/2467"}
+{"t_inv": 32.1, "wall_opt": 0.0, "rot": 973280, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 2200/2467"}
+{"t_inv": 32.2, "wall_opt": 0.0, "rot": 993440, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 2250/2467"}
+{"t_inv": 32.3, "wall_opt": 0.0, "rot": 1013760, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 2300/2467"}
+{"t_inv": 32.4, "wall_opt": 0.0, "rot": 1034000, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 2350/2467"}
+{"t_inv": 32.4, "wall_opt": 0.0, "rot": 1054260, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 2400/2467"}
+{"t_inv": 32.4, "wall_opt": 0.0, "rot": 1074560, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 2467, "rn": null, "msg": "greedy 2450/2467"}
+{"t_inv": 32.5, "wall_opt": 0.0, "rot": 2163120, "gn_iters": 0, "phase": "joint", "round": 0, "len": 2467, "rn": 0.021652268664597026, "msg": "greedy done, |r| 2.165e-02"}
+{"t_inv": 34.0, "wall_opt": 0.0, "rot": 0, "gn_iters": 0, "phase": "joint", "round": 0, "len": 6333, "rn": 8.969505899220078e-07, "msg": "seeded arm oracle_full: routed 2467 (+ greedy), proposal +3866 letters; |r| routed 2.165e-02 -> seeded 8.970e-07"}
+{"t_inv": 520.1, "wall_opt": 486.1, "rot": 18568408720, "gn_iters": 2, "phase": "joint", "round": 0, "len": 6333, "rn": 8.763529050538647e-07, "msg": "joint: |r| 8.764e-07 (iters left 298, len 6333)"}

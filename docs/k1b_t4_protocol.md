@@ -210,6 +210,26 @@ results/k1b_t4_n2_3111.md with the four arm reports and the k1b/ traces
 and summaries. H8 launch gate met; the H8 arms run in the Section 10
 order.
 
+2026-08-28 -- H8 TARGET CHECK PASSED; LOOP DEFECT, NO DATA AFFECTED.
+oracle_full on h8_chain (commit 663a146): routed prefix equals the
+certified chain, |r| routed 2.165e-02 -> seeded 8.970e-07 (the campaign
+rn to the digit), 2 GN iterations, 1.8571e10 rotations (= 2 x the
+reconstructed per-iteration work at length 6333, 9.281e9, plus the O(N)
+passes), wall 486 s (243 s per iteration), residual 7.6e-13, E(chain) -
+E0 = 4.2e-12. Banked. Defect: the unattended PowerShell loop failed to
+recognise DONE -- Windows PowerShell 5.1's Tee-Object appends UTF-16
+while the loop's separator lines were UTF-8, and the mixed-encoding log
+defeated the '^DONE' regex -- so the finished arm was re-invoked 105
+times before the 100-invocation cap. Each re-invocation resumed at
+phase 'noc', ran no optimizer phase, re-saved the same state and
+re-wrote the same report: rotation and iteration counts unchanged
+(18,571,263,060 / 2 on every line), wall_opt unchanged to the second,
+trace untouched. The arm report's provenance line therefore reads "106
+invocations"; the arm finished in its first. The loop was replaced by
+one that detects completion from the harness's own summary file
+(k1b/<tag>_summary.json), which exists only when an arm has certified,
+and skips finished arms on rerun. The harness itself is unchanged.
+
 ## 12. Files frozen with this protocol
 
   k1b_warmstart.py           the harness (arms, seeding, counter, reports,

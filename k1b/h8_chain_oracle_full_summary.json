@@ -1,0 +1,40 @@
+{
+ "harness": "k1b-warmstart-1",
+ "git": "663a146",
+ "stem": "h8_chain",
+ "arm": "oracle_full",
+ "order": "rank",
+ "pred_seed": 0,
+ "plateau": 0.01,
+ "target": "checkpoint h8_chain_bigsd.pkl",
+ "n_routed": 2467,
+ "n_seed": 3866,
+ "rn_routed": 0.021652268664597026,
+ "rn_seeded": 8.969505899220078e-07,
+ "final_len": 6333,
+ "ranks": {
+  "2": 6040,
+  "1": 293
+ },
+ "grown": 0,
+ "rounds": 0,
+ "restarts": 0,
+ "max_abs_theta": 1.5346929261558226,
+ "residual": 7.602807272633072e-13,
+ "deficit_recheck": 7.602807272633072e-13,
+ "e0_target": -4.30604886305086,
+ "e_chain": -4.3060488630466285,
+ "rot_prep_uncharged": 5017460,
+ "cost_rot": 18571263060,
+ "cost_gn_iters": 2,
+ "cost_wall_opt_s": 486.2,
+ "invocations": 173,
+ "campaign_len": 6333,
+ "seed_provenance": {
+  "arm": "oracle_full",
+  "order": "rank",
+  "source": "certified chain (label)",
+  "n": 3866,
+  "routed_theta": "certified"
+ }
+}
