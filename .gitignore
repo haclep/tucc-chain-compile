@@ -38,3 +38,8 @@ backup/
 # curated artifacts in data/ are tracked (exception to the scratch rules above)
 !data/*.npz
 !data/*.pkl
+.venv-ml/
+
+# K1 canonical corpus + frozen predictions are provenance objects (tracked)
+!k1_corpus/**/*.npz
+!k1_corpus/**/*.pkl
