@@ -326,3 +326,52 @@ D.3 THE v0 RECORD: P2 NOT MET at v0. One CI-separated theta win
 D.4 Small families (n = 3) remain in every table with their
     confidence intervals. Nothing is excluded post hoc; low
     statistical power self-reports through non-separation.
+
+Rev E -- 2026-08-27. Drafted before the FINAL Split-A evaluation and
+before any contact with Splits B, C, D, E. Committing this amendment
+constitutes confirmation.
+
+E.1 SIZE-SLOPE SECONDARY ENDPOINT (registered pre-Split-C). The
+    trend of Delta(model minus strongest baseline) with system size
+    n in {4, 6, 8} -- families h4_*, h6_*, and the Split-C H8 test
+    -- is a NAMED SECONDARY ENDPOINT, reported with confidence
+    intervals for theta and content separately, no gate attached.
+    Motivation recorded: the commercial thesis locates the learned
+    route's value at scale (session of 2026-08-26; the NN-seeded
+    variational plan B), and the v0 pattern -- the model wins where
+    baselines break -- predicts a positive slope. Registered before
+    Split C is touched so the slope reading cannot be accused of
+    being chosen after the fact.
+
+E.2 P2 ADJUDICATION RULE (fixed pre-final-Split-A). P2 is
+    adjudicated on the AGGREGATE across all Split-A folds, families
+    pooled: fold-level Delta-theta (model minus strongest baseline)
+    and fold-level Delta-F1 (model minus B1), each with a CI over
+    folds; the per-family table is published alongside in full.
+    Rationale recorded: family-wise universal quantification is
+    meaningless at baseline ceilings -- h4_chain baselines sit at
+    theta R^2 0.989 and F1 0.990, leaving no measurable headroom
+    for ANY method -- so a per-family requirement would fail every
+    possible model at the ceiling regardless of merit. This rule is
+    fixed before the final Split-A evaluation exists.
+
+E.3 DEV LEDGER THROUGH THE v1 FREEZE (rev D.1 inner folds only;
+    nulls recorded by name):
+    - C1 (theta head on present-only rows): NULL on both anchors --
+      the zero-pollution hypothesis is falsified.
+    - C2 (neighborhood features, both heads): traded theta for
+      content (ring theta +0.16 -> +0.06 while F1 0.580 -> 0.675);
+      rejected as-is.
+    - C2K (split-head: neighborhood statistics feed the CONTENT
+      head, physics alone feeds the THETA head): ADOPTED -- ring
+      theta +0.183 with the content gain retained; chain F1
+      0.772 -> 0.862; no regressions on lih, h4_ring, c2 anchors.
+      The map's measured layering, recurring as an architecture
+      constraint.
+    - C3 (300 trees, depth 3, lr 0.05): null-to-negative; rejected.
+    - SG (stability-gated neighbor theta): NULL BY MECHANISM -- the
+      gate opens only where pool signs are stable, and ring sign
+      churn is exactly the ring problem.
+    v1 = C1C2K. Known open item, scoped not hidden: ring-family
+    theta remains behind its strongest baseline on inner folds
+    (~+0.18 vs ~+0.45); no tested feature family closed it.
