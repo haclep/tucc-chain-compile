@@ -1,0 +1,40 @@
+{
+ "harness": "k1b-warmstart-1",
+ "git": "6957f89",
+ "stem": "n2_3111",
+ "arm": "b2",
+ "order": "rank",
+ "pred_seed": 0,
+ "plateau": 0.01,
+ "target": "checkpoint n2_3111_bigsd.pkl",
+ "n_routed": 651,
+ "n_seed": 315,
+ "rn_routed": 0.10027604106386277,
+ "rn_seeded": 0.5181357137229826,
+ "final_len": 1221,
+ "ranks": {
+  "2": 1127,
+  "1": 94
+ },
+ "grown": 255,
+ "rounds": 2,
+ "restarts": 0,
+ "max_abs_theta": 1.0972462179923497,
+ "residual": 0.0,
+ "deficit_recheck": 0.0,
+ "e0_target": -107.52560411848427,
+ "e_chain": -107.52560411848424,
+ "rot_prep_uncharged": 561474,
+ "cost_rot": 22238260670,
+ "cost_gn_iters": 152,
+ "cost_wall_opt_s": 555.9,
+ "invocations": 1,
+ "campaign_len": 1323,
+ "seed_provenance": {
+  "arm": "b2",
+  "order": "rank",
+  "source": "k1_harness.b2_physics (MP2 window)",
+  "b2_sign": -1.0,
+  "n": 315
+ }
+}

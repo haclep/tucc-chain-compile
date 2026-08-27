@@ -192,6 +192,24 @@ Invocation: `python -u k1b_warmstart.py h8_chain --arm <arm> --deadline
 
 (empty at freeze)
 
+2026-08-27 -- SHAKEDOWN PASSED on the campaign platform (Windows,
+commit 6957f89); no rule changed. Discrete identity with the Linux
+record of Section 10: cold 1170 letters / 5 rounds / 262 GN iterations,
+b2 1221 / 2 / 152, oracle_content 1323 / 0 / 12, oracle_full 1323 / 0 /
+2; the routed prefix equals the certified chain (oracle_full assertion
+held on both platforms); joint-phase |r| trajectories identical to four
+digits; every arm certified (cold and b2 residual 0.0, E(chain) - E0 <=
+5.7e-14). Rotation counts, Windows vs Linux: cold 2.74343e10 vs
+2.74367e10 (+0.009%), b2 2.22383e10 vs 2.22523e10 (+0.063%),
+oracle_content 2.66169e9 vs 2.66201e9 (+0.012%), oracle_full 4.40636e8
+vs 4.40950e8 (+0.071%) -- Linux higher by whole line-search trial passes
+(the O(N) term; optimizer-fence jitter), the O(N^2) Jacobian work
+identical. The governing currency is platform-reproducible three orders
+of magnitude below the 30 percent threshold. Windows scoreboard banked as
+results/k1b_t4_n2_3111.md with the four arm reports and the k1b/ traces
+and summaries. H8 launch gate met; the H8 arms run in the Section 10
+order.
+
 ## 12. Files frozen with this protocol
 
   k1b_warmstart.py           the harness (arms, seeding, counter, reports,

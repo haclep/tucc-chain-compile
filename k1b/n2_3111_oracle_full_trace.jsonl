@@ -1,0 +1,17 @@
+{"t_inv": 0.2, "wall_opt": 0.0, "rot": 0, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 651, "rn": null, "msg": "routed 651 letters"}
+{"t_inv": 0.8, "wall_opt": 0.0, "rot": 12473, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 651, "rn": null, "msg": "greedy 50/651"}
+{"t_inv": 1.0, "wall_opt": 0.0, "rot": 24327, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 651, "rn": null, "msg": "greedy 100/651"}
+{"t_inv": 1.3, "wall_opt": 0.0, "rot": 36178, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 651, "rn": null, "msg": "greedy 150/651"}
+{"t_inv": 1.4, "wall_opt": 0.0, "rot": 48033, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 651, "rn": null, "msg": "greedy 200/651"}
+{"t_inv": 1.6, "wall_opt": 0.0, "rot": 59891, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 651, "rn": null, "msg": "greedy 250/651"}
+{"t_inv": 1.8, "wall_opt": 0.0, "rot": 71131, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 651, "rn": null, "msg": "greedy 300/651"}
+{"t_inv": 1.9, "wall_opt": 0.0, "rot": 82364, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 651, "rn": null, "msg": "greedy 350/651"}
+{"t_inv": 2.0, "wall_opt": 0.0, "rot": 93604, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 651, "rn": null, "msg": "greedy 400/651"}
+{"t_inv": 2.1, "wall_opt": 0.0, "rot": 104841, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 651, "rn": null, "msg": "greedy 450/651"}
+{"t_inv": 2.2, "wall_opt": 0.0, "rot": 119151, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 651, "rn": null, "msg": "greedy 500/651"}
+{"t_inv": 2.2, "wall_opt": 0.0, "rot": 131625, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 651, "rn": null, "msg": "greedy 550/651"}
+{"t_inv": 2.3, "wall_opt": 0.0, "rot": 145942, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 651, "rn": null, "msg": "greedy 600/651"}
+{"t_inv": 2.3, "wall_opt": 0.0, "rot": 157178, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 651, "rn": null, "msg": "greedy 650/651"}
+{"t_inv": 2.3, "wall_opt": 0.0, "rot": 314806, "gn_iters": 0, "phase": "joint", "round": 0, "len": 651, "rn": 0.10027604106386277, "msg": "greedy done, |r| 1.003e-01"}
+{"t_inv": 3.5, "wall_opt": 0.0, "rot": 0, "gn_iters": 0, "phase": "joint", "round": 0, "len": 1323, "rn": 8.967777538251342e-07, "msg": "seeded arm oracle_full: routed 651 (+ greedy), proposal +672 letters; |r| routed 1.003e-01 -> seeded 8.968e-07"}
+{"t_inv": 15.9, "wall_opt": 12.4, "rot": 440305556, "gn_iters": 2, "phase": "joint", "round": 0, "len": 1323, "rn": 8.954453914388422e-07, "msg": "joint: |r| 8.954e-07 (iters left 298, len 1323)"}
