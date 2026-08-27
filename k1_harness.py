@@ -87,13 +87,19 @@ def kendall_first(pw, tw):
 
 
 def spacing_of(name):
-    return int(name.split("_")[-1])
+    tail = name.split("_root")[0].split("_")[-1]
+    if tail == "sto3g":
+        return 30
+    try:
+        return int(tail)
+    except ValueError:
+        return 0
 
 
 def b1_copy(train_names, held, labs):
-    fam = "_".join(held.split("_")[1:3])
-    cands = [n for n in train_names if "_".join(n.split("_")[1:3]) == fam]
-    src = min(cands, key=lambda n: abs(spacing_of(n) - spacing_of(held)))
+    # folds are family-scoped by construction: the train list IS the pool
+    src = min(train_names,
+              key=lambda n: abs(spacing_of(n) - spacing_of(held)))
     return labs[src]["word"], labs[src]["th"], src
 
 
