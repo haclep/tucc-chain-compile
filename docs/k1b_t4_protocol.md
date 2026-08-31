@@ -243,3 +243,18 @@ and skips finished arms on rerun. The harness itself is unchanged.
                              stop-after-greedy halts at joint, a known-
                              answer seed reaches the gate with no growth,
                              round-robin never adjacent
+
+**2026-08-30 — Ordering-gauge provenance (recording only; no rule change).**
+Chen, Cheng & Freericks, arXiv:2109.13461v1 (2021), states in print that the
+factorized form is ordering-dependent because factors do not commute, and that
+a chosen ordering imposes constraints on the amplitudes. The protocol's
+treatment of ordering (§1, L3) as partially gauge-dependent is therefore
+corroborated by the primary literature, not inferred from campaign data alone.
+No threshold, baseline, or arm definition is affected.
+
+**2026-08-30 — B2 provenance (recording only; no rule change).**
+B2's perturbative selection-and-ordering scheme is the published strategy of
+Chen, Cheng & Freericks, arXiv:2008.06637v2 (2020), adopted there on the stated
+assumption that later factors are less relevant, with improved screening left
+explicitly to future work. B2 is a literature baseline, not an internally
+devised one. To be stated as such in the write-up. No rule change.
