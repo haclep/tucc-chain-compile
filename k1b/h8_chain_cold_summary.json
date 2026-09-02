@@ -1,0 +1,37 @@
+{
+ "harness": "k1b-warmstart-1",
+ "git": "89e3c9c",
+ "stem": "h8_chain",
+ "arm": "cold",
+ "order": "rank",
+ "pred_seed": 0,
+ "plateau": 0.01,
+ "target": "checkpoint h8_chain_bigsd.pkl",
+ "n_routed": 2467,
+ "n_seed": 0,
+ "rn_routed": 0.021652268664597026,
+ "rn_seeded": 0.021652268664597026,
+ "final_len": 7113,
+ "ranks": {
+  "2": 6251,
+  "1": 862
+ },
+ "grown": 4646,
+ "rounds": 9,
+ "restarts": 0,
+ "max_abs_theta": 1.0633616064679876,
+ "residual": 8.941736240331011e-13,
+ "deficit_recheck": 8.941736240331011e-13,
+ "e0_target": -4.30604886305086,
+ "e_chain": -4.3060488630458575,
+ "rot_prep_uncharged": 3244680,
+ "cost_rot": 12255796099500,
+ "cost_gn_iters": 1612,
+ "cost_wall_opt_s": 369560.5,
+ "invocations": 31,
+ "campaign_len": 6333,
+ "seed_provenance": {
+  "arm": "cold",
+  "order": "rank"
+ }
+}
