@@ -258,3 +258,48 @@ Chen, Cheng & Freericks, arXiv:2008.06637v2 (2020), adopted there on the stated
 assumption that later factors are less relevant, with improved screening left
 explicitly to future work. B2 is a literature baseline, not an internally
 devised one. To be stated as such in the write-up. No rule change.
+
+**2026-08-31 — Console stall on the unattended loop; ~25 h idle, no data affected. (Recorded 2026-09-02.)**
+A click inside the loop's console window on 2026-08-30 placed Windows
+PowerShell 5.1 in QuickEdit selection mode, blocking the host's screen write
+and therefore the pipeline. Python was not blocked: invocation 18 of the cold
+arm completed its full slice (40 iterations to it 1212, 7.406e12 rotations,
+12,999 s wall_opt), saved state, and exited normally at approximately 20:49.
+The loop, blocked downstream, did not launch invocation 19 until the console
+was released at 22:03 on 2026-08-31. Consequence is approximately 25 hours of
+idle machine time and nothing else: checkpoint intact, trajectory resumed
+deterministically, rotation and iteration counts unaffected. QuickEdit
+disabled on the running console; loop to change to log-only output at next
+restart. Harness unchanged.
+
+**2026-09-02 — Cold arm banked; forecast audit; pred seed observation.**
+
+Cold: certified at 1.2256e13 rotations, 1612 GN iterations, 9 growth
+rounds, 0 restarts, 7113 letters (2467 routed, 4646 grown), R = 8.9e-13
+(recheck identical), E(chain) - E0 = 5.0e-12, 31 invocations, wall_opt
+369,560 s. Cost is within about 1 percent of the campaign's own compile
+of the same state (6333 letters, ~1.21e13); the plateau rule did not
+reduce cold cost on H8 as it did on N2. Finding, not defect.
+
+Falsified: the protocol's 2-4e12 forecast and the milestone's 5.5-7e12
+projection. Mechanism now visible in the staircase: round 8 (len 6323)
+never met the 0.01 plateau rule and ran its full 400-iteration budget,
+costing 4.4e12 rotations (36 percent of the arm) to contract |r| by
+about 3x; rounds 6-9 together are 87 percent of the cost. Neither
+forecast modeled a slow late round running to budget.
+
+Observation for K1c and the canonical path together (no change to the
+frozen rule for any arm of this race): an exit rule comparing projected
+cost-to-gate against the cost of a growth step would likely have saved
+2-3e12 on cold. Recorded as a post-run improvement candidate per the
+C2 session record's handling of plateau-exit changes.
+
+Pred seed (arm running): |r| routed 2.165e-02 -> seeded 3.585e-01 with
+383 proposed letters at predicted angles; the joint solve erased the
+angle damage in 12 iterations and reached 9.7e-04 at 2850 letters,
+below cold's joint floor of 3.529e-03 at 2467. Theta transfer confirmed
+harmful but costless on the real system; content confirmed useful.
+Pre-registered pred forecast of about 10 percent saving stands.
+
+Provenance: harness code unchanged since 89e3c9c. Commits after it are
+results and docs only; arm reports started later may cite a later hash.
