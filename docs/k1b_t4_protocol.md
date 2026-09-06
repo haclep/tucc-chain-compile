@@ -303,3 +303,35 @@ Pre-registered pred forecast of about 10 percent saving stands.
 
 Provenance: harness code unchanged since 89e3c9c. Commits after it are
 results and docs only; arm reports started later may cite a later hash.
+
+**2026-09-05 — Pred arm banked; rotation leg of P1 decided.**
+
+Pred certified at 9.9446e12 rotations, 1432 GN iterations, 7 growth rounds,
+0 restarts, 6495 letters (2467 routed + 383 proposed + 3645 grown), R = 9.3e-13
+(recheck identical), E(chain) - E0 = 5.30e-12, 25 invocations, wall_opt
+297,641 s. Proposal: 383 letters, 300 distinct, predictions_splitC_h8.pkl,
+pred_seed 0, config C1C2K.
+
+Saving versus cold: 18.9 percent of rotations, 11.2 percent of iterations,
+8.7 percent of final length, 21.5 percent of grown letters, 2 growth rounds.
+The P1 rotation leg (>= 30 percent, i.e. <= 8.58e12) FAILS. The comparative
+clause (>= 1.3x B2's saving) remains open pending the B2 arm; it requires
+B2 above 8.06e12.
+
+Mechanism: the saving is in search, not optimization. Iterations fell 11
+percent while grown letters fell 22 percent, so the proposal shortened the
+growth search rather than accelerating the solve. Combined with the seed
+line (angles harmful, erased in 12 iterations; letters useful, two rounds
+removed), the K1c design conclusion is to propose letters at theta = 0 and
+spend no model capacity on angles.
+
+Context: oracle_full on the same target cost 1.857e10, a 660x saving against
+cold. A model with sub-48-percent vocabulary coverage and failed angle
+regression captured 18.9 percent of an available 99.85 percent. Read as
+undertrained model on a learnable task, not as an unlearnable task.
+
+Forecast audit: three in-session forecasts of this arm (6-14, 16, 19-24
+percent) bracketed the outcome but the first two were low. Cause: assuming
+pred would suffer a grinding late round comparable to cold's round 8. It
+suffered one that was cheaper (3.7e12 vs 4.4e12) and more productive
+(5.2x vs 3x residual contraction) on a chain 9 percent shorter.
