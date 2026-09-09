@@ -1,0 +1,43 @@
+{
+ "harness": "k1b-warmstart-1",
+ "git": "75754a3",
+ "stem": "k1_h6_ring_22",
+ "arm": "pred",
+ "order": "rank",
+ "pred_seed": 0,
+ "plateau": 0.01,
+ "target": "dense eigh of the dump (root 0)",
+ "n_routed": 159,
+ "n_seed": 531,
+ "rn_routed": 0.008321006007398157,
+ "rn_seeded": 0.008321006007398157,
+ "final_len": 690,
+ "ranks": {
+  "2": 652,
+  "1": 38
+ },
+ "grown": 0,
+ "rounds": 0,
+ "restarts": 0,
+ "max_abs_theta": 0.5767191812048733,
+ "residual": 0.0,
+ "deficit_recheck": 0.0,
+ "e0_target": -3.1917463772907197,
+ "e_chain": -3.1917463772907233,
+ "rot_prep_uncharged": 21944156,
+ "cost_rot": 49604192,
+ "cost_gn_iters": 5,
+ "cost_wall_opt_s": 39.1,
+ "invocations": 1,
+ "campaign_len": null,
+ "seed_provenance": {
+  "arm": "pred",
+  "order": "rank",
+  "source": "k1_h6_ring_22_poolall.pkl",
+  "pred_seed": 0,
+  "config": "K1c-poolall",
+  "insert": "post-joint",
+  "n": 531,
+  "n_distinct": 531
+ }
+}
