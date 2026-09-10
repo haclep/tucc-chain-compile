@@ -1,0 +1,14 @@
+{"t_inv": 0.0, "wall_opt": 0.0, "rot": 0, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 159, "rn": null, "msg": "routed 159 letters"}
+{"t_inv": 0.1, "wall_opt": 0.0, "rot": 1840, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 159, "rn": null, "msg": "greedy 50/159"}
+{"t_inv": 0.1, "wall_opt": 0.0, "rot": 4116, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 159, "rn": null, "msg": "greedy 100/159"}
+{"t_inv": 0.2, "wall_opt": 0.0, "rot": 6200, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 159, "rn": null, "msg": "greedy 150/159"}
+{"t_inv": 0.2, "wall_opt": 0.0, "rot": 13064, "gn_iters": 0, "phase": "joint", "round": 0, "len": 159, "rn": 0.015636407690299794, "msg": "greedy done, |r| 1.564e-02"}
+{"t_inv": 3.3, "wall_opt": 0.0, "rot": 5490252, "gn_iters": 10, "phase": "joint", "round": 0, "len": 159, "rn": 0.0033631559624289426, "msg": "prejoint: |r| 3.363e-03 (iters left 290, len 159)"}
+{"t_inv": 6.1, "wall_opt": 0.0, "rot": 10960908, "gn_iters": 20, "phase": "joint", "round": 0, "len": 159, "rn": 0.002451342868955276, "msg": "prejoint: |r| 2.451e-03 (iters left 280, len 159)"}
+{"t_inv": 9.3, "wall_opt": 0.0, "rot": 16431564, "gn_iters": 30, "phase": "joint", "round": 0, "len": 159, "rn": 0.002386965073725314, "msg": "prejoint: |r| 2.387e-03 (iters left 270, len 159)"}
+{"t_inv": 13.6, "wall_opt": 0.0, "rot": 21902220, "gn_iters": 40, "phase": "joint", "round": 0, "len": 159, "rn": 0.002383091760826739, "msg": "prejoint: |r| 2.383e-03 (iters left 260, len 159)"}
+{"t_inv": 13.6, "wall_opt": 0.0, "rot": 21902220, "gn_iters": 40, "phase": "joint", "round": 0, "len": 159, "rn": 0.002383091760826739, "msg": "prejoint: plateau exit (slice gain 1.62e-03 < 0.01)"}
+{"t_inv": 13.6, "wall_opt": 0.0, "rot": 21902220, "gn_iters": 40, "phase": "joint", "round": 0, "len": 159, "rn": 0.002383091760826739, "msg": "post-joint insertion point: |r| 2.383e-03 after the uncharged joint solve; proposal appended next"}
+{"t_inv": 13.7, "wall_opt": 0.0, "rot": 0, "gn_iters": 0, "phase": "joint", "round": 0, "len": 674, "rn": 0.002383091760826739, "msg": "seeded arm pred: routed 159 (+ greedy), proposal +515 letters; |r| routed 2.383e-03 -> seeded 2.383e-03"}
+{"t_inv": 17.1, "wall_opt": 3.4, "rot": 18992152, "gn_iters": 2, "phase": "joint", "round": 0, "len": 674, "rn": 0.00011184847516388105, "msg": "joint: |r| 1.118e-04 (iters left 298, len 674)"}
+{"t_inv": 22.8, "wall_opt": 9.1, "rot": 47466424, "gn_iters": 5, "phase": "joint", "round": 0, "len": 674, "rn": 7.331966791004915e-16, "msg": "joint: |r| 7.332e-16 (iters left 288, len 674)"}

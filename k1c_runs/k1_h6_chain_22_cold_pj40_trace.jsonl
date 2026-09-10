@@ -1,0 +1,22 @@
+{"t_inv": 0.1, "wall_opt": 0.0, "rot": 0, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 199, "rn": null, "msg": "routed 199 letters"}
+{"t_inv": 0.1, "wall_opt": 0.0, "rot": 1836, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 199, "rn": null, "msg": "greedy 50/199"}
+{"t_inv": 0.2, "wall_opt": 0.0, "rot": 3996, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 199, "rn": null, "msg": "greedy 100/199"}
+{"t_inv": 0.2, "wall_opt": 0.0, "rot": 6580, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 199, "rn": null, "msg": "greedy 150/199"}
+{"t_inv": 0.2, "wall_opt": 0.0, "rot": 17304, "gn_iters": 0, "phase": "joint", "round": 0, "len": 199, "rn": 0.022470366542328712, "msg": "greedy done, |r| 2.247e-02"}
+{"t_inv": 2.5, "wall_opt": 0.0, "rot": 9142464, "gn_iters": 10, "phase": "joint", "round": 0, "len": 199, "rn": 0.0052948210799177884, "msg": "prejoint: |r| 5.295e-03 (iters left 30, len 199)"}
+{"t_inv": 5.1, "wall_opt": 0.0, "rot": 18267624, "gn_iters": 20, "phase": "joint", "round": 0, "len": 199, "rn": 0.0020158909982328312, "msg": "prejoint: |r| 2.016e-03 (iters left 20, len 199)"}
+{"t_inv": 7.8, "wall_opt": 0.0, "rot": 27384132, "gn_iters": 30, "phase": "joint", "round": 0, "len": 199, "rn": 0.0011182030085254797, "msg": "prejoint: |r| 1.118e-03 (iters left 10, len 199)"}
+{"t_inv": 10.3, "wall_opt": 0.0, "rot": 36491988, "gn_iters": 40, "phase": "joint", "round": 0, "len": 199, "rn": 0.0006971102191145888, "msg": "prejoint: |r| 6.971e-04 (iters left 0, len 199)"}
+{"t_inv": 10.3, "wall_opt": 0.0, "rot": 36491988, "gn_iters": 40, "phase": "joint", "round": 0, "len": 199, "rn": 0.0006971102191145888, "msg": "post-joint insertion point: |r| 6.971e-04 after the uncharged joint solve; proposal appended next"}
+{"t_inv": 10.3, "wall_opt": 0.0, "rot": 0, "gn_iters": 0, "phase": "joint", "round": 0, "len": 199, "rn": 0.0006971102191145888, "msg": "seeded arm cold: routed 199 (+ greedy), proposal +0 letters; |r| routed 6.971e-04 -> seeded 6.971e-04"}
+{"t_inv": 10.7, "wall_opt": 0.4, "rot": 1842336, "gn_iters": 2, "phase": "joint", "round": 0, "len": 199, "rn": 0.000623149985112592, "msg": "joint: |r| 6.231e-04 (iters left 298, len 199)"}
+{"t_inv": 13.4, "wall_opt": 3.1, "rot": 10950192, "gn_iters": 12, "phase": "joint", "round": 0, "len": 199, "rn": 0.0005480271454175718, "msg": "joint: |r| 5.480e-04 (iters left 288, len 199)"}
+{"t_inv": 16.0, "wall_opt": 5.7, "rot": 20058048, "gn_iters": 22, "phase": "joint", "round": 0, "len": 199, "rn": 0.00041380687957085144, "msg": "joint: |r| 4.138e-04 (iters left 278, len 199)"}
+{"t_inv": 18.8, "wall_opt": 8.5, "rot": 29165904, "gn_iters": 32, "phase": "joint", "round": 0, "len": 199, "rn": 0.0003453295048591277, "msg": "joint: |r| 3.453e-04 (iters left 268, len 199)"}
+{"t_inv": 21.4, "wall_opt": 11.1, "rot": 38273760, "gn_iters": 42, "phase": "joint", "round": 0, "len": 199, "rn": 0.0003445994231481533, "msg": "joint: |r| 3.446e-04 (iters left 258, len 199)"}
+{"t_inv": 21.4, "wall_opt": 11.1, "rot": 38273760, "gn_iters": 42, "phase": "joint", "round": 0, "len": 199, "rn": 0.0003445994231481533, "msg": "joint: plateau exit (slice gain 2.11e-03 < 0.01)"}
+{"t_inv": 21.5, "wall_opt": 11.2, "rot": 38282412, "gn_iters": 42, "phase": "grow_gn", "round": 1, "len": 223, "rn": 0.0003445994231481533, "msg": "grow round 1: +24 letters (len 223)"}
+{"t_inv": 25.0, "wall_opt": 14.8, "rot": 49233180, "gn_iters": 52, "phase": "grow_gn", "round": 1, "len": 223, "rn": 3.9833323339514034e-05, "msg": "grow_gn: |r| 3.983e-05 (iters left 390, len 223)"}
+{"t_inv": 28.4, "wall_opt": 18.2, "rot": 60183948, "gn_iters": 62, "phase": "grow_gn", "round": 1, "len": 223, "rn": 1.3893121314739767e-05, "msg": "grow_gn: |r| 1.389e-05 (iters left 380, len 223)"}
+{"t_inv": 31.9, "wall_opt": 21.6, "rot": 71125200, "gn_iters": 72, "phase": "grow_gn", "round": 1, "len": 223, "rn": 4.348215674591857e-06, "msg": "grow_gn: |r| 4.348e-06 (iters left 370, len 223)"}
+{"t_inv": 34.3, "wall_opt": 24.0, "rot": 79853460, "gn_iters": 80, "phase": "grow_gn", "round": 1, "len": 223, "rn": 1.1202466035301981e-14, "msg": "grow_gn: |r| 1.120e-14 (iters left 360, len 223)"}

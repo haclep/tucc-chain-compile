@@ -1,0 +1,102 @@
+{
+ "name": "h8_chain",
+ "n_routed": 2467,
+ "portion": "grown",
+ "members": {
+  "campaign": {
+   "len": 6333,
+   "grown": 3866,
+   "depth": 5305,
+   "depth_canonical": 5305,
+   "grown_mass_in_core": 0.46326952922917747
+  },
+  "cold": {
+   "len": 7113,
+   "grown": 4646,
+   "depth": 5703,
+   "depth_canonical": 5703,
+   "grown_mass_in_core": 0.38549289711579854
+  },
+  "oracle_full": {
+   "len": 6333,
+   "grown": 3866,
+   "depth": 5305,
+   "depth_canonical": 5305,
+   "grown_mass_in_core": 0.46326952922917747
+  },
+  "pred_s0": {
+   "len": 6495,
+   "grown": 4028,
+   "depth": 5091,
+   "depth_canonical": 5091,
+   "grown_mass_in_core": 0.44463753723932475
+  }
+ },
+ "pairs": {
+  "campaign|cold": {
+   "P": 0.6707190894981894,
+   "R": 0.5581145071028842,
+   "F1": 0.6092575187969925,
+   "msetJ": 0.4380807568846089,
+   "n_shared_distinct": 762,
+   "order_raw": 0.3021252938688213,
+   "order_can": 0.3023689553182156,
+   "angle_pearson": 0.2181902928676319
+  },
+  "campaign|oracle_full": {
+   "P": 1.0,
+   "R": 1.0,
+   "F1": 1.0,
+   "msetJ": 1.0,
+   "n_shared_distinct": 921,
+   "order_raw": 1.0,
+   "order_can": 1.0,
+   "angle_pearson": 0.9999950016239959
+  },
+  "campaign|pred_s0": {
+   "P": 0.5610450077599586,
+   "R": 0.538480635551142,
+   "F1": 0.549531289587028,
+   "msetJ": 0.3788646288209607,
+   "n_shared_distinct": 638,
+   "order_raw": 0.09564114739997626,
+   "order_can": 0.09603784591642776,
+   "angle_pearson": 0.23901123447550257
+  },
+  "cold|oracle_full": {
+   "P": 0.5581145071028842,
+   "R": 0.6707190894981894,
+   "F1": 0.6092575187969925,
+   "msetJ": 0.4380807568846089,
+   "n_shared_distinct": 762,
+   "order_raw": 0.3021252938688213,
+   "order_can": 0.3023689553182156,
+   "angle_pearson": 0.21793448767181373
+  },
+  "cold|pred_s0": {
+   "P": 0.6177356866121395,
+   "R": 0.7125124131082423,
+   "F1": 0.6617477519022367,
+   "msetJ": 0.494486560992419,
+   "n_shared_distinct": 594,
+   "order_raw": 0.14722156019646343,
+   "order_can": 0.14748413750496872,
+   "angle_pearson": 0.8500037810925517
+  },
+  "oracle_full|pred_s0": {
+   "P": 0.5610450077599586,
+   "R": 0.538480635551142,
+   "F1": 0.549531289587028,
+   "msetJ": 0.3788646288209607,
+   "n_shared_distinct": 638,
+   "order_raw": 0.09564114739997626,
+   "order_can": 0.09603784591642776,
+   "angle_pearson": 0.23886109582850001
+  }
+ },
+ "core_mass": 1791,
+ "core_distinct": 555,
+ "union_mass": 6699,
+ "union_distinct": 1070,
+ "verify": {}
+}
