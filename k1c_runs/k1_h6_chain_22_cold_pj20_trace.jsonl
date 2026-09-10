@@ -1,0 +1,21 @@
+{"t_inv": 0.1, "wall_opt": 0.0, "rot": 0, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 199, "rn": null, "msg": "routed 199 letters"}
+{"t_inv": 0.1, "wall_opt": 0.0, "rot": 1836, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 199, "rn": null, "msg": "greedy 50/199"}
+{"t_inv": 0.2, "wall_opt": 0.0, "rot": 3996, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 199, "rn": null, "msg": "greedy 100/199"}
+{"t_inv": 0.2, "wall_opt": 0.0, "rot": 6580, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 199, "rn": null, "msg": "greedy 150/199"}
+{"t_inv": 0.2, "wall_opt": 0.0, "rot": 17304, "gn_iters": 0, "phase": "joint", "round": 0, "len": 199, "rn": 0.022470366542328712, "msg": "greedy done, |r| 2.247e-02"}
+{"t_inv": 2.2, "wall_opt": 0.0, "rot": 9142464, "gn_iters": 10, "phase": "joint", "round": 0, "len": 199, "rn": 0.0052948210799177884, "msg": "prejoint: |r| 5.295e-03 (iters left 10, len 199)"}
+{"t_inv": 4.0, "wall_opt": 0.0, "rot": 18267624, "gn_iters": 20, "phase": "joint", "round": 0, "len": 199, "rn": 0.0020158909982328312, "msg": "prejoint: |r| 2.016e-03 (iters left 0, len 199)"}
+{"t_inv": 4.0, "wall_opt": 0.0, "rot": 18267624, "gn_iters": 20, "phase": "joint", "round": 0, "len": 199, "rn": 0.0020158909982328312, "msg": "post-joint insertion point: |r| 2.016e-03 after the uncharged joint solve; proposal appended next"}
+{"t_inv": 4.0, "wall_opt": 0.0, "rot": 0, "gn_iters": 0, "phase": "joint", "round": 0, "len": 199, "rn": 0.0020158909982328312, "msg": "seeded arm cold: routed 199 (+ greedy), proposal +0 letters; |r| routed 2.016e-03 -> seeded 2.016e-03"}
+{"t_inv": 4.7, "wall_opt": 0.6, "rot": 1859640, "gn_iters": 2, "phase": "joint", "round": 0, "len": 199, "rn": 0.001831845857332864, "msg": "joint: |r| 1.832e-03 (iters left 298, len 199)"}
+{"t_inv": 6.4, "wall_opt": 2.3, "rot": 10976148, "gn_iters": 12, "phase": "joint", "round": 0, "len": 199, "rn": 0.0011237744368609126, "msg": "joint: |r| 1.124e-03 (iters left 288, len 199)"}
+{"t_inv": 7.7, "wall_opt": 3.7, "rot": 20084004, "gn_iters": 22, "phase": "joint", "round": 0, "len": 199, "rn": 0.0006890540669531626, "msg": "joint: |r| 6.891e-04 (iters left 278, len 199)"}
+{"t_inv": 9.1, "wall_opt": 5.0, "rot": 29191860, "gn_iters": 32, "phase": "joint", "round": 0, "len": 199, "rn": 0.00041049622707350046, "msg": "joint: |r| 4.105e-04 (iters left 268, len 199)"}
+{"t_inv": 10.6, "wall_opt": 6.5, "rot": 38299716, "gn_iters": 42, "phase": "joint", "round": 0, "len": 199, "rn": 0.00034563636135909404, "msg": "joint: |r| 3.456e-04 (iters left 258, len 199)"}
+{"t_inv": 12.1, "wall_opt": 8.1, "rot": 47407572, "gn_iters": 52, "phase": "joint", "round": 0, "len": 199, "rn": 0.0003446018585513033, "msg": "joint: |r| 3.446e-04 (iters left 248, len 199)"}
+{"t_inv": 12.1, "wall_opt": 8.1, "rot": 47407572, "gn_iters": 52, "phase": "joint", "round": 0, "len": 199, "rn": 0.0003446018585513033, "msg": "joint: plateau exit (slice gain 2.99e-03 < 0.01)"}
+{"t_inv": 12.2, "wall_opt": 8.2, "rot": 47416224, "gn_iters": 52, "phase": "grow_gn", "round": 1, "len": 223, "rn": 0.0003446018585513033, "msg": "grow round 1: +24 letters (len 223)"}
+{"t_inv": 14.3, "wall_opt": 10.3, "rot": 58366992, "gn_iters": 62, "phase": "grow_gn", "round": 1, "len": 223, "rn": 3.993621856020691e-05, "msg": "grow_gn: |r| 3.994e-05 (iters left 390, len 223)"}
+{"t_inv": 15.9, "wall_opt": 11.9, "rot": 69317760, "gn_iters": 72, "phase": "grow_gn", "round": 1, "len": 223, "rn": 1.3939925367749813e-05, "msg": "grow_gn: |r| 1.394e-05 (iters left 380, len 223)"}
+{"t_inv": 17.6, "wall_opt": 13.5, "rot": 80259012, "gn_iters": 82, "phase": "grow_gn", "round": 1, "len": 223, "rn": 4.44089561955454e-06, "msg": "grow_gn: |r| 4.441e-06 (iters left 370, len 223)"}
+{"t_inv": 18.6, "wall_opt": 14.6, "rot": 88987272, "gn_iters": 90, "phase": "grow_gn", "round": 1, "len": 223, "rn": 1.2204043285632037e-14, "msg": "grow_gn: |r| 1.220e-14 (iters left 360, len 223)"}
