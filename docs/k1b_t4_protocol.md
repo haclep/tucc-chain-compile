@@ -335,3 +335,19 @@ percent) bracketed the outcome but the first two were low. Cause: assuming
 pred would suffer a grinding late round comparable to cold's round 8. It
 suffered one that was cheaper (3.7e12 vs 4.4e12) and more productive
 (5.2x vs 3x residual contraction) on a chain 9 percent shorter.
+
+**2026-09-10 — b2 interrupted by an unattended Windows update; environment rebuilt.**
+The campaign process was killed overnight during round 8 of the b2 arm.
+State at the last checkpoint: round 8 start, 7,249 letters, |r| 2.537e-06,
+1.112e13 rotations, iteration 1412, invocation 30. Work since that
+checkpoint is re-walked deterministically on resume; no effect on the
+currency. The environment that ran invocations 1-30 (.venv) was no longer
+present. Invocations 31 onward run under .venv rebuilt from the k1c
+environment's package set (requirements-campaign.txt: Python 3.11.10,
+numpy 2.4.6, numba 0.67.0, scikit-learn 1.9.0), which reproduced the Linux
+sandbox's rotation counts on every H6 race. A change of numeric build can
+alter last-digit summation order (0.07 percent on N2; a discrete divergence
+on a symmetric H6 ring); risk accepted and recorded. Windows updates
+paused. The loop now runs from run_k1b_loop.ps1 with log-only output.
+The comparative clause is already decided: b2 at 1.112e13 exceeds the
+1.048e13 threshold with a round remaining, so pred clears it.
