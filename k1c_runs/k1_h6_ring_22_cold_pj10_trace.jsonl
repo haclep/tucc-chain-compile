@@ -41,3 +41,46 @@
 {"t_inv": 73.5, "wall_opt": 71.7, "rot": 283470732, "gn_iters": 192, "phase": "grow_gn", "round": 6, "len": 319, "rn": 0.0003003888362929334, "msg": "grow_gn: plateau exit (slice gain 3.72e-07 < 0.01)"}
 {"t_inv": 73.5, "wall_opt": 71.7, "rot": 283485552, "gn_iters": 192, "phase": "grow_gn", "round": 7, "len": 358, "rn": 0.0003003888362929334, "msg": "grow round 7: +39 letters (len 358)"}
 {"t_inv": 80.7, "wall_opt": 78.8, "rot": 312879172, "gn_iters": 201, "phase": "grow_gn", "round": 7, "len": 358, "rn": 6.647506481472636e-15, "msg": "grow_gn: |r| 6.648e-15 (iters left 390, len 358)"}
+{"t_inv": 0.0, "wall_opt": 0.0, "rot": 0, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 159, "rn": null, "msg": "routed 159 letters"}
+{"t_inv": 0.1, "wall_opt": 0.0, "rot": 1844, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 159, "rn": null, "msg": "greedy 50/159"}
+{"t_inv": 0.1, "wall_opt": 0.0, "rot": 3944, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 159, "rn": null, "msg": "greedy 100/159"}
+{"t_inv": 0.1, "wall_opt": 0.0, "rot": 6188, "gn_iters": 0, "phase": "greedy", "round": 0, "len": 159, "rn": null, "msg": "greedy 150/159"}
+{"t_inv": 0.2, "wall_opt": 0.0, "rot": 13032, "gn_iters": 0, "phase": "joint", "round": 0, "len": 159, "rn": 0.023764976890967623, "msg": "greedy done, |r| 2.376e-02"}
+{"t_inv": 0.8, "wall_opt": 0.0, "rot": 5483800, "gn_iters": 10, "phase": "joint", "round": 0, "len": 159, "rn": 0.008983589975946343, "msg": "prejoint: |r| 8.984e-03 (iters left 0, len 159)"}
+{"t_inv": 0.8, "wall_opt": 0.0, "rot": 5483800, "gn_iters": 10, "phase": "joint", "round": 0, "len": 159, "rn": 0.008983589975946343, "msg": "post-joint insertion point: |r| 8.984e-03 after the uncharged joint solve; proposal appended next"}
+{"t_inv": 0.8, "wall_opt": 0.0, "rot": 0, "gn_iters": 0, "phase": "joint", "round": 0, "len": 159, "rn": 0.008983589975946343, "msg": "seeded arm cold: routed 159 (+ greedy), proposal +0 letters; |r| routed 8.984e-03 -> seeded 8.984e-03"}
+{"t_inv": 1.0, "wall_opt": 0.2, "rot": 1116308, "gn_iters": 2, "phase": "joint", "round": 0, "len": 159, "rn": 0.008777365236960913, "msg": "joint: |r| 8.777e-03 (iters left 298, len 159)"}
+{"t_inv": 1.5, "wall_opt": 0.7, "rot": 6593592, "gn_iters": 12, "phase": "joint", "round": 0, "len": 159, "rn": 0.008370557629533126, "msg": "joint: |r| 8.371e-03 (iters left 288, len 159)"}
+{"t_inv": 2.0, "wall_opt": 1.3, "rot": 12070876, "gn_iters": 22, "phase": "joint", "round": 0, "len": 159, "rn": 0.008326269840174339, "msg": "joint: |r| 8.326e-03 (iters left 278, len 159)"}
+{"t_inv": 2.0, "wall_opt": 1.3, "rot": 12070876, "gn_iters": 22, "phase": "joint", "round": 0, "len": 159, "rn": 0.008326269840174339, "msg": "joint: plateau exit (slice gain 5.29e-03 < 0.01)"}
+{"t_inv": 2.2, "wall_opt": 1.4, "rot": 12077392, "gn_iters": 22, "phase": "grow_gn", "round": 1, "len": 178, "rn": 0.008326269840174339, "msg": "grow round 1: +19 letters (len 178)"}
+{"t_inv": 3.1, "wall_opt": 2.3, "rot": 18716432, "gn_iters": 32, "phase": "grow_gn", "round": 1, "len": 178, "rn": 0.0059149486662752205, "msg": "grow_gn: |r| 5.915e-03 (iters left 390, len 178)"}
+{"t_inv": 4.1, "wall_opt": 3.3, "rot": 25362672, "gn_iters": 42, "phase": "grow_gn", "round": 1, "len": 178, "rn": 0.005262169645436942, "msg": "grow_gn: |r| 5.262e-03 (iters left 380, len 178)"}
+{"t_inv": 5.0, "wall_opt": 4.3, "rot": 32008912, "gn_iters": 52, "phase": "grow_gn", "round": 1, "len": 178, "rn": 0.005243450807432831, "msg": "grow_gn: |r| 5.243e-03 (iters left 370, len 178)"}
+{"t_inv": 5.0, "wall_opt": 4.3, "rot": 32008912, "gn_iters": 52, "phase": "grow_gn", "round": 1, "len": 178, "rn": 0.005243450807432831, "msg": "grow_gn: plateau exit (slice gain 3.56e-03 < 0.01)"}
+{"t_inv": 5.1, "wall_opt": 4.3, "rot": 32016112, "gn_iters": 52, "phase": "grow_gn", "round": 2, "len": 200, "rn": 0.005243450807432831, "msg": "grow round 2: +22 letters (len 200)"}
+{"t_inv": 5.9, "wall_opt": 5.2, "rot": 40167012, "gn_iters": 62, "phase": "grow_gn", "round": 2, "len": 200, "rn": 0.0034398014669058544, "msg": "grow_gn: |r| 3.440e-03 (iters left 390, len 200)"}
+{"t_inv": 6.7, "wall_opt": 5.9, "rot": 48317912, "gn_iters": 72, "phase": "grow_gn", "round": 2, "len": 200, "rn": 0.003438749893700715, "msg": "grow_gn: |r| 3.439e-03 (iters left 380, len 200)"}
+{"t_inv": 6.7, "wall_opt": 5.9, "rot": 48317912, "gn_iters": 72, "phase": "grow_gn", "round": 2, "len": 200, "rn": 0.003438749893700715, "msg": "grow_gn: plateau exit (slice gain 3.06e-04 < 0.01)"}
+{"t_inv": 6.7, "wall_opt": 5.9, "rot": 48325932, "gn_iters": 72, "phase": "grow_gn", "round": 3, "len": 225, "rn": 0.003438749893700715, "msg": "grow round 3: +25 letters (len 225)"}
+{"t_inv": 8.4, "wall_opt": 7.6, "rot": 59766892, "gn_iters": 82, "phase": "grow_gn", "round": 3, "len": 225, "rn": 0.002323496791488245, "msg": "grow_gn: |r| 2.323e-03 (iters left 390, len 225)"}
+{"t_inv": 9.7, "wall_opt": 8.9, "rot": 71169772, "gn_iters": 92, "phase": "grow_gn", "round": 3, "len": 225, "rn": 0.0023229098659881394, "msg": "grow_gn: |r| 2.323e-03 (iters left 380, len 225)"}
+{"t_inv": 9.7, "wall_opt": 8.9, "rot": 71169772, "gn_iters": 92, "phase": "grow_gn", "round": 3, "len": 225, "rn": 0.0023229098659881394, "msg": "grow_gn: plateau exit (slice gain 2.53e-04 < 0.01)"}
+{"t_inv": 9.7, "wall_opt": 8.9, "rot": 71179292, "gn_iters": 92, "phase": "grow_gn", "round": 4, "len": 253, "rn": 0.0023229098659881394, "msg": "grow round 4: +28 letters (len 253)"}
+{"t_inv": 12.0, "wall_opt": 11.2, "rot": 87885260, "gn_iters": 102, "phase": "grow_gn", "round": 4, "len": 253, "rn": 0.0015984058726485786, "msg": "grow_gn: |r| 1.598e-03 (iters left 390, len 253)"}
+{"t_inv": 14.1, "wall_opt": 13.3, "rot": 104521004, "gn_iters": 112, "phase": "grow_gn", "round": 4, "len": 253, "rn": 0.001579063698356223, "msg": "grow_gn: |r| 1.579e-03 (iters left 380, len 253)"}
+{"t_inv": 15.6, "wall_opt": 14.9, "rot": 121156748, "gn_iters": 122, "phase": "grow_gn", "round": 4, "len": 253, "rn": 0.0015785125819371066, "msg": "grow_gn: |r| 1.579e-03 (iters left 370, len 253)"}
+{"t_inv": 15.6, "wall_opt": 14.9, "rot": 121156748, "gn_iters": 122, "phase": "grow_gn", "round": 4, "len": 253, "rn": 0.0015785125819371066, "msg": "grow_gn: plateau exit (slice gain 3.49e-04 < 0.01)"}
+{"t_inv": 15.7, "wall_opt": 14.9, "rot": 121168452, "gn_iters": 122, "phase": "grow_gn", "round": 5, "len": 284, "rn": 0.0015785125819371066, "msg": "grow round 5: +31 letters (len 284)"}
+{"t_inv": 18.2, "wall_opt": 17.5, "rot": 141003832, "gn_iters": 132, "phase": "grow_gn", "round": 5, "len": 284, "rn": 0.0009423543520878371, "msg": "grow_gn: |r| 9.424e-04 (iters left 390, len 284)"}
+{"t_inv": 20.5, "wall_opt": 19.8, "rot": 160762052, "gn_iters": 142, "phase": "grow_gn", "round": 5, "len": 284, "rn": 0.0009060852840711339, "msg": "grow_gn: |r| 9.061e-04 (iters left 380, len 284)"}
+{"t_inv": 23.2, "wall_opt": 22.5, "rot": 180520272, "gn_iters": 152, "phase": "grow_gn", "round": 5, "len": 284, "rn": 0.0009056682306265119, "msg": "grow_gn: |r| 9.057e-04 (iters left 370, len 284)"}
+{"t_inv": 23.2, "wall_opt": 22.5, "rot": 180520272, "gn_iters": 152, "phase": "grow_gn", "round": 5, "len": 284, "rn": 0.0009056682306265119, "msg": "grow_gn: plateau exit (slice gain 4.60e-04 < 0.01)"}
+{"t_inv": 23.3, "wall_opt": 22.5, "rot": 180533132, "gn_iters": 152, "phase": "grow_gn", "round": 6, "len": 319, "rn": 0.0009056682306265119, "msg": "grow round 6: +35 letters (len 319)"}
+{"t_inv": 27.9, "wall_opt": 27.1, "rot": 206282352, "gn_iters": 162, "phase": "grow_gn", "round": 6, "len": 319, "rn": 0.0003387628827551651, "msg": "grow_gn: |r| 3.388e-04 (iters left 390, len 319)"}
+{"t_inv": 32.2, "wall_opt": 31.4, "rot": 232031572, "gn_iters": 172, "phase": "grow_gn", "round": 6, "len": 319, "rn": 0.00031156668541859964, "msg": "grow_gn: |r| 3.116e-04 (iters left 380, len 319)"}
+{"t_inv": 36.2, "wall_opt": 35.4, "rot": 257751152, "gn_iters": 182, "phase": "grow_gn", "round": 6, "len": 319, "rn": 0.00030038894790433885, "msg": "grow_gn: |r| 3.004e-04 (iters left 370, len 319)"}
+{"t_inv": 39.8, "wall_opt": 39.1, "rot": 283470732, "gn_iters": 192, "phase": "grow_gn", "round": 6, "len": 319, "rn": 0.0003003888362929334, "msg": "grow_gn: |r| 3.004e-04 (iters left 360, len 319)"}
+{"t_inv": 39.8, "wall_opt": 39.1, "rot": 283470732, "gn_iters": 192, "phase": "grow_gn", "round": 6, "len": 319, "rn": 0.0003003888362929334, "msg": "grow_gn: plateau exit (slice gain 3.72e-07 < 0.01)"}
+{"t_inv": 39.9, "wall_opt": 39.1, "rot": 283485552, "gn_iters": 192, "phase": "grow_gn", "round": 7, "len": 358, "rn": 0.0003003888362929334, "msg": "grow round 7: +39 letters (len 358)"}
+{"t_inv": 43.9, "wall_opt": 43.1, "rot": 312879172, "gn_iters": 201, "phase": "grow_gn", "round": 7, "len": 358, "rn": 6.647506481472636e-15, "msg": "grow_gn: |r| 6.648e-15 (iters left 390, len 358)"}

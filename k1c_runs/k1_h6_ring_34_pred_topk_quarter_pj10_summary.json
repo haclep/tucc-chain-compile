@@ -1,6 +1,6 @@
 {
  "harness": "k1b-warmstart-1",
- "git": "7bf387f",
+ "git": "dfcb1b1",
  "stem": "k1_h6_ring_34",
  "arm": "pred",
  "order": "rank",
@@ -27,8 +27,8 @@
  "rot_prep_uncharged": 5624512,
  "cost_rot": 9609704,
  "cost_gn_iters": 5,
- "cost_wall_opt_s": 1.6,
- "invocations": 2,
+ "cost_wall_opt_s": 1.2,
+ "invocations": 1,
  "campaign_len": null,
  "seed_provenance": {
   "arm": "pred",

@@ -1,6 +1,6 @@
 {
  "harness": "k1b-warmstart-1",
- "git": "7bf387f",
+ "git": "dfcb1b1",
  "stem": "k1_h6_ring_26",
  "arm": "cold",
  "order": "rank",
@@ -23,12 +23,12 @@
  "residual": 0.0,
  "deficit_recheck": 0.0,
  "e0_target": -3.080602015734817,
- "e_chain": -3.080602015734808,
+ "e_chain": -3.0806020157348097,
  "rot_prep_uncharged": 11104428,
  "cost_rot": 151623836,
  "cost_gn_iters": 142,
- "cost_wall_opt_s": 39.9,
- "invocations": 2,
+ "cost_wall_opt_s": 29.5,
+ "invocations": 1,
  "campaign_len": null,
  "seed_provenance": {
   "arm": "cold",
