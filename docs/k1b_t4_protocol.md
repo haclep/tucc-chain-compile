@@ -375,3 +375,39 @@ race adds a second cold sample.
 Forecast audit: pre-registered b2 forecast (~+10 percent) falsified;
 in-session forecasts of 1.03e13, 1.07e13 and bimodal 9.6e12/1.15e13 were
 low; the post-round-8 statement (>= 1.11e13, near cold or worse) held.
+
+# K1b-T4 warm-start scoreboard -- h8_chain
+
+Governing currency: rotations (2x2, per column) from the first Gauss-Newton solve to the certification gate; every arm under harness k1b-warmstart-1, plateau 0.01, identical target (checkpoint h8_chain_bigsd.pkl).
+
+| arm | proposal | final len | rounds | GN iters | rotations | wall s | savings (rot) | savings (iters) | savings (wall) | residual |
+|---|---|---|---|---|---|---|---|---|---|---|
+| b2 | 360 | 7249 | 8 | 1532 | 1.2951e+13 | 391601 | -5.7% | +5.0% | -6.0% | 8.7e-13 |
+| cold | 0 | 7113 | 9 | 1612 | 1.2256e+13 | 369560 | +0.0% | +0.0% | +0.0% | 8.9e-13 |
+| oracle_content | 3866 | 6333 | 0 | 22 | 2.0090e+11 | 5788 | +98.4% | +98.6% | +98.4% | 4.4e-16 |
+| oracle_full | 3866 | 6333 | 0 | 2 | 1.8571e+10 | 486 | +99.8% | +99.9% | +99.9% | 7.6e-13 |
+| pred_s0 | 383 | 6495 | 7 | 1432 | 9.9446e+12 | 297641 | +18.9% | +11.2% | +19.5% | 9.3e-13 |
+
+Registered thresholds (docs/k1_verdict.md, K1b-T4): pred savings >= 30% vs cold AND >= 1.3x the b2 savings.
+
+VERDICT: FAIL -- pred savings +18.9% (gate >= 30%: not met); b2 savings -5.7%, 1.3x b2 = -7.4% (gate: met)
+
+Ceiling (oracle_content): +98.4% savings -- what a perfect proposal of this kind is worth on this target.
+Ceiling (oracle_full): +99.8% savings -- what a perfect proposal of this kind is worth on this target.
+
+**2026-09-11 — oracle_content banked; K1b-T4 scoreboard complete; VERDICT.**
+oracle_content certified at 2.0090e11 rotations, 22 GN iterations, 0 growth
+rounds, 0 restarts, 6333 letters (2467 routed + 3866 proposed, shuffled,
+theta 0), R = 4.4e-16, E(chain) - E0 = -6.75e-14, 1 invocation, wall_opt
+5,788 s, under the rebuilt .venv; harness stamp 4950194, code unchanged.
+Saving versus cold: 98.36 percent (N2 shakedown: 90.3).
+Verdict, K1b-T4, frozen rule: FAIL. Rotation leg 18.9 < 30; comparative
+clause UNTESTED (b2 non-positive, 7 Sep rule); content F1 and theta R^2
+legs foreclosed before the race (Sec. 8.2); single seed (pred s0) as
+recorded 7 Sep.
+Findings carried forward: content transfers and angles do not, for both
+proposal families; the perturbative baseline does not help at H8; perfect
+content is worth 98.4 percent and perfect content with angles and order
+99.85; cold's exit-rule variance is unquantified at H8 with one sample.
+Forecast audit: oracle_content (>= 80): held. oracle_full (>= 99): held.
+pred (~+10): held in direction, low in size. b2 (~+10): falsified.
