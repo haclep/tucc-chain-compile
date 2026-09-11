@@ -351,3 +351,27 @@ on a symmetric H6 ring); risk accepted and recorded. Windows updates
 paused. The loop now runs from run_k1b_loop.ps1 with log-only output.
 The comparative clause is already decided: b2 at 1.112e13 exceeds the
 1.048e13 threshold with a round remaining, so pred clears it.
+
+**2026-09-11 — b2 arm banked; comparative clause UNTESTED; forecast audit.**
+b2 certified at 1.2951e13 rotations, 1532 GN iterations, 8 growth rounds,
+0 restarts, 7249 letters (2467 routed + 360 proposed + 4422 grown),
+R = 8.7e-13 (recheck identical), E(chain) - E0 = 5.01e-12, 34 invocations,
+wall_opt 391,601 s; invocations 1-30 under the original .venv, 31-34 under
+the rebuilt .venv (requirements-campaign.txt) per the 10 Sep entry. Harness
+stamp c918b61: harness code unchanged since 89e3c9c; the stamp reflects
+docs/results commits preceding the arm's launch.
+Saving versus cold: -5.7 percent. Under the 7 Sep rule (non-positive B2
+saving makes the 1.3x clause vacuous) the comparative clause is UNTESTED.
+P1 stands as FAIL on the rotation leg (18.9 < 30), comparative clause
+untested, content and theta legs foreclosed (Sec. 8.2).
+Substantive: pred exceeds b2 by 24.6 points of cold's cost. b2's seeded
+residual was 10.4x worse than routing alone; growth carried a chain 136
+letters longer than cold's through one fewer round at higher cost.
+Caveat: cold's exit-rule variance was measured at 20-40 percent on H6
+(prefix-cap sweep, 10 Sep) and is evidenced on H8 by round 8's budget
+exhaustion. With one cold sample at H8, effects of the order of 18.9
+percent cannot be separated from that variance by this design; the K1c-T4
+race adds a second cold sample.
+Forecast audit: pre-registered b2 forecast (~+10 percent) falsified;
+in-session forecasts of 1.03e13, 1.07e13 and bimodal 9.6e12/1.15e13 were
+low; the post-round-8 statement (>= 1.11e13, near cold or worse) held.
