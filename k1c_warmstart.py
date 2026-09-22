@@ -187,12 +187,19 @@ def _target_vector(stem, h, e, basis):
     os.makedirs(os.path.join(HERE, "data"), exist_ok=True)
     cache = os.path.join(HERE, "data", stem + "_target.npz")
     if os.path.exists(cache):
-        z = np.load(cache)
-        v0 = np.asarray(z["v0"], float)
-        if v0.size != basis.dim:
-            raise RuntimeError("%s holds a vector of size %d, sector dim is %d"
-                               % (cache, v0.size, basis.dim))
-        return v0, float(z["e0"]), str(z["how"]), float(z["gap"])
+        try:
+            z = np.load(cache)
+            v0 = np.asarray(z["v0"], float)
+            out = (v0, float(z["e0"]), str(z["how"]), float(z["gap"]))
+        except Exception as ex:
+            print("target cache %s unreadable (%s); recomputing"
+                  % (os.path.basename(cache), ex.__class__.__name__), flush=True)
+            os.remove(cache)
+        else:
+            if v0.size != basis.dim:
+                raise RuntimeError("%s holds a vector of size %d, sector dim is %d"
+                                   % (cache, v0.size, basis.dim))
+            return out
     t0 = time.time()
     if basis.dim <= DENSE_LIMIT:
         H = kb.build_h_sector(h, e, basis)
@@ -574,8 +581,13 @@ def _refuse_stale_state(a):
         with open(spath, "rb") as fh:
             have = float(pickle.load(fh).get("k1c_gate", kb.GATE))
     except Exception as ex:
-        raise SystemExit("cannot read %s (%s); delete it to restart the member"
-                         % (spath, ex))
+        # a checkpoint cut short by a preemption: start this member over
+        print("saved state %s unreadable (%s); removed, starting the member over"
+              % (os.path.basename(spath), ex.__class__.__name__), flush=True)
+        for q in (spath, tpath):
+            if os.path.exists(q):
+                os.remove(q)
+        return
     if abs(have - want) > 1e-3 * want:
         raise SystemExit(
             "saved state %s was solved under gate %g; requested %g. Delete it "

@@ -314,6 +314,15 @@ def sector_check(h, eri, n, na, nb, econst, want_mult):
             "reference_weight": w0}
 
 
+def readable_dump(path):
+    try:
+        z = np.load(path, allow_pickle=True)
+        np.asarray(z["eri_mo"])
+        return True
+    except Exception:
+        return False
+
+
 def sidecar_for_existing(system, g, stem, path):
     """Sidecar for a dump that was not minted here: the same checks, the
     provenance taken from the file itself."""
@@ -384,6 +393,12 @@ def run_system(system, out_dir, threads, do_check, verbose):
     for i, g in enumerate(order):
         stem = stem_of(system, g)
         path = os.path.join(out_dir, stem + ".npz")
+        if os.path.exists(path) and not readable_dump(path):
+            side = os.path.join(out_dir, stem + ".json")
+            log("%s unreadable (cut short by a stop); removed, re-minting" % stem)
+            for q in (path, side):
+                if os.path.exists(q):
+                    os.remove(q)
         if os.path.exists(path):
             side = os.path.join(out_dir, stem + ".json")
             if os.path.exists(side):
@@ -520,7 +535,8 @@ def run_system(system, out_dir, threads, do_check, verbose):
                 "pyscf_version": __import__("pyscf").__version__,
             }
             eps = orbital_energies(h, eri, na, nb)
-            np.savez(path,
+            tmp = path + ".tmp.npz"
+            np.savez(tmp,
                      schema=DUMP_SCHEMA,
                      h_mo=h, eri_mo=eri, e_nuc=econst, e_scf=e_ref,
                      n_alpha=na, n_beta=nb, mo_energy=eps,
@@ -536,6 +552,7 @@ def run_system(system, out_dir, threads, do_check, verbose):
                      e_nuclear_repulsion=float(mol.energy_nuc()),
                      natural_occupations=np.array([] if noons is None else noons),
                      atlas_label=label, stem=stem)
+            os.replace(tmp, path)
             with open(os.path.join(out_dir, stem + ".json"), "w") as fh:
                 json.dump(meta, fh, indent=1)
             flag = ""

@@ -196,7 +196,7 @@ def run_all(stem, sts, jobs, deadline, dry):
         v0 = np.load(os.path.join(HERE, "data", stem + "_target.npz"))["v0"]
         support = int(np.sum(np.abs(v0) > 1e-10))
     except Exception:
-        support = None
+        support = None          # the members recompute the target themselves
     if support is not None:
         keep = [st for st in todo if st["pivot_rank"] < support]
         if len(keep) < len(todo):
@@ -248,12 +248,22 @@ def load_members(stem):
     out = {}
     for p in sorted(glob.glob(os.path.join(CHAINS, stem + "_*_chain.npz"))):
         tag = os.path.basename(p)[len(stem) + 1:-len("_chain.npz")]
-        d = np.load(p, allow_pickle=True)
-        word = [(tuple(int(q) for q in h), tuple(int(q) for q in pp))
-                for h, pp in zip(d["subs_h"], d["subs_p"])]
-        th = [float(t) for t in d["th"]]
         sp = os.path.join(RUNS, "%s_%s_summary.json" % (stem, tag))
-        meta = json.load(open(sp)) if os.path.exists(sp) else {}
+        try:
+            d = np.load(p, allow_pickle=True)
+            word = [(tuple(int(q) for q in h), tuple(int(q) for q in pp))
+                    for h, pp in zip(d["subs_h"], d["subs_p"])]
+            th = [float(t) for t in d["th"]]
+            meta = json.load(open(sp)) if os.path.exists(sp) else {}
+        except Exception as ex:
+            # A file cut short by a preemption. Drop the member's chain AND
+            # summary so the factory re-runs it instead of counting it.
+            print("  unreadable member %s (%s): removed, will be re-run"
+                  % (os.path.basename(p), ex.__class__.__name__))
+            for q in (p, sp):
+                if os.path.exists(q):
+                    os.remove(q)
+            continue
         out[tag] = {"word": word, "th": th, "meta": meta}
     return out
 
@@ -327,6 +337,20 @@ def report(stem):
     return out
 
 
+def readable_json(p):
+    """True if p exists and parses; a truncated report is removed so the
+    family is reported again."""
+    if not os.path.exists(p):
+        return False
+    try:
+        with open(p) as fh:
+            json.load(fh)
+        return True
+    except Exception:
+        os.remove(p)
+        return False
+
+
 def corpus_stems(corpus_dir, phases=None):
     """Stems from k1_corpus/index.json, smallest sector first, optionally
     restricted to some atlas phases. Dumps that are not on disk are skipped."""
@@ -389,7 +413,7 @@ def main():
         print("gate for every member: %g" % GATE)
     for n in names:
         if a.corpus and a.plan and not a.dry_run and \
-                os.path.exists(os.path.join(RUNS, "gauge_%s.json" % n)):
+                readable_json(os.path.join(RUNS, "gauge_%s.json" % n)):
             continue                        # family already produced and reported
         if a.plan:
             run_all(n, settings(a.plan), a.jobs, a.deadline, a.dry_run)

@@ -26,6 +26,11 @@ mkdir -p k1_corpus k1c_runs k1b logs
 
 echo "=== $(date -u +%FT%TZ) foundry phase $PHASE  jobs $JOBS  gate $GATE  plan $PLAN" | tee -a logs/foundry.log
 
+# 0. Files cut short by a machine stop are removed so that only those pieces
+#    are redone (a truncated chain, checkpoint, dump or report would
+#    otherwise stop a worker or be counted as finished).
+$PY k1c_heal.py | tail -1 | tee -a logs/foundry.log
+
 # 1. Hamiltonian dumps (minutes to a few hours for a whole phase).
 #    Two BLAS threads per CASSCF; half as many jobs as cores.
 CJ=$(( JOBS / 2 > 0 ? JOBS / 2 : 1 ))
