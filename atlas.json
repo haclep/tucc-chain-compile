@@ -1,0 +1,1660 @@
+{
+ "corpus": "seneca-atlas-v1",
+ "author": "Dr. Luogen Xu, Seneca Labs",
+ "note": "Each system yields ~20 certified derivations (gauge quick plan). Flagship systems use the wide plan (~120).",
+ "conventions": {
+  "geometry_units": "angstrom unless the system says bohr (hydrogen models, to match K1 corpus stems)",
+  "ring_parameter": "nearest-neighbour distance",
+  "stems": "hydrogen models: k1_h<n>_<chain|ring>_<spacing in tenths of a bohr>; all others: <label with - as _>_r<distance in angstrom, 3 decimals, '.' as 'p'>",
+  "dump_energies": "e_nuc is the CONSTANT part of the energy in the orbital space: nuclear repulsion plus the frozen core, if any. e_scf is the energy of the reference determinant (lowest orbitals) in that space."
+ },
+ "held_out": {
+  "policy": "cr2-cas1212 is the size-transfer test. Train on the Cr2 (6,6), (8,8) and (10,10) ladder; evaluate on (12,12), which never enters training.",
+  "systems": [
+   "cr2-cas1212"
+  ]
+ },
+ "systems": [
+  {
+   "label": "h2",
+   "formula": "H2",
+   "kind": "main-group diatomic",
+   "active_space": {
+    "n_electrons": 2,
+    "n_orbitals": 2,
+    "multiplicity": 1,
+    "n_alpha": 1,
+    "n_beta": 1
+   },
+   "sector_dimension": 4,
+   "basis": "cc-pVDZ",
+   "phase": 1,
+   "geometries": [
+    0.63,
+    0.704,
+    0.741,
+    0.815,
+    0.926,
+    1.074,
+    1.26,
+    1.482,
+    1.853,
+    2.371
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 10,
+   "equilibrium": 0.741,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "energy",
+    "avas_labels": []
+   },
+   "rationale": "the floor: exactly solvable by hand, D=4",
+   "atoms": "H2"
+  },
+  {
+   "label": "lih",
+   "formula": "LiH",
+   "kind": "main-group diatomic",
+   "active_space": {
+    "n_electrons": 4,
+    "n_orbitals": 6,
+    "multiplicity": 1,
+    "n_alpha": 2,
+    "n_beta": 2
+   },
+   "sector_dimension": 225,
+   "basis": "cc-pVDZ",
+   "phase": 1,
+   "geometries": [
+    1.357,
+    1.516,
+    1.596,
+    1.756,
+    1.995,
+    2.314,
+    2.713,
+    3.192,
+    3.99,
+    5.107
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 10,
+   "equilibrium": 1.596,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "energy",
+    "avas_labels": []
+   },
+   "rationale": "continuity with the existing sample pack",
+   "atoms": "LiH"
+  },
+  {
+   "label": "hf",
+   "formula": "HF",
+   "kind": "main-group diatomic",
+   "active_space": {
+    "n_electrons": 8,
+    "n_orbitals": 8,
+    "multiplicity": 1,
+    "n_alpha": 4,
+    "n_beta": 4
+   },
+   "sector_dimension": 4900,
+   "basis": "cc-pVDZ",
+   "phase": 1,
+   "geometries": [
+    0.779,
+    0.871,
+    0.917,
+    1.009,
+    1.146,
+    1.33,
+    1.559,
+    1.834,
+    2.292,
+    2.934
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 10,
+   "equilibrium": 0.917,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "energy",
+    "avas_labels": []
+   },
+   "rationale": "polar single bond, ionic dissociation",
+   "atoms": "HF"
+  },
+  {
+   "label": "lif",
+   "formula": "LiF",
+   "kind": "main-group diatomic",
+   "active_space": {
+    "n_electrons": 8,
+    "n_orbitals": 8,
+    "multiplicity": 1,
+    "n_alpha": 4,
+    "n_beta": 4
+   },
+   "sector_dimension": 4900,
+   "basis": "cc-pVDZ",
+   "phase": 1,
+   "geometries": [
+    1.329,
+    1.486,
+    1.564,
+    1.72,
+    1.955,
+    2.268,
+    2.659,
+    3.128,
+    3.91,
+    5.005
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 10,
+   "equilibrium": 1.564,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "energy",
+    "avas_labels": []
+   },
+   "rationale": "avoided crossing: ionic/covalent curve cross",
+   "atoms": "LiF"
+  },
+  {
+   "label": "beo",
+   "formula": "BeO",
+   "kind": "main-group diatomic",
+   "active_space": {
+    "n_electrons": 8,
+    "n_orbitals": 8,
+    "multiplicity": 1,
+    "n_alpha": 4,
+    "n_beta": 4
+   },
+   "sector_dimension": 4900,
+   "basis": "cc-pVDZ",
+   "phase": 1,
+   "geometries": [
+    1.131,
+    1.264,
+    1.331,
+    1.464,
+    1.664,
+    1.93,
+    2.263,
+    2.662,
+    3.327,
+    4.259
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 10,
+   "equilibrium": 1.331,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "energy",
+    "avas_labels": []
+   },
+   "rationale": "polar double bond, low-lying excited states",
+   "atoms": "BeO"
+  },
+  {
+   "label": "bn",
+   "formula": "BN",
+   "kind": "main-group diatomic",
+   "active_space": {
+    "n_electrons": 8,
+    "n_orbitals": 8,
+    "multiplicity": 1,
+    "n_alpha": 4,
+    "n_beta": 4
+   },
+   "sector_dimension": 4900,
+   "basis": "cc-pVDZ",
+   "phase": 1,
+   "geometries": [
+    1.089,
+    1.217,
+    1.281,
+    1.409,
+    1.601,
+    1.857,
+    2.178,
+    2.562,
+    3.202,
+    4.099
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 10,
+   "equilibrium": 1.281,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "energy",
+    "avas_labels": []
+   },
+   "rationale": "near-degenerate ground state, notoriously hard",
+   "atoms": "BN"
+  },
+  {
+   "label": "co",
+   "formula": "CO",
+   "kind": "main-group diatomic",
+   "active_space": {
+    "n_electrons": 10,
+    "n_orbitals": 8,
+    "multiplicity": 1,
+    "n_alpha": 5,
+    "n_beta": 5
+   },
+   "sector_dimension": 3136,
+   "basis": "cc-pVDZ",
+   "phase": 1,
+   "geometries": [
+    0.959,
+    1.072,
+    1.128,
+    1.241,
+    1.41,
+    1.636,
+    1.918,
+    2.256,
+    2.82,
+    3.61
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 10,
+   "equilibrium": 1.128,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "energy",
+    "avas_labels": []
+   },
+   "rationale": "triple bond, closed shell, industrially central",
+   "atoms": "CO"
+  },
+  {
+   "label": "n2",
+   "formula": "N2",
+   "kind": "main-group diatomic",
+   "active_space": {
+    "n_electrons": 10,
+    "n_orbitals": 8,
+    "multiplicity": 1,
+    "n_alpha": 5,
+    "n_beta": 5
+   },
+   "sector_dimension": 3136,
+   "basis": "cc-pVDZ",
+   "phase": 1,
+   "geometries": [
+    0.933,
+    1.043,
+    1.098,
+    1.208,
+    1.373,
+    1.592,
+    1.867,
+    2.196,
+    2.745,
+    3.514
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 10,
+   "equilibrium": 1.098,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "energy",
+    "avas_labels": []
+   },
+   "rationale": "the standard multireference benchmark",
+   "atoms": "N2"
+  },
+  {
+   "label": "c2",
+   "formula": "C2",
+   "kind": "main-group diatomic",
+   "active_space": {
+    "n_electrons": 8,
+    "n_orbitals": 8,
+    "multiplicity": 1,
+    "n_alpha": 4,
+    "n_beta": 4
+   },
+   "sector_dimension": 4900,
+   "basis": "cc-pVDZ",
+   "phase": 1,
+   "geometries": [
+    1.057,
+    1.181,
+    1.243,
+    1.367,
+    1.554,
+    1.802,
+    2.113,
+    2.486,
+    3.108,
+    3.978
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 10,
+   "equilibrium": 1.243,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "energy",
+    "avas_labels": []
+   },
+   "rationale": "contested bond order; multiple bonds at once",
+   "atoms": "C2"
+  },
+  {
+   "label": "f2",
+   "formula": "F2",
+   "kind": "main-group diatomic",
+   "active_space": {
+    "n_electrons": 14,
+    "n_orbitals": 10,
+    "multiplicity": 1,
+    "n_alpha": 7,
+    "n_beta": 7
+   },
+   "sector_dimension": 14400,
+   "basis": "cc-pVDZ",
+   "phase": 1,
+   "geometries": [
+    1.2,
+    1.341,
+    1.412,
+    1.553,
+    1.765,
+    2.047,
+    2.4,
+    2.824,
+    3.53,
+    4.518
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 10,
+   "equilibrium": 1.412,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "energy",
+    "avas_labels": []
+   },
+   "rationale": "weak bond; 2 virtuals added because full valence is nearly closed",
+   "atoms": "F2"
+  },
+  {
+   "label": "o2-triplet",
+   "formula": "O2",
+   "kind": "main-group diatomic",
+   "active_space": {
+    "n_electrons": 12,
+    "n_orbitals": 8,
+    "multiplicity": 3,
+    "n_alpha": 7,
+    "n_beta": 5
+   },
+   "sector_dimension": 448,
+   "basis": "cc-pVDZ",
+   "phase": 1,
+   "geometries": [
+    1.027,
+    1.148,
+    1.208,
+    1.329,
+    1.51,
+    1.752,
+    2.054,
+    2.416,
+    3.02,
+    3.866
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 10,
+   "equilibrium": 1.208,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "energy",
+    "avas_labels": []
+   },
+   "rationale": "open-shell ground state: exercises Sz != 0 in the compiler",
+   "atoms": "O2"
+  },
+  {
+   "label": "h2o-sym",
+   "formula": "H2O",
+   "kind": "polyatomic",
+   "active_space": {
+    "n_electrons": 8,
+    "n_orbitals": 6,
+    "multiplicity": 1,
+    "n_alpha": 4,
+    "n_beta": 4
+   },
+   "sector_dimension": 225,
+   "basis": "cc-pVDZ",
+   "phase": 1,
+   "geometries": [
+    0.814,
+    0.91,
+    0.958,
+    1.054,
+    1.198,
+    1.389,
+    1.629,
+    1.916,
+    2.395,
+    3.066
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 10,
+   "equilibrium": 0.958,
+   "recipe": {
+    "geometry": "h2o-sym",
+    "selection": "energy",
+    "avas_labels": []
+   },
+   "rationale": "symmetric O-H stretch; double dissociation in a bent molecule",
+   "atoms": "H2O, HOH angle fixed 104.5 deg, both O-H scanned together"
+  },
+  {
+   "label": "nh3-sym",
+   "formula": "NH3",
+   "kind": "polyatomic",
+   "active_space": {
+    "n_electrons": 8,
+    "n_orbitals": 7,
+    "multiplicity": 1,
+    "n_alpha": 4,
+    "n_beta": 4
+   },
+   "sector_dimension": 1225,
+   "basis": "cc-pVDZ",
+   "phase": 1,
+   "geometries": [
+    0.86,
+    0.961,
+    1.012,
+    1.113,
+    1.265,
+    1.467,
+    1.72,
+    2.024,
+    2.53,
+    3.238
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 10,
+   "equilibrium": 1.012,
+   "recipe": {
+    "geometry": "nh3-sym",
+    "selection": "energy",
+    "avas_labels": []
+   },
+   "rationale": "triple N-H dissociation",
+   "atoms": "NH3, C3v, HNH angle fixed 106.7 deg, all three N-H scanned together"
+  },
+  {
+   "label": "ch4-sym",
+   "formula": "CH4",
+   "kind": "polyatomic",
+   "active_space": {
+    "n_electrons": 8,
+    "n_orbitals": 8,
+    "multiplicity": 1,
+    "n_alpha": 4,
+    "n_beta": 4
+   },
+   "sector_dimension": 4900,
+   "basis": "cc-pVDZ",
+   "phase": 1,
+   "geometries": [
+    0.924,
+    1.033,
+    1.087,
+    1.196,
+    1.359,
+    1.576,
+    1.848,
+    2.174,
+    2.717,
+    3.478
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 10,
+   "equilibrium": 1.087,
+   "recipe": {
+    "geometry": "ch4-sym",
+    "selection": "energy",
+    "avas_labels": []
+   },
+   "rationale": "quadruple C-H dissociation, the saturated-carbon reference",
+   "atoms": "CH4, Td, all four C-H scanned together"
+  },
+  {
+   "label": "h4-chain",
+   "formula": "H4",
+   "kind": "hydrogen model",
+   "active_space": {
+    "n_electrons": 4,
+    "n_orbitals": 4,
+    "multiplicity": 1,
+    "n_alpha": 2,
+    "n_beta": 2
+   },
+   "sector_dimension": 36,
+   "basis": "STO-3G",
+   "phase": 1,
+   "geometries": [
+    1.2,
+    1.4,
+    1.6,
+    1.8,
+    1.9,
+    2.0,
+    2.2,
+    2.4,
+    2.6,
+    2.8,
+    3.2,
+    3.6
+   ],
+   "geometry_units": "bohr",
+   "n_geometries": 12,
+   "equilibrium": null,
+   "recipe": {
+    "geometry": "h-chain",
+    "selection": "full",
+    "avas_labels": []
+   },
+   "rationale": "size ladder at fixed chemistry; chain already in the sample",
+   "atoms": "4 H atoms, uniform nearest-neighbour spacing, chain"
+  },
+  {
+   "label": "h4-ring",
+   "formula": "H4",
+   "kind": "hydrogen model",
+   "active_space": {
+    "n_electrons": 4,
+    "n_orbitals": 4,
+    "multiplicity": 1,
+    "n_alpha": 2,
+    "n_beta": 2
+   },
+   "sector_dimension": 36,
+   "basis": "STO-3G",
+   "phase": 1,
+   "geometries": [
+    1.2,
+    1.4,
+    1.6,
+    1.8,
+    1.9,
+    2.0,
+    2.2,
+    2.4,
+    2.6,
+    2.8,
+    3.2,
+    3.6
+   ],
+   "geometry_units": "bohr",
+   "n_geometries": 12,
+   "equilibrium": null,
+   "recipe": {
+    "geometry": "h-ring",
+    "selection": "full",
+    "avas_labels": []
+   },
+   "rationale": "size ladder at fixed chemistry; ring already in the sample",
+   "atoms": "4 H atoms, uniform nearest-neighbour spacing, ring"
+  },
+  {
+   "label": "h6-chain",
+   "formula": "H6",
+   "kind": "hydrogen model",
+   "active_space": {
+    "n_electrons": 6,
+    "n_orbitals": 6,
+    "multiplicity": 1,
+    "n_alpha": 3,
+    "n_beta": 3
+   },
+   "sector_dimension": 400,
+   "basis": "STO-3G",
+   "phase": 1,
+   "geometries": [
+    1.2,
+    1.4,
+    1.6,
+    1.8,
+    1.9,
+    2.0,
+    2.2,
+    2.4,
+    2.6,
+    2.8,
+    3.2,
+    3.6
+   ],
+   "geometry_units": "bohr",
+   "n_geometries": 12,
+   "equilibrium": null,
+   "recipe": {
+    "geometry": "h-chain",
+    "selection": "full",
+    "avas_labels": []
+   },
+   "rationale": "size ladder at fixed chemistry; chain already in the sample",
+   "atoms": "6 H atoms, uniform nearest-neighbour spacing, chain"
+  },
+  {
+   "label": "h6-ring",
+   "formula": "H6",
+   "kind": "hydrogen model",
+   "active_space": {
+    "n_electrons": 6,
+    "n_orbitals": 6,
+    "multiplicity": 1,
+    "n_alpha": 3,
+    "n_beta": 3
+   },
+   "sector_dimension": 400,
+   "basis": "STO-3G",
+   "phase": 1,
+   "geometries": [
+    1.2,
+    1.4,
+    1.6,
+    1.8,
+    1.9,
+    2.0,
+    2.2,
+    2.4,
+    2.6,
+    2.8,
+    3.2,
+    3.6
+   ],
+   "geometry_units": "bohr",
+   "n_geometries": 12,
+   "equilibrium": null,
+   "recipe": {
+    "geometry": "h-ring",
+    "selection": "full",
+    "avas_labels": []
+   },
+   "rationale": "size ladder at fixed chemistry; ring already in the sample",
+   "atoms": "6 H atoms, uniform nearest-neighbour spacing, ring"
+  },
+  {
+   "label": "h8-chain",
+   "formula": "H8",
+   "kind": "hydrogen model",
+   "active_space": {
+    "n_electrons": 8,
+    "n_orbitals": 8,
+    "multiplicity": 1,
+    "n_alpha": 4,
+    "n_beta": 4
+   },
+   "sector_dimension": 4900,
+   "basis": "STO-3G",
+   "phase": 1,
+   "geometries": [
+    1.2,
+    1.4,
+    1.6,
+    1.8,
+    1.9,
+    2.0,
+    2.2,
+    2.4,
+    2.6,
+    2.8,
+    3.2,
+    3.6
+   ],
+   "geometry_units": "bohr",
+   "n_geometries": 12,
+   "equilibrium": null,
+   "recipe": {
+    "geometry": "h-chain",
+    "selection": "full",
+    "avas_labels": []
+   },
+   "rationale": "size ladder at fixed chemistry; chain already in the sample",
+   "atoms": "8 H atoms, uniform nearest-neighbour spacing, chain"
+  },
+  {
+   "label": "h8-ring",
+   "formula": "H8",
+   "kind": "hydrogen model",
+   "active_space": {
+    "n_electrons": 8,
+    "n_orbitals": 8,
+    "multiplicity": 1,
+    "n_alpha": 4,
+    "n_beta": 4
+   },
+   "sector_dimension": 4900,
+   "basis": "STO-3G",
+   "phase": 1,
+   "geometries": [
+    1.2,
+    1.4,
+    1.6,
+    1.8,
+    1.9,
+    2.0,
+    2.2,
+    2.4,
+    2.6,
+    2.8,
+    3.2,
+    3.6
+   ],
+   "geometry_units": "bohr",
+   "n_geometries": 12,
+   "equilibrium": null,
+   "recipe": {
+    "geometry": "h-ring",
+    "selection": "full",
+    "avas_labels": []
+   },
+   "rationale": "size ladder at fixed chemistry; ring already in the sample",
+   "atoms": "8 H atoms, uniform nearest-neighbour spacing, ring"
+  },
+  {
+   "label": "sch",
+   "formula": "ScH",
+   "kind": "transition-metal hydride",
+   "active_space": {
+    "n_electrons": 4,
+    "n_orbitals": 10,
+    "multiplicity": 1,
+    "n_alpha": 2,
+    "n_beta": 2
+   },
+   "sector_dimension": 2025,
+   "basis": "def2-SVP",
+   "phase": 1,
+   "geometries": [
+    1.509,
+    1.686,
+    1.775,
+    1.953,
+    2.219,
+    2.574,
+    3.017,
+    3.55
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 8,
+   "equilibrium": 1.775,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "avas",
+    "avas_labels": [
+     "Sc 3d",
+     "Sc 4s",
+     "Sc 4p",
+     "H 1s"
+    ]
+   },
+   "rationale": "3d physics before Cr2. Space = 3d(5) + 4s + 4p(3) + H1s. 3d^1: the simplest 3d bond",
+   "atoms": "ScH"
+  },
+  {
+   "label": "tih",
+   "formula": "TiH",
+   "kind": "transition-metal hydride",
+   "active_space": {
+    "n_electrons": 5,
+    "n_orbitals": 10,
+    "multiplicity": 4,
+    "n_alpha": 4,
+    "n_beta": 1
+   },
+   "sector_dimension": 2100,
+   "basis": "def2-SVP",
+   "phase": 1,
+   "geometries": [
+    1.514,
+    1.692,
+    1.781,
+    1.959,
+    2.226,
+    2.582,
+    3.028,
+    3.562
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 8,
+   "equilibrium": 1.781,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "avas",
+    "avas_labels": [
+     "Ti 3d",
+     "Ti 4s",
+     "Ti 4p",
+     "H 1s"
+    ]
+   },
+   "rationale": "3d physics before Cr2. Space = 3d(5) + 4s + 4p(3) + H1s. 3d^2, 4-Phi ground state",
+   "atoms": "TiH"
+  },
+  {
+   "label": "vh",
+   "formula": "VH",
+   "kind": "transition-metal hydride",
+   "active_space": {
+    "n_electrons": 6,
+    "n_orbitals": 10,
+    "multiplicity": 5,
+    "n_alpha": 5,
+    "n_beta": 1
+   },
+   "sector_dimension": 2520,
+   "basis": "def2-SVP",
+   "phase": 1,
+   "geometries": [
+    1.461,
+    1.633,
+    1.719,
+    1.891,
+    2.149,
+    2.493,
+    2.922,
+    3.438
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 8,
+   "equilibrium": 1.719,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "avas",
+    "avas_labels": [
+     "V 3d",
+     "V 4s",
+     "V 4p",
+     "H 1s"
+    ]
+   },
+   "rationale": "3d physics before Cr2. Space = 3d(5) + 4s + 4p(3) + H1s. 3d^3, high spin",
+   "atoms": "VH"
+  },
+  {
+   "label": "crh",
+   "formula": "CrH",
+   "kind": "transition-metal hydride",
+   "active_space": {
+    "n_electrons": 7,
+    "n_orbitals": 10,
+    "multiplicity": 6,
+    "n_alpha": 6,
+    "n_beta": 1
+   },
+   "sector_dimension": 2100,
+   "basis": "def2-SVP",
+   "phase": 1,
+   "geometries": [
+    1.407,
+    1.572,
+    1.655,
+    1.821,
+    2.069,
+    2.4,
+    2.813,
+    3.31
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 8,
+   "equilibrium": 1.655,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "avas",
+    "avas_labels": [
+     "Cr 3d",
+     "Cr 4s",
+     "Cr 4p",
+     "H 1s"
+    ]
+   },
+   "rationale": "3d physics before Cr2. Space = 3d(5) + 4s + 4p(3) + H1s. 3d^5 4s^1: the Cr atom's own configuration",
+   "atoms": "CrH"
+  },
+  {
+   "label": "mnh",
+   "formula": "MnH",
+   "kind": "transition-metal hydride",
+   "active_space": {
+    "n_electrons": 8,
+    "n_orbitals": 10,
+    "multiplicity": 7,
+    "n_alpha": 7,
+    "n_beta": 1
+   },
+   "sector_dimension": 1200,
+   "basis": "def2-SVP",
+   "phase": 1,
+   "geometries": [
+    1.471,
+    1.644,
+    1.731,
+    1.904,
+    2.164,
+    2.51,
+    2.943,
+    3.462
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 8,
+   "equilibrium": 1.731,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "avas",
+    "avas_labels": [
+     "Mn 3d",
+     "Mn 4s",
+     "Mn 4p",
+     "H 1s"
+    ]
+   },
+   "rationale": "3d physics before Cr2. Space = 3d(5) + 4s + 4p(3) + H1s. 3d^5 4s^2, maximal high spin",
+   "atoms": "MnH"
+  },
+  {
+   "label": "feh",
+   "formula": "FeH",
+   "kind": "transition-metal hydride",
+   "active_space": {
+    "n_electrons": 9,
+    "n_orbitals": 10,
+    "multiplicity": 4,
+    "n_alpha": 6,
+    "n_beta": 3
+   },
+   "sector_dimension": 25200,
+   "basis": "def2-SVP",
+   "phase": 3,
+   "geometries": [
+    1.351,
+    1.51,
+    1.589,
+    1.748,
+    1.986,
+    2.304,
+    2.701,
+    3.178
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 8,
+   "equilibrium": 1.589,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "avas",
+    "avas_labels": [
+     "Fe 3d",
+     "Fe 4s",
+     "Fe 4p",
+     "H 1s"
+    ]
+   },
+   "rationale": "3d physics before Cr2. Space = 3d(5) + 4s + 4p(3) + H1s. 3d^6, near-degenerate low-lying states",
+   "atoms": "FeH"
+  },
+  {
+   "label": "coh",
+   "formula": "CoH",
+   "kind": "transition-metal hydride",
+   "active_space": {
+    "n_electrons": 10,
+    "n_orbitals": 10,
+    "multiplicity": 3,
+    "n_alpha": 6,
+    "n_beta": 4
+   },
+   "sector_dimension": 44100,
+   "basis": "def2-SVP",
+   "phase": 3,
+   "geometries": [
+    1.287,
+    1.438,
+    1.514,
+    1.665,
+    1.893,
+    2.195,
+    2.574,
+    3.028
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 8,
+   "equilibrium": 1.514,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "avas",
+    "avas_labels": [
+     "Co 3d",
+     "Co 4s",
+     "Co 4p",
+     "H 1s"
+    ]
+   },
+   "rationale": "3d physics before Cr2. Space = 3d(5) + 4s + 4p(3) + H1s. 3d^7",
+   "atoms": "CoH"
+  },
+  {
+   "label": "nih",
+   "formula": "NiH",
+   "kind": "transition-metal hydride",
+   "active_space": {
+    "n_electrons": 11,
+    "n_orbitals": 10,
+    "multiplicity": 2,
+    "n_alpha": 6,
+    "n_beta": 5
+   },
+   "sector_dimension": 52920,
+   "basis": "def2-SVP",
+   "phase": 3,
+   "geometries": [
+    1.236,
+    1.381,
+    1.454,
+    1.599,
+    1.817,
+    2.108,
+    2.472,
+    2.908
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 8,
+   "equilibrium": 1.454,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "avas",
+    "avas_labels": [
+     "Ni 3d",
+     "Ni 4s",
+     "Ni 4p",
+     "H 1s"
+    ]
+   },
+   "rationale": "3d physics before Cr2. Space = 3d(5) + 4s + 4p(3) + H1s. 3d^8, approaching closed d shell",
+   "atoms": "NiH"
+  },
+  {
+   "label": "o3",
+   "formula": "O3",
+   "kind": "polyatomic",
+   "active_space": {
+    "n_electrons": 12,
+    "n_orbitals": 9,
+    "multiplicity": 1,
+    "n_alpha": 6,
+    "n_beta": 6
+   },
+   "sector_dimension": 7056,
+   "basis": "cc-pVDZ",
+   "phase": 1,
+   "geometries": [
+    1.2,
+    1.24,
+    1.278,
+    1.32,
+    1.4,
+    1.55,
+    1.75,
+    2.0
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 8,
+   "equilibrium": 1.278,
+   "recipe": {
+    "geometry": "o3-sym",
+    "selection": "energy",
+    "avas_labels": []
+   },
+   "rationale": "singlet ozone: strong biradical character at a closed-shell geometry",
+   "atoms": "O3, C2v, OOO angle fixed 116.8 deg, both O-O scanned together"
+  },
+  {
+   "label": "cr2-cas66",
+   "formula": "Cr2",
+   "kind": "target sub-space",
+   "active_space": {
+    "n_electrons": 6,
+    "n_orbitals": 6,
+    "multiplicity": 1,
+    "n_alpha": 3,
+    "n_beta": 3
+   },
+   "sector_dimension": 400,
+   "basis": "def2-SVP",
+   "phase": 1,
+   "geometries": [
+    1.4,
+    1.55,
+    1.68,
+    1.8,
+    2.0,
+    2.2,
+    2.4,
+    2.6,
+    2.8,
+    3.0,
+    3.3,
+    3.8,
+    4.5
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 13,
+   "equilibrium": 1.679,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "avas",
+    "avas_labels": [
+     "Cr 3dz^2",
+     "Cr 3dxz",
+     "Cr 3dyz"
+    ]
+   },
+   "rationale": "Cr2 3d-sigma + 3d-pi only, 3d-delta frozen. Same molecule and geometry sweep as the CAS(12,12) target, at a dimension already proven.",
+   "atoms": "Cr2"
+  },
+  {
+   "label": "cr2-cas88",
+   "formula": "Cr2",
+   "kind": "target sub-space",
+   "active_space": {
+    "n_electrons": 8,
+    "n_orbitals": 8,
+    "multiplicity": 1,
+    "n_alpha": 4,
+    "n_beta": 4
+   },
+   "sector_dimension": 4900,
+   "basis": "def2-SVP",
+   "phase": 1,
+   "geometries": [
+    1.4,
+    1.55,
+    1.68,
+    1.8,
+    2.0,
+    2.2,
+    2.4,
+    2.6,
+    2.8,
+    3.0,
+    3.3,
+    3.8,
+    4.5
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 13,
+   "equilibrium": 1.679,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "avas",
+    "avas_labels": [
+     "Cr 3dz^2",
+     "Cr 3dxz",
+     "Cr 3dyz",
+     "Cr 4s"
+    ]
+   },
+   "rationale": "Cr2 3d-sigma + 3d-pi + 4s-sigma. Second rung of the Cr2 ladder.",
+   "atoms": "Cr2"
+  },
+  {
+   "label": "mo2-cas66",
+   "formula": "Mo2",
+   "kind": "target sub-space",
+   "active_space": {
+    "n_electrons": 6,
+    "n_orbitals": 6,
+    "multiplicity": 1,
+    "n_alpha": 3,
+    "n_beta": 3
+   },
+   "sector_dimension": 400,
+   "basis": "def2-SVP",
+   "phase": 1,
+   "geometries": [
+    1.649,
+    1.843,
+    1.94,
+    2.134,
+    2.425,
+    2.813,
+    3.298,
+    3.88,
+    4.85,
+    6.208
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 10,
+   "equilibrium": 1.94,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "avas",
+    "avas_labels": [
+     "Mo 4dz^2",
+     "Mo 4dxz",
+     "Mo 4dyz"
+    ]
+   },
+   "rationale": "4d analogue of Cr2, sextuply bonded and less pathological: the dress rehearsal that fails cheaply.",
+   "atoms": "Mo2"
+  },
+  {
+   "label": "mo2-cas88",
+   "formula": "Mo2",
+   "kind": "target sub-space",
+   "active_space": {
+    "n_electrons": 8,
+    "n_orbitals": 8,
+    "multiplicity": 1,
+    "n_alpha": 4,
+    "n_beta": 4
+   },
+   "sector_dimension": 4900,
+   "basis": "def2-SVP",
+   "phase": 1,
+   "geometries": [
+    1.649,
+    1.843,
+    1.94,
+    2.134,
+    2.425,
+    2.813,
+    3.298,
+    3.88,
+    4.85,
+    6.208
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 10,
+   "equilibrium": 1.94,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "avas",
+    "avas_labels": [
+     "Mo 4dz^2",
+     "Mo 4dxz",
+     "Mo 4dyz",
+     "Mo 5s"
+    ]
+   },
+   "rationale": "Mo2 second rung.",
+   "atoms": "Mo2"
+  },
+  {
+   "label": "h10-chain",
+   "formula": "H10",
+   "kind": "hydrogen model",
+   "active_space": {
+    "n_electrons": 10,
+    "n_orbitals": 10,
+    "multiplicity": 1,
+    "n_alpha": 5,
+    "n_beta": 5
+   },
+   "sector_dimension": 63504,
+   "basis": "STO-3G",
+   "phase": 3,
+   "geometries": [
+    1.2,
+    1.4,
+    1.6,
+    1.8,
+    1.9,
+    2.0,
+    2.2,
+    2.4,
+    2.6,
+    2.8,
+    3.2,
+    3.6
+   ],
+   "geometry_units": "bohr",
+   "n_geometries": 12,
+   "equilibrium": null,
+   "recipe": {
+    "geometry": "h-chain",
+    "selection": "full",
+    "avas_labels": []
+   },
+   "rationale": "top of the hydrogen ladder; direct 13x scaling test vs h8",
+   "atoms": "10 H atoms, uniform spacing, chain"
+  },
+  {
+   "label": "h10-ring",
+   "formula": "H10",
+   "kind": "hydrogen model",
+   "active_space": {
+    "n_electrons": 10,
+    "n_orbitals": 10,
+    "multiplicity": 1,
+    "n_alpha": 5,
+    "n_beta": 5
+   },
+   "sector_dimension": 63504,
+   "basis": "STO-3G",
+   "phase": 3,
+   "geometries": [
+    1.2,
+    1.4,
+    1.6,
+    1.8,
+    1.9,
+    2.0,
+    2.2,
+    2.4,
+    2.6,
+    2.8,
+    3.2,
+    3.6
+   ],
+   "geometry_units": "bohr",
+   "n_geometries": 12,
+   "equilibrium": null,
+   "recipe": {
+    "geometry": "h-ring",
+    "selection": "full",
+    "avas_labels": []
+   },
+   "rationale": "ring counterpart",
+   "atoms": "10 H atoms, uniform nearest-neighbour spacing, ring"
+  },
+  {
+   "label": "cr2-cas1010",
+   "formula": "Cr2",
+   "kind": "target sub-space",
+   "active_space": {
+    "n_electrons": 10,
+    "n_orbitals": 10,
+    "multiplicity": 1,
+    "n_alpha": 5,
+    "n_beta": 5
+   },
+   "sector_dimension": 63504,
+   "basis": "def2-TZVP",
+   "phase": 3,
+   "geometries": [
+    1.4,
+    1.55,
+    1.68,
+    1.8,
+    2.0,
+    2.2,
+    2.4,
+    2.6,
+    2.8,
+    3.0,
+    3.3,
+    3.8,
+    4.5
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 13,
+   "equilibrium": 1.679,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "avas",
+    "avas_labels": [
+     "Cr 3d"
+    ]
+   },
+   "rationale": "Cr2 full 3d manifold, 4s excluded. Third rung; the last step before the target space.",
+   "atoms": "Cr2"
+  },
+  {
+   "label": "mo2-cas1010",
+   "formula": "Mo2",
+   "kind": "target sub-space",
+   "active_space": {
+    "n_electrons": 10,
+    "n_orbitals": 10,
+    "multiplicity": 1,
+    "n_alpha": 5,
+    "n_beta": 5
+   },
+   "sector_dimension": 63504,
+   "basis": "def2-TZVP",
+   "phase": 3,
+   "geometries": [
+    1.649,
+    1.843,
+    1.94,
+    2.134,
+    2.425,
+    2.813,
+    3.298,
+    3.88,
+    4.85,
+    6.208
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 10,
+   "equilibrium": 1.94,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "avas",
+    "avas_labels": [
+     "Mo 4d"
+    ]
+   },
+   "rationale": "Mo2 third rung.",
+   "atoms": "Mo2"
+  },
+  {
+   "label": "tio",
+   "formula": "TiO",
+   "kind": "transition-metal oxide",
+   "active_space": {
+    "n_electrons": 10,
+    "n_orbitals": 10,
+    "multiplicity": 1,
+    "n_alpha": 5,
+    "n_beta": 5
+   },
+   "sector_dimension": 63504,
+   "basis": "def2-TZVP",
+   "phase": 3,
+   "geometries": [
+    1.377,
+    1.539,
+    1.62,
+    1.782,
+    2.025,
+    2.349,
+    2.754,
+    3.24
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 8,
+   "equilibrium": 1.62,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "avas",
+    "avas_labels": [
+     "Ti 3d",
+     "Ti 4s",
+     "O 2s",
+     "O 2p"
+    ]
+   },
+   "rationale": "3d physics at rung-2 size. Space = 3d(5) + 4s + O 2s + O 2p(3). 3d metal oxide, closed-shell singlet",
+   "atoms": "TiO"
+  },
+  {
+   "label": "vo",
+   "formula": "VO",
+   "kind": "transition-metal oxide",
+   "active_space": {
+    "n_electrons": 11,
+    "n_orbitals": 10,
+    "multiplicity": 4,
+    "n_alpha": 7,
+    "n_beta": 4
+   },
+   "sector_dimension": 25200,
+   "basis": "def2-TZVP",
+   "phase": 3,
+   "geometries": [
+    1.351,
+    1.51,
+    1.589,
+    1.748,
+    1.986,
+    2.304,
+    2.701,
+    3.178
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 8,
+   "equilibrium": 1.589,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "avas",
+    "avas_labels": [
+     "V 3d",
+     "V 4s",
+     "O 2s",
+     "O 2p"
+    ]
+   },
+   "rationale": "3d physics at rung-2 size. Space = 3d(5) + 4s + O 2s + O 2p(3). 3d metal oxide, quartet",
+   "atoms": "VO"
+  },
+  {
+   "label": "cro",
+   "formula": "CrO",
+   "kind": "transition-metal oxide",
+   "active_space": {
+    "n_electrons": 12,
+    "n_orbitals": 10,
+    "multiplicity": 5,
+    "n_alpha": 8,
+    "n_beta": 4
+   },
+   "sector_dimension": 9450,
+   "basis": "def2-TZVP",
+   "phase": 1,
+   "geometries": [
+    1.373,
+    1.534,
+    1.615,
+    1.777,
+    2.019,
+    2.342,
+    2.745,
+    3.23
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 8,
+   "equilibrium": 1.615,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "avas",
+    "avas_labels": [
+     "Cr 3d",
+     "Cr 4s",
+     "O 2s",
+     "O 2p"
+    ]
+   },
+   "rationale": "3d physics at rung-2 size. Space = 3d(5) + 4s + O 2s + O 2p(3). 3d metal oxide, quintet; Cr in a second bonding motif",
+   "atoms": "CrO"
+  },
+  {
+   "label": "mo2-cas1212",
+   "formula": "Mo2",
+   "kind": "target",
+   "active_space": {
+    "n_electrons": 12,
+    "n_orbitals": 12,
+    "multiplicity": 1,
+    "n_alpha": 6,
+    "n_beta": 6
+   },
+   "sector_dimension": 853776,
+   "basis": "def2-TZVP",
+   "phase": 4,
+   "geometries": [
+    1.649,
+    1.843,
+    1.94,
+    2.134,
+    2.425,
+    2.813,
+    3.298,
+    3.88,
+    4.85,
+    6.208
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 10,
+   "equilibrium": 1.94,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "avas",
+    "avas_labels": [
+     "Mo 4d",
+     "Mo 5s"
+    ]
+   },
+   "rationale": "Full 4d+5s valence. Run BEFORE Cr2: same dimension, same bonding pattern, less pathological.",
+   "atoms": "Mo2"
+  },
+  {
+   "label": "cr2-cas1212",
+   "formula": "Cr2",
+   "kind": "target",
+   "active_space": {
+    "n_electrons": 12,
+    "n_orbitals": 12,
+    "multiplicity": 1,
+    "n_alpha": 6,
+    "n_beta": 6
+   },
+   "sector_dimension": 853776,
+   "basis": "def2-TZVP",
+   "phase": 4,
+   "geometries": [
+    1.4,
+    1.55,
+    1.68,
+    1.8,
+    2.0,
+    2.2,
+    2.4,
+    2.6,
+    2.8,
+    3.0,
+    3.3,
+    3.8,
+    4.5
+   ],
+   "geometry_units": "angstrom",
+   "n_geometries": 13,
+   "equilibrium": 1.679,
+   "recipe": {
+    "geometry": "diatomic",
+    "selection": "avas",
+    "avas_labels": [
+     "Cr 3d",
+     "Cr 4s"
+    ]
+   },
+   "rationale": "THE TARGET. Full 3d+4s valence, sextuple bond, 13 geometries spanning equilibrium (1.68 A), the shoulder (2.4-3.0 A), and dissociation.",
+   "atoms": "Cr2"
+  }
+ ]
+}
