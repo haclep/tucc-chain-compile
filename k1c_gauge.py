@@ -222,6 +222,8 @@ def run_all(stem, sts, jobs, deadline, dry):
             err = p.stderr.read().decode(errors="replace")
             if os.path.exists(summary_path(stem, st)):
                 ok += 1
+                if hasattr(os, "sync"):
+                    os.sync()           # a Spot stop then loses at most the members in flight
             elif p.returncode == 0 and tries < MAX_TRIES:
                 queue.append((st, tries + 1))       # checkpoint: resume it
                 resumed += 1
@@ -337,6 +339,21 @@ def report(stem):
     return out
 
 
+def pending(stem, sts):
+    """Planned members with no summary on disk, ignoring pivot ranks the
+    target's support cannot provide (those are never run)."""
+    todo = [st for st in sts if not os.path.exists(summary_path(stem, st))]
+    cache = os.path.join(HERE, "data", stem + "_target.npz")
+    if todo and os.path.exists(cache):
+        try:
+            v0 = np.load(cache)["v0"]
+            support = int(np.sum(np.abs(v0) > 1e-10))
+            todo = [st for st in todo if st["pivot_rank"] < support]
+        except Exception:
+            pass
+    return todo
+
+
 def readable_json(p):
     """True if p exists and parses; a truncated report is removed so the
     family is reported again."""
@@ -413,8 +430,9 @@ def main():
         print("gate for every member: %g" % GATE)
     for n in names:
         if a.corpus and a.plan and not a.dry_run and \
-                readable_json(os.path.join(RUNS, "gauge_%s.json" % n)):
-            continue                        # family already produced and reported
+                readable_json(os.path.join(RUNS, "gauge_%s.json" % n)) and \
+                not pending(n, settings(a.plan)):
+            continue                        # every planned member on disk and reported
         if a.plan:
             run_all(n, settings(a.plan), a.jobs, a.deadline, a.dry_run)
         if a.report or (a.plan and not a.dry_run):
