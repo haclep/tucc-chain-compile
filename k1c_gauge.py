@@ -55,6 +55,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 RUNS = os.path.join(HERE, "k1c_runs")
 CHAINS = os.path.join(HERE, "k1b")
 GATE = float(os.environ["K1_GATE"]) if "K1_GATE" in os.environ else None
+DEADLINE_DIM = 2000         # sectors above this get a proportionally longer deadline
 RACED = ["k1_h6_chain_14", "k1_h6_chain_19", "k1_h6_chain_22",
          "k1_h6_chain_26", "k1_h6_chain_30", "k1_h6_chain_34",
          "k1_h6_ring_14", "k1_h6_ring_19", "k1_h6_ring_22",
@@ -195,15 +196,25 @@ def run_all(stem, sts, jobs, deadline, dry):
     try:
         v0 = np.load(os.path.join(HERE, "data", stem + "_target.npz"))["v0"]
         support = int(np.sum(np.abs(v0) > 1e-10))
+        dim = int(v0.shape[0])
     except Exception:
-        support = None          # the members recompute the target themselves
+        support = dim = None    # the members recompute the target themselves
     if support is not None:
         keep = [st for st in todo if st["pivot_rank"] < support]
         if len(keep) < len(todo):
             print("  %d setting(s) dropped: pivot rank beyond the support of %d "
                   "determinants" % (len(todo) - len(keep), support))
             todo = keep
-    MAX_TRIES = 40
+    # The solver checkpoints when it judges that one slice of iterations will
+    # not fit before the deadline; on a large sector a slice takes long, so
+    # the deadline grows with the sector (up to 8x), else a member could
+    # checkpoint at every invocation and never advance. What a machine stop
+    # loses stays proportionate to what a member costs.
+    if dim and dim > DEADLINE_DIM:
+        deadline = deadline * min(8.0, dim / float(DEADLINE_DIM))
+        print("  deadline per invocation for this family: %.0f s (sector %d)"
+              % (deadline, dim))
+    MAX_TRIES = int(os.environ.get("K1_MAX_TRIES", 400))
     running, ok, bad, resumed = [], 0, 0, 0
     queue = [(st, 1) for st in todo]
     while queue or running:
