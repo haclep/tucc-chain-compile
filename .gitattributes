@@ -1,3 +1,2 @@
-* text=auto eol=lf
-*.pkl binary
-*.npz binary
+# Shell scripts run on the Linux VM: keep Unix line endings whatever machine commits them.
+*.sh text eol=lf

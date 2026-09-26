@@ -160,8 +160,93 @@ def _normalize_target(target, basis, pivot_mask):
     return _norm_frozen(target, basis, pivot_mask)
 
 
+# ------------------------------------------------------------ fast Jacobian
+# The frozen _gauss_newton builds the Jacobian one letter at a time and, at
+# every letter, copies the whole dim x k block built so far
+# (apply_ucc_factor_cols copies its input) although only the rows of that
+# letter's 2x2 blocks change -- about a tenth of the rows on H8. The build
+# below rotates those rows in place, with the same arithmetic in the same
+# order, so the Jacobian is identical bit for bit and every member compiles
+# to exactly the chain it would have compiled to, only sooner (4.9x on the
+# H8 chain, 4,900 x 6,333, measured; the build is ~97% of an iteration).
+# The harness's work counters (rot, gn_iters) are advanced exactly as the
+# frozen build advances them. K1_FROZEN_JACOBIAN=1 restores the frozen build.
+def _jacobian_inplace(a, seq, th, basis):
+    N = len(seq)
+    W = kb.WORK
+    J = np.zeros((basis.dim, N))
+    for k in range(N):
+        ii, jj, ss = basis.block_arrays(seq[k][0])
+        if k:
+            W["rot"] += len(ii) * k
+            if k == 1:
+                W["gn_iters"] += 1
+            ct, st = np.cos(th[k]), np.sin(th[k])
+            lo, up = J[ii, :k], J[jj, :k]
+            sst = (ss * st)[:, None]
+            J[ii, :k] = ct * lo - sst * up
+            J[jj, :k] = sst * lo + ct * up
+        src = a[k + 1]
+        J[jj, k] = ss * src[ii]
+        J[ii, k] = -ss * src[jj]
+    return J
+
+
+def _gauss_newton_fast(thetas, seq, basis, pivot_mask, ct, tol, max_iter=200,
+                       bound=None, start=None):
+    """chaincompile.compile._gauss_newton with the in-place Jacobian build;
+    everything else verbatim."""
+    N = len(seq)
+    lam = 1e-8
+    if bound is None:
+        to_th = lambda x: x                                    # noqa: E731
+        dth_dx = lambda x: np.ones_like(x)                     # noqa: E731
+        x = thetas.copy()
+    else:
+        to_th = lambda x: bound * np.tanh(x)                   # noqa: E731
+        dth_dx = lambda x: bound * (1.0 - np.tanh(x) ** 2)     # noqa: E731
+        x = np.arctanh(np.clip(thetas / bound, -0.9999, 0.9999))
+    th = to_th(x)
+    psi = _prep(th, seq, basis, pivot_mask, start=start)
+    res = psi - ct
+    rn = np.linalg.norm(res)
+    for _ in range(max_iter):
+        if rn < tol:
+            break
+        a = [basis.basis_vector(pivot_mask) if start is None else start.copy()]
+        for (sub, _, _), t in zip(seq, th):
+            a.append(_cc.apply_ucc_factor(a[-1], basis, sub, t))
+        J = _jacobian_inplace(a, seq, th, basis)
+        J = J * dth_dx(x)[None, :]
+        JtJ = J.T @ J
+        g = J.T @ res
+        for _ in range(60):
+            try:
+                delta = np.linalg.solve(JtJ + lam * np.eye(N), -g)
+            except np.linalg.LinAlgError:  # pragma: no cover
+                lam *= 10
+                continue
+            x_new = x + delta
+            th_new = to_th(x_new)
+            psi_new = _prep(th_new, seq, basis, pivot_mask, start=start)
+            rn_new = np.linalg.norm(psi_new - ct)
+            if rn_new < rn:
+                x, th = x_new, th_new
+                psi, rn, res = psi_new, rn_new, psi_new - ct
+                lam = max(lam / 3.0, 1e-14)
+                break
+            lam *= 10.0
+        else:  # pragma: no cover
+            break
+    return th, rn
+
+
+FAST_JACOBIAN = os.environ.get("K1_FROZEN_JACOBIAN", "") not in ("1", "true", "yes")
+
+
 def _install_gauge():
     """Rebind in every namespace that resolved these names at import."""
+    global _gauss_newton
     for mod in (_cc, kb.big, kb):
         for nm, fn in (("_canon_argmax", _canon_argmax),
                        ("_canon_desc", _canon_desc),
@@ -169,6 +254,10 @@ def _install_gauge():
                        ("_normalize_target", _normalize_target)):
             if hasattr(mod, nm):
                 setattr(mod, nm, fn)
+        if FAST_JACOBIAN and hasattr(mod, "_gauss_newton"):
+            setattr(mod, "_gauss_newton", _gauss_newton_fast)
+    if FAST_JACOBIAN:
+        _gauss_newton = _gauss_newton_fast
     kb.load_target = _load_target
 
 

@@ -406,27 +406,17 @@ def main():
         flat = avg_of[top] * n_rem
         print("  if every remaining member cost what a %s member costs (%s):  %s of worker time -> about %s wall"
               % (top, hours(avg_of[top]), hours(flat), hours(flat / workers)))
-        # (b) power law in the sector dimension, from the systems finished so far
-        if len(set(fit_x)) >= 3:
-            import math
-            n = len(fit_x)
-            mx, my = sum(fit_x) / n, sum(fit_y) / n
-            sxx = sum((x - mx) ** 2 for x in fit_x)
-            b = sum((x - mx) * (y - my) for x, y in zip(fit_x, fit_y)) / sxx if sxx else 0.0
-            a0 = my - b * mx
-            tot = 0.0
-            per = {}
-            for label, dim, k in remaining:
-                c = math.exp(a0 + b * math.log(max(dim, 1)))
-                per[label] = c
-                tot += c * k
-            print("  if cost keeps scaling with sector size as it has (t ~ dim^%.1f):  %s of worker time -> about %s wall"
-                  % (b, hours(tot), hours(tot / workers)))
-            big = sorted(set((dim, l) for l, dim, k in remaining))[-3:]
-            print("     that puts one member at " + ", ".join(
-                "%s (dim %d) near %s" % (l, d, hours(per[l])) for d, l in big))
-            print("     (an extrapolation from dim <= %d; treat as an order of magnitude, not a date)"
-                  % max(dim_of[l] for l in by_label if dim_of[l] >= 200))
+        # (b) what the members still in flight are costing: the first members
+        #     of a family to finish are its cheapest, so (a) is a floor
+        run_tot = [read_trace(m["trace"])[1] for r in rows for m in r["members"]
+                   if m["started"] and not m["done"]]
+        run_tot = [t for t in run_tot if t > 0]
+        if run_tot:
+            print("  members in flight: %d, averaging %s of compute so far and not finished, so the "
+                  "true cost at this size is above the %s average of the finished ones"
+                  % (len(run_tot), hours(sum(run_tot) / len(run_tot)), hours(avg_of[top])))
+        print("  the cost of a member is set by its chain length (the size of the state's support), "
+              "not by the sector dimension alone; MnH and NH3 share a dimension and differ 6x.")
 
     # ---- failures
     fails = all_failures()
